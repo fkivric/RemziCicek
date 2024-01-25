@@ -1,7 +1,50 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="RemziCicek.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="YonavmAracDatasıConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Server = 192.168.4.24; Database = MDE_GENEL; User Id = sa; Password = MagicUser2023!;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Server = 192.168.4.24; Database = MDE_GENEL; User Id = sa; Password = MagicUser2023!;</Value>
+    </Setting>
+    <Setting Name="DbNewConnectionString" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="RemziCicek_com_turkiyeshell_ttstest_TTSWebServices" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ttstest.turkiyeshell.com/tts/TTSWebServices.asmx</Value>
+    </Setting>
+    <Setting Name="servisGuncelle" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Kodu" Type="System.String" Scope="User">
+      <Value Profile="(Default)">11818213</Value>
+    </Setting>
+    <Setting Name="Adı" Type="System.String" Scope="User">
+      <Value Profile="(Default)">abbasçınar</Value>
+    </Setting>
+    <Setting Name="Sifre" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Ac221980</Value>
+    </Setting>
+    <Setting Name="VolConnection" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Server = 192.168.4.24; Database = VDB_YON01; User Id = sa; Password = MagicUser2023!;</Value>
+    </Setting>
+    <Setting Name="Company" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DbName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="VolFtpHost" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="VolFtpUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="VolFtpPass" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
 </SettingsFile>

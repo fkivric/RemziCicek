@@ -1,0 +1,962 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<a1:UltraExplorerBarStreamer id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Appearance href="#ref-4"/>
+<AutoScrollStyle>1</AutoScrollStyle>
+<BorderStyle>15</BorderStyle>
+<Groups href="#ref-5"/>
+<GroupSettings href="#ref-6"/>
+<GroupSpacing>0</GroupSpacing>
+<ItemSettings href="#ref-7"/>
+<NavigationMaxGroupHeaders>7</NavigationMaxGroupHeaders>
+<Style>3</Style>
+<UseLargeGroupHeaderImages>1</UseLargeGroupHeaderImages>
+<UseLargeNavigationOverflowButtonImages>true</UseLargeNavigationOverflowButtonImages>
+<ViewStyle>6</ViewStyle>
+<SelectedGroup href="#ref-8"/>
+</a1:UltraExplorerBarStreamer>
+<a2:AppearanceHolder id="ref-4" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-9"/>
+</a2:AppearanceHolder>
+<a1:UltraExplorerBarGroupsCollection id="ref-5" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Count>8</Count>
+<_x0030_ href="#ref-10"/>
+<_x0031_ href="#ref-11"/>
+<_x0032_ href="#ref-12"/>
+<_x0033_ href="#ref-13"/>
+<_x0034_ href="#ref-14"/>
+<_x0035_ href="#ref-15"/>
+<_x0036_ href="#ref-16"/>
+<_x0037_ href="#ref-17"/>
+</a1:UltraExplorerBarGroupsCollection>
+<a1:UltraExplorerBarGroupSettings id="ref-6" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<AppearancesLarge href="#ref-18"/>
+<Style>5</Style>
+</a1:UltraExplorerBarGroupSettings>
+<a1:UltraExplorerBarItemSettings id="ref-7" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<AllowEdit>2</AllowEdit>
+<AllowDragMove>2</AllowDragMove>
+<Style>1</Style>
+</a1:UltraExplorerBarItemSettings>
+<a1:UltraExplorerBarStreamer_x002B_SelectedGroupSerializer id="ref-8" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<key id="ref-19"></key>
+<index>7</index>
+</a1:UltraExplorerBarStreamer_x002B_SelectedGroupSerializer>
+<a2:Appearance id="ref-9" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue href="#ref-22"/>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a1:UltraExplorerBarGroup id="ref-10" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Items href="#ref-23"/>
+<Settings href="#ref-24"/>
+<Text id="ref-25">Ürünler</Text>
+</a1:UltraExplorerBarGroup>
+<a1:UltraExplorerBarGroup id="ref-11" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Items href="#ref-26"/>
+<Settings href="#ref-27"/>
+<Text id="ref-28">Depo Yönetimi</Text>
+</a1:UltraExplorerBarGroup>
+<a1:UltraExplorerBarGroup id="ref-12" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Items href="#ref-29"/>
+<Settings href="#ref-30"/>
+<Text id="ref-31">Cari İşlemler</Text>
+</a1:UltraExplorerBarGroup>
+<a1:UltraExplorerBarGroup id="ref-13" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Items href="#ref-32"/>
+<Settings href="#ref-33"/>
+<Text id="ref-34">Satışlar</Text>
+</a1:UltraExplorerBarGroup>
+<a1:UltraExplorerBarGroup id="ref-14" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Items href="#ref-35"/>
+<Settings href="#ref-36"/>
+<Text id="ref-37">Fatura / İrsaaliye</Text>
+</a1:UltraExplorerBarGroup>
+<a1:UltraExplorerBarGroup id="ref-15" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Items href="#ref-38"/>
+<Settings href="#ref-39"/>
+<Text id="ref-40">Kargo</Text>
+</a1:UltraExplorerBarGroup>
+<a1:UltraExplorerBarGroup id="ref-16" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Items href="#ref-41"/>
+<Settings href="#ref-42"/>
+<Text id="ref-43">Raporlar</Text>
+</a1:UltraExplorerBarGroup>
+<a1:UltraExplorerBarGroup id="ref-17" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Items href="#ref-44"/>
+<Settings href="#ref-45"/>
+<Text id="ref-46">Ayarlar</Text>
+</a1:UltraExplorerBarGroup>
+<a1:UltraExplorerBarGroupAppearances id="ref-18" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Appearance href="#ref-47"/>
+<HeaderAppearance href="#ref-48"/>
+</a1:UltraExplorerBarGroupAppearances>
+<a4:Bitmap id="ref-22" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing">
+<Data href="#ref-49"/>
+</a4:Bitmap>
+<a1:UltraExplorerBarItemsCollection id="ref-23" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Count>3</Count>
+<_x0030_ href="#ref-50"/>
+<_x0031_ href="#ref-51"/>
+<_x0032_ href="#ref-52"/>
+</a1:UltraExplorerBarItemsCollection>
+<a1:UltraExplorerBarGroupSettings id="ref-24" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<AppearancesLarge href="#ref-53"/>
+<HeaderButtonStyle>10</HeaderButtonStyle>
+</a1:UltraExplorerBarGroupSettings>
+<a1:UltraExplorerBarItemsCollection id="ref-26" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Count>3</Count>
+<_x0030_ href="#ref-54"/>
+<_x0031_ href="#ref-55"/>
+<_x0032_ href="#ref-56"/>
+</a1:UltraExplorerBarItemsCollection>
+<a1:UltraExplorerBarGroupSettings id="ref-27" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<AppearancesLarge href="#ref-57"/>
+</a1:UltraExplorerBarGroupSettings>
+<a1:UltraExplorerBarItemsCollection id="ref-29" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Count>2</Count>
+<_x0030_ href="#ref-58"/>
+<_x0031_ href="#ref-59"/>
+</a1:UltraExplorerBarItemsCollection>
+<a1:UltraExplorerBarGroupSettings id="ref-30" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<AppearancesLarge href="#ref-60"/>
+</a1:UltraExplorerBarGroupSettings>
+<a1:UltraExplorerBarItemsCollection id="ref-32" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Count>2</Count>
+<_x0030_ href="#ref-61"/>
+<_x0031_ href="#ref-62"/>
+</a1:UltraExplorerBarItemsCollection>
+<a1:UltraExplorerBarGroupSettings id="ref-33" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<AppearancesLarge href="#ref-63"/>
+</a1:UltraExplorerBarGroupSettings>
+<a1:UltraExplorerBarItemsCollection id="ref-35" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Count>3</Count>
+<_x0030_ href="#ref-64"/>
+<_x0031_ href="#ref-65"/>
+<_x0032_ href="#ref-66"/>
+</a1:UltraExplorerBarItemsCollection>
+<a1:UltraExplorerBarGroupSettings id="ref-36" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<AppearancesLarge href="#ref-67"/>
+</a1:UltraExplorerBarGroupSettings>
+<a1:UltraExplorerBarItemsCollection id="ref-38" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Count>1</Count>
+<_x0030_ href="#ref-68"/>
+</a1:UltraExplorerBarItemsCollection>
+<a1:UltraExplorerBarGroupSettings id="ref-39" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<AppearancesLarge href="#ref-69"/>
+</a1:UltraExplorerBarGroupSettings>
+<a1:UltraExplorerBarItemsCollection id="ref-41" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Count>2</Count>
+<_x0030_ href="#ref-70"/>
+<_x0031_ href="#ref-71"/>
+</a1:UltraExplorerBarItemsCollection>
+<a1:UltraExplorerBarGroupSettings id="ref-42" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<AppearancesLarge href="#ref-72"/>
+</a1:UltraExplorerBarGroupSettings>
+<a1:UltraExplorerBarItemsCollection id="ref-44" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Count>5</Count>
+<_x0030_ href="#ref-73"/>
+<_x0031_ href="#ref-74"/>
+<_x0032_ href="#ref-75"/>
+<_x0033_ href="#ref-76"/>
+<_x0034_ href="#ref-77"/>
+</a1:UltraExplorerBarItemsCollection>
+<a1:UltraExplorerBarGroupSettings id="ref-45" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<AppearancesLarge href="#ref-78"/>
+</a1:UltraExplorerBarGroupSettings>
+<a2:AppearanceHolder id="ref-47" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-79"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-48" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-80"/>
+</a2:AppearanceHolder>
+<SOAP-ENC:Array id="ref-49" xsi:type="SOAP-ENC:base64">iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOxAAADsQBlSsOGwAABK1JREFUWEftl11sFFUUx29N5AGlSCwgSv2AFEuExJBokKjRaALGSoxPPkmiJj4YwReliBWtRT4EFGkQY/yIRKxA+ZAt1tZK6QPQ7bTdj66w2679CG3VtttuuzM7uzvbv+fO3Onudne73dKEF//JTXfm3sz5nXPPPeeW4SbrfwDm8muQhjTxOHtq6BnD5esB8ZRe7NKABvZjAO85VAQi4+L1zOVXNbxq6QF76xLOuv3ibbK21F5HffcYWCN5v+i0jKVnZaz7XYF9JCqWZC9rr4xFB11gH7aAfdCMqvZRMRPToBLBhgov2DuNqOsUAIsJoLBKwbJzMpackVFsU6FFpx+NCK195Rx5vaMZrKwVObtsKQGOtfnAtjWBlRJgSTPqu+IAVp5X9PFglYy7CGJjgwr7cObcsPbJWP2NWzfIyPAtu+36SAXw9LEO3bg+/76UGAETgA8zGvNOBlDmCmE4lByNAQrl5ppesK3kkfDaNJ4O4PkTf4F93KqvZx+1QOqXkwFWUAQKLMYzB8mn3Fhbo8A6FMuNi5Thd37epn/ENMw+obDTmArgueO097QFc/baIVHkuBIAuPHHahWspXHfL0Ze8LGcgPJOBbDFFkFRBYWxRALbaXids4uMUVjzCGghhxIQqQDW/+zFu3/0iSdDCQD3U9jflIzjuOFiEHn0nkfDBCmoDpNxqzBMHu+kQXu54qtrGAtreLGyUw9xOgD3kCp+xZQE8EZTbNH5Xg0PV8u4V0RjdS0BlEqGcfJ67qcOVLh8YjVQJPY4HUAqJQNYEym7AlFsalQxvzKAwt8IYAclHe3jMz954ZnkkZlk0wHoGgnBO6xmBjBV26/hifowFuy34ZR7RLxNVKYtMHVYGgR7+wqqvaNglwc1fa8zAXD1BcfRPZJ63jkQxJJDVAUpL9IBjFKZXvOdRxQiyShEbVR682mP+bnPBJBKo6EoNlNd1+uBMK4DbJeSesG6o2ScwHjB4n91AD7hJIhVvyrIpX1+PQuADl8Id3OvJ9cD+vht+xxop/l4Tc6RCQBT+66G8RolXCbxjld0nD5GR9Csgjn8o/TxW/fYUXwh8aybygjA1UlZP5Uq6djll1PBocZj1APhNcHcU+4ir9M7sPHkNAAyiZVT/d9LAGVG2HlCzdnjwOGWAbEitbTxcTz6PeUAReyGAO44TR3TEsC8L6mulzTh8R88cP6riNnU8viCFLU/J8q3DmB2Q7Fm2sqlDsmPbGG1iqfqpjbM7xQvn+nWe398x4x1QyV7gLknqCJSWeYQyywKlWoFR9rDYjYm7t2qr68ZlxQzSXmu0Plf8JkTrX8b8FkDrKSOyeuGCcGb1UIqZM9eCKLNH8WgHMZLvCIWx+4JuvFS+r3bhkNSYq5kDdBP1XArXdlup0jw4qV3SlFFH6kLY+lBh56YE+EWHbPgyFVc6U2+JWcNYKrFF8ULDUH9+savcRzioRqjWele0+D7nLvfgS+a0p+QGQNwRahkbLOrWEwQD1AEzHbNs517veZbN/rHkvMjXjcEYOqfYBTrKQeW8wvL9kbMP+CEpSP9/wTxmhUArggVmgMeDU8edaPHP7XX8Zo1gJnqJgMA/wE/eQWRKZJulQAAAABJRU5ErkJggg==</SOAP-ENC:Array>
+<a1:UltraExplorerBarItem id="ref-50" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Settings href="#ref-81"/>
+<Text id="ref-82">Ürün İşlemleri</Text>
+<Key id="ref-83">11</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarItem id="ref-51" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Settings href="#ref-84"/>
+<Text id="ref-85">Fiyatlandırma</Text>
+<Key id="ref-86">12</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarItem id="ref-52" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Settings href="#ref-87"/>
+<Text id="ref-88">Toplu Ürün Ekleme</Text>
+<Key id="ref-89">13</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarGroupAppearances id="ref-53" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<ActiveAppearance href="#ref-90"/>
+<ActiveHeaderAppearance href="#ref-91"/>
+<Appearance href="#ref-92"/>
+<EditAppearance href="#ref-93"/>
+<HeaderAppearance href="#ref-94"/>
+<HeaderHotTrackAppearance href="#ref-95"/>
+<NavigationOverflowButtonAppearance href="#ref-96"/>
+<NavigationOverflowButtonSelectedAppearance href="#ref-97"/>
+<NavigationOverflowButtonHotTrackAppearance href="#ref-98"/>
+<NavigationPaneHeaderAppearance href="#ref-99"/>
+<SelectedAppearance href="#ref-100"/>
+<SelectedHeaderAppearance href="#ref-101"/>
+<ScrollButtonAppearance href="#ref-102"/>
+<ScrollButtonHotTrackAppearance href="#ref-103"/>
+<NavigationPaneExpansionButtonAppearance href="#ref-104"/>
+<NavigationPaneExpansionButtonHotTrackAppearance href="#ref-105"/>
+<NavigationPaneCollapsedGroupAreaAppearance href="#ref-106"/>
+<NavigationPaneCollapsedGroupAreaHotTrackAppearance href="#ref-107"/>
+<ItemAreaAppearance href="#ref-108"/>
+</a1:UltraExplorerBarGroupAppearances>
+<a1:UltraExplorerBarItem id="ref-54" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Settings href="#ref-109"/>
+<Text id="ref-110">Depo Oluştur</Text>
+<Key id="ref-111">21</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarItem id="ref-55" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Text id="ref-112">Depo Sayım</Text>
+<Key id="ref-113">22</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarItem id="ref-56" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Text id="ref-114">Depolar Arası Transfer</Text>
+<Key id="ref-115">23</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarGroupAppearances id="ref-57" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<ActiveHeaderAppearance href="#ref-116"/>
+<Appearance href="#ref-117"/>
+<HeaderAppearance href="#ref-118"/>
+<NavigationPaneHeaderAppearance href="#ref-119"/>
+<SelectedAppearance href="#ref-120"/>
+</a1:UltraExplorerBarGroupAppearances>
+<a1:UltraExplorerBarItem id="ref-58" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Settings href="#ref-121"/>
+<Text id="ref-122">Tedariçi Firma İşlemleri</Text>
+<Key id="ref-123">31</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarItem id="ref-59" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Text id="ref-124">Cari İşlem Girişi</Text>
+<Key id="ref-125">32</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarGroupAppearances id="ref-60" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Appearance href="#ref-126"/>
+<HeaderAppearance href="#ref-127"/>
+<NavigationPaneHeaderAppearance href="#ref-128"/>
+</a1:UltraExplorerBarGroupAppearances>
+<a1:UltraExplorerBarItem id="ref-61" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Settings href="#ref-129"/>
+<Text id="ref-130">Satış Takibi</Text>
+<Key id="ref-131">41</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarItem id="ref-62" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Settings href="#ref-132"/>
+<Text id="ref-133">Müşteri Ekle / Sil / Güncelle</Text>
+<Key id="ref-134">42</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarGroupAppearances id="ref-63" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Appearance href="#ref-135"/>
+<HeaderAppearance href="#ref-136"/>
+<NavigationPaneHeaderAppearance href="#ref-137"/>
+</a1:UltraExplorerBarGroupAppearances>
+<a1:UltraExplorerBarItem id="ref-64" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Settings href="#ref-138"/>
+<Text id="ref-139">Fatura</Text>
+<Key id="ref-140">51</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarItem id="ref-65" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Settings href="#ref-141"/>
+<Text id="ref-142">E-Arşiv Fatura</Text>
+<Key id="ref-143">52</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarItem id="ref-66" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Settings href="#ref-144"/>
+<Text id="ref-145">E-Irsaliye</Text>
+<Key id="ref-146">53</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarGroupAppearances id="ref-67" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Appearance href="#ref-147"/>
+<HeaderAppearance href="#ref-148"/>
+<NavigationPaneHeaderAppearance href="#ref-149"/>
+</a1:UltraExplorerBarGroupAppearances>
+<a1:UltraExplorerBarItem id="ref-68" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Settings href="#ref-150"/>
+<Text id="ref-151">Kargo Seçimi</Text>
+<Key id="ref-152">61</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarGroupAppearances id="ref-69" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Appearance href="#ref-153"/>
+<HeaderAppearance href="#ref-154"/>
+<NavigationPaneHeaderAppearance href="#ref-155"/>
+<ItemAreaAppearance href="#ref-156"/>
+</a1:UltraExplorerBarGroupAppearances>
+<a1:UltraExplorerBarItem id="ref-70" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Settings href="#ref-157"/>
+<Text id="ref-158">Rapor</Text>
+<Key id="ref-159">81</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarItem id="ref-71" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Settings href="#ref-160"/>
+<Text id="ref-161">Rapor Dizayn</Text>
+<Key id="ref-162">82</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarGroupAppearances id="ref-72" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Appearance href="#ref-163"/>
+<HeaderAppearance href="#ref-164"/>
+<NavigationPaneHeaderAppearance href="#ref-165"/>
+</a1:UltraExplorerBarGroupAppearances>
+<a1:UltraExplorerBarItem id="ref-73" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Text id="ref-166">Perakende Satış Ayarları</Text>
+<Visible>false</Visible>
+<Key id="ref-167">91</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarItem id="ref-74" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Settings href="#ref-168"/>
+<Text id="ref-169">ERP Ayarları</Text>
+<Key id="ref-170">92</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarItem id="ref-75" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Text id="ref-171">Depo Ayarları</Text>
+<Visible>false</Visible>
+<Key id="ref-172">93</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarItem id="ref-76" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Text id="ref-173">Program Ayarları</Text>
+<Visible>false</Visible>
+<Key id="ref-174">94</Key>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarItem id="ref-77" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Text id="ref-175">E-Fatura / E-Irsaliye Ayarları</Text>
+<Visible>false</Visible>
+</a1:UltraExplorerBarItem>
+<a1:UltraExplorerBarGroupAppearances id="ref-78" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Appearance href="#ref-176"/>
+<HeaderAppearance href="#ref-177"/>
+<NavigationPaneHeaderAppearance href="#ref-178"/>
+</a1:UltraExplorerBarGroupAppearances>
+<a2:Appearance id="ref-79" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue href="#ref-22"/>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-80" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue href="#ref-22"/>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a1:UltraExplorerBarItemSettings id="ref-81" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<AppearancesLarge href="#ref-179"/>
+</a1:UltraExplorerBarItemSettings>
+<a1:UltraExplorerBarItemSettings id="ref-84" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<AppearancesLarge href="#ref-180"/>
+</a1:UltraExplorerBarItemSettings>
+<a1:UltraExplorerBarItemSettings id="ref-87" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<AppearancesLarge href="#ref-181"/>
+</a1:UltraExplorerBarItemSettings>
+<a2:AppearanceHolder id="ref-90" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-182"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-91" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-183"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-92" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-184"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-93" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-185"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-94" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-186"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-95" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-187"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-96" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-188"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-97" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-189"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-98" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-190"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-99" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-191"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-100" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-192"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-101" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-193"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-102" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-194"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-103" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-195"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-104" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-196"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-105" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-197"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-106" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-198"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-107" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-199"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-108" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-200"/>
+</a2:AppearanceHolder>
+<a1:UltraExplorerBarItemSettings id="ref-109" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<AppearancesLarge href="#ref-201"/>
+</a1:UltraExplorerBarItemSettings>
+<a2:AppearanceHolder id="ref-116" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-202"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-117" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-203"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-118" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-204"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-119" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-205"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-120" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-206"/>
+</a2:AppearanceHolder>
+<a1:UltraExplorerBarItemSettings id="ref-121" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<AppearancesLarge href="#ref-207"/>
+</a1:UltraExplorerBarItemSettings>
+<a2:AppearanceHolder id="ref-126" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-208"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-127" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-209"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-128" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-210"/>
+</a2:AppearanceHolder>
+<a1:UltraExplorerBarItemSettings id="ref-129" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<AppearancesLarge href="#ref-211"/>
+</a1:UltraExplorerBarItemSettings>
+<a1:UltraExplorerBarItemSettings id="ref-132" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<AppearancesLarge href="#ref-212"/>
+</a1:UltraExplorerBarItemSettings>
+<a2:AppearanceHolder id="ref-135" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-213"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-136" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-214"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-137" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-215"/>
+</a2:AppearanceHolder>
+<a1:UltraExplorerBarItemSettings id="ref-138" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<AppearancesLarge href="#ref-216"/>
+</a1:UltraExplorerBarItemSettings>
+<a1:UltraExplorerBarItemSettings id="ref-141" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<AppearancesLarge href="#ref-217"/>
+</a1:UltraExplorerBarItemSettings>
+<a1:UltraExplorerBarItemSettings id="ref-144" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<AppearancesLarge href="#ref-218"/>
+<AppearancesSmall href="#ref-219"/>
+</a1:UltraExplorerBarItemSettings>
+<a2:AppearanceHolder id="ref-147" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-220"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-148" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-221"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-149" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-222"/>
+</a2:AppearanceHolder>
+<a1:UltraExplorerBarItemSettings id="ref-150" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<AppearancesLarge href="#ref-223"/>
+</a1:UltraExplorerBarItemSettings>
+<a2:AppearanceHolder id="ref-153" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-224"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-154" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-225"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-155" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-226"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-156" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-227"/>
+</a2:AppearanceHolder>
+<a1:UltraExplorerBarItemSettings id="ref-157" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<AppearancesLarge href="#ref-228"/>
+</a1:UltraExplorerBarItemSettings>
+<a1:UltraExplorerBarItemSettings id="ref-160" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<AppearancesLarge href="#ref-229"/>
+</a1:UltraExplorerBarItemSettings>
+<a2:AppearanceHolder id="ref-163" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-230"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-164" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-231"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-165" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-232"/>
+</a2:AppearanceHolder>
+<a1:UltraExplorerBarItemSettings id="ref-168" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<AppearancesLarge href="#ref-233"/>
+</a1:UltraExplorerBarItemSettings>
+<a2:AppearanceHolder id="ref-176" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-234"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-177" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-235"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-178" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-236"/>
+</a2:AppearanceHolder>
+<a1:UltraExplorerBarItemAppearances id="ref-179" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Appearance href="#ref-237"/>
+</a1:UltraExplorerBarItemAppearances>
+<a1:UltraExplorerBarItemAppearances id="ref-180" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Appearance href="#ref-238"/>
+</a1:UltraExplorerBarItemAppearances>
+<a1:UltraExplorerBarItemAppearances id="ref-181" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Appearance href="#ref-239"/>
+</a1:UltraExplorerBarItemAppearances>
+<a2:Appearance id="ref-182" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-240" xsi:type="SOAP-ENC:string">product_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-183" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-241" xsi:type="SOAP-ENC:string">product_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-184" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-242" xsi:type="SOAP-ENC:string">product_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-185" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-243" xsi:type="SOAP-ENC:string">product_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-186" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-244" xsi:type="SOAP-ENC:string">product_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-187" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-245" xsi:type="SOAP-ENC:string">product_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-188" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-246" xsi:type="SOAP-ENC:string">product_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-189" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-247" xsi:type="SOAP-ENC:string">product_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-190" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-248" xsi:type="SOAP-ENC:string">product_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-191" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-249" xsi:type="SOAP-ENC:string">product_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-192" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-250" xsi:type="SOAP-ENC:string">product_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-193" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-251" xsi:type="SOAP-ENC:string">product_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-194" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-252" xsi:type="SOAP-ENC:string">product_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-195" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-253" xsi:type="SOAP-ENC:string">product_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-196" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-254" xsi:type="SOAP-ENC:string">product_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-197" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-255" xsi:type="SOAP-ENC:string">product_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-198" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-256" xsi:type="SOAP-ENC:string">product_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-199" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-257" xsi:type="SOAP-ENC:string">product_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-200" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-258" xsi:type="SOAP-ENC:string">product_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a1:UltraExplorerBarItemAppearances id="ref-201" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Appearance href="#ref-259"/>
+</a1:UltraExplorerBarItemAppearances>
+<a2:Appearance id="ref-202" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue href="#ref-22"/>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-203" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue href="#ref-22"/>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-204" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue href="#ref-22"/>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-205" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue href="#ref-22"/>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-206" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue href="#ref-22"/>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a1:UltraExplorerBarItemAppearances id="ref-207" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Appearance href="#ref-260"/>
+</a1:UltraExplorerBarItemAppearances>
+<a2:Appearance id="ref-208" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-261" xsi:type="SOAP-ENC:string">Store Setting_32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-209" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-262" xsi:type="SOAP-ENC:string">Store Setting_32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-210" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-263" xsi:type="SOAP-ENC:string">Store Setting_32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a1:UltraExplorerBarItemAppearances id="ref-211" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Appearance href="#ref-264"/>
+</a1:UltraExplorerBarItemAppearances>
+<a1:UltraExplorerBarItemAppearances id="ref-212" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Appearance href="#ref-265"/>
+</a1:UltraExplorerBarItemAppearances>
+<a2:Appearance id="ref-213" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-266" xsi:type="SOAP-ENC:string">perakende_32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-214" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-267" xsi:type="SOAP-ENC:string">perakende_32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-215" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-268" xsi:type="SOAP-ENC:string">perakende_32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a1:UltraExplorerBarItemAppearances id="ref-216" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Appearance href="#ref-269"/>
+</a1:UltraExplorerBarItemAppearances>
+<a1:UltraExplorerBarItemAppearances id="ref-217" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Appearance href="#ref-270"/>
+</a1:UltraExplorerBarItemAppearances>
+<a1:UltraExplorerBarItemAppearances id="ref-218" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Appearance href="#ref-271"/>
+</a1:UltraExplorerBarItemAppearances>
+<a1:UltraExplorerBarItemAppearances id="ref-219" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Appearance href="#ref-272"/>
+</a1:UltraExplorerBarItemAppearances>
+<a2:Appearance id="ref-220" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-273" xsi:type="SOAP-ENC:string">VKN 32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-221" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-274" xsi:type="SOAP-ENC:string">VKN 32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-222" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-275" xsi:type="SOAP-ENC:string">VKN 32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a1:UltraExplorerBarItemAppearances id="ref-223" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Appearance href="#ref-276"/>
+</a1:UltraExplorerBarItemAppearances>
+<a2:Appearance id="ref-224" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-277" xsi:type="SOAP-ENC:string">Truck_100px.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-225" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-278" xsi:type="SOAP-ENC:string">Truck_100px.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-226" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-279" xsi:type="SOAP-ENC:string">Truck_100px.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-227" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-280" xsi:type="SOAP-ENC:string">Truck_100px.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a1:UltraExplorerBarItemAppearances id="ref-228" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Appearance href="#ref-281"/>
+</a1:UltraExplorerBarItemAppearances>
+<a1:UltraExplorerBarItemAppearances id="ref-229" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Appearance href="#ref-282"/>
+</a1:UltraExplorerBarItemAppearances>
+<a2:Appearance id="ref-230" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-283" xsi:type="SOAP-ENC:string">designreport_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-231" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-284" xsi:type="SOAP-ENC:string">designreport_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-232" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-285" xsi:type="SOAP-ENC:string">designreport_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a1:UltraExplorerBarItemAppearances id="ref-233" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinExplorerBar/Infragistics4.Win.UltraWinExplorerBar.v19.2">
+<Appearance href="#ref-286"/>
+</a1:UltraExplorerBarItemAppearances>
+<a2:Appearance id="ref-234" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-287" xsi:type="SOAP-ENC:string">Settings_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-235" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-288" xsi:type="SOAP-ENC:string">Settings_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-236" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-289" xsi:type="SOAP-ENC:string">Settings_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:AppearanceHolder id="ref-237" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-290"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-238" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-291"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-239" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-292"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-259" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-293"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-260" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-294"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-264" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-295"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-265" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-296"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-269" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-297"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-270" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-298"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-271" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-299"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-272" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-300"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-276" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-301"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-281" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-302"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-282" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-303"/>
+</a2:AppearanceHolder>
+<a2:AppearanceHolder id="ref-286" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Appearance href="#ref-304"/>
+</a2:AppearanceHolder>
+<a2:Appearance id="ref-290" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-305" xsi:type="SOAP-ENC:string">sell_32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-291" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-306" xsi:type="SOAP-ENC:string">definednamecreatefromselection_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-292" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-307" xsi:type="SOAP-ENC:string">microsoft_excel_32px.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-293" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-308" xsi:type="SOAP-ENC:string">Store Setting_32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-294" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-309" xsi:type="SOAP-ENC:string">supplier_40px.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-295" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue href="#ref-310"/>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-296" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-311" xsi:type="SOAP-ENC:string">user_group_32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-297" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-312" xsi:type="SOAP-ENC:string">e-fatura32x.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-298" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-313" xsi:type="SOAP-ENC:string">e-arşiv32x.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-299" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-314" xsi:type="SOAP-ENC:string">e-irsaliye new.jpg</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-300" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-315" xsi:type="SOAP-ENC:string">e-irsaliye new.jpg</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-301" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-316" xsi:type="SOAP-ENC:string">Truck_100px.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-302" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-317" xsi:type="SOAP-ENC:string">previewchart_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-303" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-318" xsi:type="SOAP-ENC:string">designreport_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a2:Appearance id="ref-304" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v19.2">
+<Image xsi:type="a3:ObjectWrapper" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/Infragistics.Shared.Serialization/Infragistics4.Shared.v19.2">
+<objectValue id="ref-319" xsi:type="SOAP-ENC:string">technology_32x32.png</objectValue>
+</Image>
+<Id>0</Id>
+</a2:Appearance>
+<a4:Bitmap id="ref-310" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing">
+<Data href="#ref-320"/>
+</a4:Bitmap>
+<SOAP-ENC:Array id="ref-320" xsi:type="SOAP-ENC:base64">iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACB0RVh0VGl0bGUAU2FsZXM7Vmlld1NhbGVzO1NhbGVzVmlldzu1prbtAAABTUlEQVRYR+3QvVFDMRAEYJNQASEZKWXQibuDgAqYoQACyOjAASUQiDvmVrP3ozcWZuTEwTfDSXvaZ3attbMqD1cqD1cqD1cqD1cqD1cqDz/3D6qdAG+UuMsNYMHq4WO5woi73AAWrB52kKU93OGNEvLKDWBBV1ZBlvZwt7mPvOp/MAkd9QEbLh8Q9/HmL+5yA1iQH5gV93u54i43gAX5gVlxv5cr7nIDWJAfmBX3e7niLjeABfmBWXG/lyvucgNYkB+YFfd7ueIuN4AF+YFZcb+XK+5yA8SFPzrpA3j5P1w+YPoDouvibMtmnrvcABa8Fx9Cf8GbuKO7kbQjUo673AAWfBf8b3ylu5G0I1KOu9wAEroS34If+7K7kXJHpCx3uQEs+CL4sUe6G0k7IuW4yw1gwVvxLA7iSdzQ3UjaESnHXW44h/JwpfJwnbb7ARz8FpuZKltVAAAAAElFTkSuQmCC</SOAP-ENC:Array>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
