@@ -26,7 +26,7 @@
       <Value Profile="(Default)">abbasçınar</Value>
     </Setting>
     <Setting Name="Sifre" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Ac221980</Value>
+      <Value Profile="(Default)">Ac221980.</Value>
     </Setting>
     <Setting Name="VolConnection" Type="System.String" Scope="User">
       <Value Profile="(Default)">Server = 192.168.4.24; Database = VDB_YON01; User Id = sa; Password = MagicUser2023!;</Value>

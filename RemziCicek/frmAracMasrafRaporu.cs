@@ -69,7 +69,7 @@ namespace RemziCicek
         {
             if (togyakit.IsOn == false)
             {
-                string q = @"CREATE TABLE #ARAC
+                string q = string.Format(@"CREATE TABLE #ARAC
                 (
 	                DSHIPVAL		varchar(6),
 	                DSHIPNAME		varchar(60),
@@ -117,11 +117,11 @@ namespace RemziCicek
                 ,yakit.YakıtFiyatı,yakit.YakıtMiktarı,yakit.YakıtTutarı
                 from #ARAC
                 outer apply (select distinct substring(DIVNAME,1,CHARINDEX(' ',DIVNAME)) as DIVNAME,DIVREGION from VDB_YON01.dbo.DIVISON where DIVVAL = DSHIPDIVLIST) MAGAZA
-                outer apply (select Plaka,COUNT(YakıtFiyatı) as YakıtFiyatı,sum([YakıtMiktarı]) as YakıtMiktarı,sum([YakıtTutarı]) as YakıtTutarı FROM ARACYAKIT where Plaka = DSHIPNAME 
+                outer apply (select Plaka,COUNT(YakıtFiyatı) as YakıtFiyatı,sum([YakıtMiktarı]) as YakıtMiktarı,sum([YakıtTutarı]) as YakıtTutarı FROM ARACYAKIT where Plaka = DSHIPNAME and Tarih between '{0}' and '{1}'
                 group by Plaka) yakit
                 --group by DSHIPVAL,DSHIPNAME,DIVREGION,DIVNAME
                 order by 2,3
-                drop table #ARAC";
+                drop table #ARAC", Convert.ToDateTime(dteStart.EditValue).ToString("yyyy-MM-dd"),Convert.ToDateTime(dteEnd.EditValue).ToString("yyyy-MM-dd"));
                 SqlDataAdapter da = new SqlDataAdapter(q, arac);
                 DataTable dt = new DataTable();
                 da.Fill(dt);

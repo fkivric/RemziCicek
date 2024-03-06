@@ -94,7 +94,7 @@ namespace RemziCicek.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Ac221980")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Ac221980.")]
         public string Sifre {
             get {
                 return ((string)(this["Sifre"]));

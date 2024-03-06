@@ -29,11 +29,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraPivotGrid.PivotGridGroup pivotGridGroup5 = new DevExpress.XtraPivotGrid.PivotGridGroup();
-            DevExpress.XtraPivotGrid.PivotGridGroup pivotGridGroup6 = new DevExpress.XtraPivotGrid.PivotGridGroup();
+            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraPivotGrid.PivotGridGroup pivotGridGroup1 = new DevExpress.XtraPivotGrid.PivotGridGroup();
+            DevExpress.XtraPivotGrid.PivotGridGroup pivotGridGroup2 = new DevExpress.XtraPivotGrid.PivotGridGroup();
             this.tileBar = new DevExpress.XtraBars.Navigation.TileBar();
             this.tileBarGroupTables = new DevExpress.XtraBars.Navigation.TileBarGroup();
             this.employeesTileBarItem = new DevExpress.XtraBars.Navigation.TileBarItem();
@@ -148,17 +148,17 @@
             this.employeesTileBarItem.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(196)))));
             this.employeesTileBarItem.AppearanceItem.Normal.Options.UseBackColor = true;
             this.employeesTileBarItem.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement7.ImageOptions.ImageUri.Uri = "Cube;Size32x32;GrayScaled";
-            tileItemElement7.Text = "Araç Gider Raporu Pivot";
-            this.employeesTileBarItem.Elements.Add(tileItemElement7);
+            tileItemElement1.ImageOptions.ImageUri.Uri = "Cube;Size32x32;GrayScaled";
+            tileItemElement1.Text = "Araç Gider Raporu Pivot";
+            this.employeesTileBarItem.Elements.Add(tileItemElement1);
             this.employeesTileBarItem.Name = "employeesTileBarItem";
             // 
             // customersTileBarItem
             // 
             this.customersTileBarItem.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement8.ImageOptions.ImageUri.Uri = "Cube;Size32x32;GrayScaled";
-            tileItemElement8.Text = "Araç Gider Raporu Excel";
-            this.customersTileBarItem.Elements.Add(tileItemElement8);
+            tileItemElement2.ImageOptions.ImageUri.Uri = "Cube;Size32x32;GrayScaled";
+            tileItemElement2.Text = "Araç Gider Raporu Excel";
+            this.customersTileBarItem.Elements.Add(tileItemElement2);
             this.customersTileBarItem.Id = 2;
             this.customersTileBarItem.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.customersTileBarItem.Name = "customersTileBarItem";
@@ -166,8 +166,8 @@
             // tileBarItem1
             // 
             this.tileBarItem1.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement9.Text = "İstenecek Diğer Raporlar";
-            this.tileBarItem1.Elements.Add(tileItemElement9);
+            tileItemElement3.Text = "İstenecek Diğer Raporlar";
+            this.tileBarItem1.Elements.Add(tileItemElement3);
             this.tileBarItem1.Id = 3;
             this.tileBarItem1.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem1.Name = "tileBarItem1";
@@ -226,8 +226,8 @@
             this.pivotGridField5,
             this.pivotGridField6});
             this.pivotGridControl1.Groups.AddRange(new DevExpress.XtraPivotGrid.PivotGridGroup[] {
-            pivotGridGroup5,
-            pivotGridGroup6});
+            pivotGridGroup1,
+            pivotGridGroup2});
             this.pivotGridControl1.Location = new System.Drawing.Point(0, 57);
             this.pivotGridControl1.Name = "pivotGridControl1";
             this.pivotGridControl1.Size = new System.Drawing.Size(829, 408);
@@ -240,6 +240,7 @@
             this.pivotGridField1.Caption = "PLAKA";
             this.pivotGridField1.FieldName = "PLAKA";
             this.pivotGridField1.Name = "pivotGridField1";
+            this.pivotGridField1.Width = 315;
             // 
             // pivotGridField2
             // 
@@ -320,7 +321,7 @@
             this.togyakit.Name = "togyakit";
             this.togyakit.Properties.OffText = "Kümülatif";
             this.togyakit.Properties.OnText = "Detaylı";
-            this.togyakit.Size = new System.Drawing.Size(95, 18);
+            this.togyakit.Size = new System.Drawing.Size(159, 18);
             this.togyakit.TabIndex = 9;
             // 
             // simpleButton1

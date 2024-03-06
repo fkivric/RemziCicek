@@ -246,6 +246,8 @@ namespace RemziCicek
         string baslangıc;
         string bitis;
         string plaka;
+        internal MainForm mdiParent;
+
         private void button4_Click(object sender, EventArgs e)
         {
             baslangıc = Convert.ToDateTime(dteStart.EditValue).ToString("yyyy-MM-ddTHH:mm:ss");
@@ -257,7 +259,7 @@ namespace RemziCicek
             RemziCicek.ShellServiceClient.CUSTOMERSALESTRANSACTIONS result = new CUSTOMERSALESTRANSACTIONS();
             if (togArac.IsOn)
             {                
-                result = client.GetCustomerSalesTransaction(Kodu, Adı, Sifre, "", Convert.ToDateTime(baslangıc), Convert.ToDateTime(bitis), "", "", "", "");
+                result = client.GetCustomerSalesTransaction(Kodu, Adı, Sifre, Kodu, Convert.ToDateTime(baslangıc), Convert.ToDateTime(bitis), "", "", "", "");
                 lblUyarı.Text = "Günlük Sorgu hakkı bitti";
                 lblUyarı.Tag = "1";
             }
@@ -351,10 +353,6 @@ namespace RemziCicek
         {
             if (dteEnd.EditValue != null)
             {
-                if (int.Parse(dteEnd.EditValue.ToString()) - int.Parse(dteStart.EditValue.ToString()) > 31)
-                {
-
-                }
             }
             else
             {

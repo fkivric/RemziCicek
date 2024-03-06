@@ -76,15 +76,12 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.windowDockingArea1 = new Infragistics.Win.UltraWinDock.WindowDockingArea();
             this.dockableWindow1 = new Infragistics.Win.UltraWinDock.DockableWindow();
-            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ((System.ComponentModel.ISupportInitialize)(this.ultraExplorerBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ayar)).BeginInit();
             this.windowDockingArea1.SuspendLayout();
             this.dockableWindow1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // ultraExplorerBar1
@@ -171,13 +168,12 @@
             this.ultraExplorerBar1.GroupSettings.AppearancesLarge.HeaderAppearance = appearance24;
             this.ultraExplorerBar1.GroupSettings.Style = Infragistics.Win.UltraWinExplorerBar.GroupStyle.LargeImagesWithTextBelow;
             this.ultraExplorerBar1.GroupSpacing = 0;
-            this.ultraExplorerBar1.ImageListLarge = this.UltraExplorerBarimage;
             this.ultraExplorerBar1.ItemSettings.AllowDragMove = Infragistics.Win.UltraWinExplorerBar.ItemDragStyle.WithinGroupOnly;
             this.ultraExplorerBar1.ItemSettings.AllowEdit = Infragistics.Win.DefaultableBoolean.False;
             this.ultraExplorerBar1.ItemSettings.Style = Infragistics.Win.UltraWinExplorerBar.ItemStyle.Button;
             this.ultraExplorerBar1.Location = new System.Drawing.Point(0, 18);
             this.ultraExplorerBar1.Name = "ultraExplorerBar1";
-            this.ultraExplorerBar1.Size = new System.Drawing.Size(265, 527);
+            this.ultraExplorerBar1.Size = new System.Drawing.Size(265, 655);
             this.ultraExplorerBar1.Style = Infragistics.Win.UltraWinExplorerBar.UltraExplorerBarStyle.OutlookNavigationPane;
             this.ultraExplorerBar1.TabIndex = 1;
             this.ultraExplorerBar1.UseLargeGroupHeaderImages = Infragistics.Win.DefaultableBoolean.True;
@@ -204,7 +200,7 @@
             dockableControlPane1.Text = "Araçlar İşlem Menü";
             dockAreaPane1.Panes.AddRange(new Infragistics.Win.UltraWinDock.DockablePaneBase[] {
             dockableControlPane1});
-            dockAreaPane1.Size = new System.Drawing.Size(265, 545);
+            dockAreaPane1.Size = new System.Drawing.Size(265, 673);
             this.Ayar.DockAreas.AddRange(new Infragistics.Win.UltraWinDock.DockAreaPane[] {
             dockAreaPane1});
             this.Ayar.HostControl = this;
@@ -219,7 +215,7 @@
             this._Form1UnpinnedTabAreaLeft.Name = "_Form1UnpinnedTabAreaLeft";
             this._Form1UnpinnedTabAreaLeft.Owner = this.Ayar;
             this._Form1UnpinnedTabAreaLeft.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._Form1UnpinnedTabAreaLeft.Size = new System.Drawing.Size(0, 545);
+            this._Form1UnpinnedTabAreaLeft.Size = new System.Drawing.Size(0, 673);
             this._Form1UnpinnedTabAreaLeft.TabIndex = 2;
             // 
             // _Form1UnpinnedTabAreaRight
@@ -230,7 +226,7 @@
             this._Form1UnpinnedTabAreaRight.Name = "_Form1UnpinnedTabAreaRight";
             this._Form1UnpinnedTabAreaRight.Owner = this.Ayar;
             this._Form1UnpinnedTabAreaRight.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._Form1UnpinnedTabAreaRight.Size = new System.Drawing.Size(0, 545);
+            this._Form1UnpinnedTabAreaRight.Size = new System.Drawing.Size(0, 673);
             this._Form1UnpinnedTabAreaRight.TabIndex = 3;
             // 
             // _Form1UnpinnedTabAreaTop
@@ -248,7 +244,7 @@
             // 
             this._Form1UnpinnedTabAreaBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this._Form1UnpinnedTabAreaBottom.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this._Form1UnpinnedTabAreaBottom.Location = new System.Drawing.Point(0, 545);
+            this._Form1UnpinnedTabAreaBottom.Location = new System.Drawing.Point(0, 673);
             this._Form1UnpinnedTabAreaBottom.Name = "_Form1UnpinnedTabAreaBottom";
             this._Form1UnpinnedTabAreaBottom.Owner = this.Ayar;
             this._Form1UnpinnedTabAreaBottom.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -279,7 +275,7 @@
             this.windowDockingArea1.Name = "windowDockingArea1";
             this.windowDockingArea1.Owner = this.Ayar;
             this.windowDockingArea1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.windowDockingArea1.Size = new System.Drawing.Size(270, 545);
+            this.windowDockingArea1.Size = new System.Drawing.Size(270, 673);
             this.windowDockingArea1.TabIndex = 8;
             // 
             // dockableWindow1
@@ -288,35 +284,14 @@
             this.dockableWindow1.Location = new System.Drawing.Point(0, 0);
             this.dockableWindow1.Name = "dockableWindow1";
             this.dockableWindow1.Owner = this.Ayar;
-            this.dockableWindow1.Size = new System.Drawing.Size(265, 545);
+            this.dockableWindow1.Size = new System.Drawing.Size(265, 673);
             this.dockableWindow1.TabIndex = 10;
-            // 
-            // ribbonControl1
-            // 
-            this.ribbonControl1.ExpandCollapseItem.Id = 0;
-            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ribbonControl1.ExpandCollapseItem,
-            this.ribbonControl1.SearchEditItem});
-            this.ribbonControl1.Location = new System.Drawing.Point(270, 0);
-            this.ribbonControl1.MaxItemId = 1;
-            this.ribbonControl1.Name = "ribbonControl1";
-            this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage1});
-            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
-            this.ribbonControl1.Size = new System.Drawing.Size(907, 150);
-            this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
-            // 
-            // ribbonPage1
-            // 
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "ribbonPage1";
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(270, 518);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(270, 653);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
-            this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(907, 27);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(907, 20);
             // 
             // ribbonPage3
             // 
@@ -327,9 +302,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1177, 545);
+            this.ClientSize = new System.Drawing.Size(1177, 673);
             this.Controls.Add(this._Form1AutoHideControl);
-            this.Controls.Add(this.ribbonControl1);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.windowDockingArea1);
             this.Controls.Add(this._Form1UnpinnedTabAreaBottom);
@@ -347,9 +321,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Ayar)).EndInit();
             this.windowDockingArea1.ResumeLayout(false);
             this.dockableWindow1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -366,8 +338,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private Infragistics.Win.UltraWinDock.WindowDockingArea windowDockingArea1;
         private Infragistics.Win.UltraWinDock.DockableWindow dockableWindow1;
-        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
     }

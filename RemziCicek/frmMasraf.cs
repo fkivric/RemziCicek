@@ -132,7 +132,9 @@ namespace RemziCicek
 		string pass = "Kama";
 		string uys = "Kama2023!";
 		string url = "ftp://192.168.4.22//Arac/";
-		public void FtpTransfer(string fullPath)
+        internal MainForm mdiParent;
+
+        public void FtpTransfer(string fullPath)
 		{
 
 			string From = "/"+ cmbArac.Text + "//" + Convert.ToDateTime(dteMasrafTarihi.EditValue).ToString("yyyyMMdd") +"//"+ Path.GetFileName(fullPath);

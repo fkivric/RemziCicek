@@ -33,7 +33,7 @@
     <WebPage>index.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
+    <ApplicationVersion>1.0.5.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -303,6 +303,12 @@
     <Compile Include="frmMasrafPDF.Designer.cs">
       <DependentUpon>frmMasrafPDF.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProgressBarFrm.cs">
       <SubType>Form</SubType>
@@ -368,6 +374,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMasrafPDF.resx">
       <DependentUpon>frmMasrafPDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProgressBarFrm.resx">
       <DependentUpon>ProgressBarFrm.cs</DependentUpon>
