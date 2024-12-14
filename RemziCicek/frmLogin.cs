@@ -200,7 +200,7 @@ namespace RemziCicek
             {
                 userID = yetki.Rows[0][0].ToString();
                 this.Hide();
-                Form1 main = new Form1();
+                MainForm main = new MainForm();
                 main.ShowDialog();
                 this.Close();
             }

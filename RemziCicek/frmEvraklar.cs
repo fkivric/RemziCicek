@@ -167,7 +167,7 @@ namespace RemziCicek
                 request2.Credentials = new NetworkCredential(pass, uys);
                 FtpWebResponse response2 = (FtpWebResponse)request2.GetResponse();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }

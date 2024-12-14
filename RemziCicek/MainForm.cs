@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraBars.Navigation;
 using DevExpress.Utils;
 using DevExpress.XtraTab;
+using RemziCicek.Class;
 
 namespace RemziCicek
 {
@@ -63,6 +64,26 @@ namespace RemziCicek
                     {
                         xtraTabControl.TabPages.Add(tabPageText);
                         xtraTabControl.SelectedTabPageIndex = xtraTabControl.TabPages.Count - 1;
+                        frmMasrafGor childForm = new frmMasrafGor();
+                        childForm.mdiParent = this;
+                        childForm.TopLevel = false;
+                        childForm.Dock = DockStyle.Fill;
+                        childForm.FormBorderStyle = FormBorderStyle.None;
+                        childForm.WindowState = FormWindowState.Maximized;
+                        childForm.Parent = xtraTabControl.TabPages[xtraTabControl.TabPages.Count - 1];
+                        childForm.Show();
+                    }
+                    catch (Exception exp)
+                    {
+                        XtraMessageBox.Show(exp.Message);
+                    }
+                }
+                else if (index == 2)
+                {
+                    try
+                    {
+                        xtraTabControl.TabPages.Add(tabPageText);
+                        xtraTabControl.SelectedTabPageIndex = xtraTabControl.TabPages.Count - 1;
                         frmArac_TTS childForm = new frmArac_TTS();
                         childForm.mdiParent = this;
                         childForm.TopLevel = false;
@@ -78,18 +99,38 @@ namespace RemziCicek
                     }
 
                 }
-                else if (index == 2)
+                else if (index == 3)
                 {
                     try
                     {
                         xtraTabControl.TabPages.Add(tabPageText);
                         xtraTabControl.SelectedTabPageIndex = xtraTabControl.TabPages.Count - 1;
-                        frmArac_TTS childForm = new frmArac_TTS();
+                        frmAracMasrafRaporu childForm = new frmAracMasrafRaporu();
                         childForm.mdiParent = this;
                         childForm.TopLevel = false;
                         childForm.Dock = DockStyle.Fill;
                         childForm.FormBorderStyle = FormBorderStyle.None;
                         childForm.WindowState = FormWindowState.Maximized;
+                        childForm.Parent = xtraTabControl.TabPages[xtraTabControl.TabPages.Count - 1];
+                        childForm.Show();
+                    }
+                    catch (Exception exp)
+                    {
+                        XtraMessageBox.Show(exp.Message);
+                    }
+                }
+                if (tabPageText == "btnSettings")
+                {
+                    try
+                    {
+                        xtraTabControl.TabPages.Add(tabPageText);
+                        xtraTabControl.SelectedTabPageIndex = xtraTabControl.TabPages.Count - 1;
+                        frmSettings childForm = new frmSettings();
+                        childForm.mdiParent = this;
+                        childForm.TopLevel = false;
+                        childForm.Dock = DockStyle.Fill;
+                        childForm.FormBorderStyle = FormBorderStyle.None;
+                        //childForm.WindowState = FormWindowState.Maximized;
                         childForm.Parent = xtraTabControl.TabPages[xtraTabControl.TabPages.Count - 1];
                         childForm.Show();
                     }
@@ -154,10 +195,34 @@ namespace RemziCicek
 
         private void tileBarItem2_ItemClick(object sender, TileItemEventArgs e)
         {
-            Point pt = base.Location;
-            pt.Offset(base.Width / 2, base.Height / 2);
-            radialMenu.ShowPopup(pt);
-            radialMenu.Expand();
+            List<XtraTabPage> lRemovePages = new List<XtraTabPage>();
+            for (int i = 0; i < xtraTabControl.TabPages.Count; i++)
+            {
+                //i == xtraTabControl.SelectedTabPageIndex || 
+                if (!(xtraTabControl.TabPages[i].Name != "anaSayfaTab"))
+                {
+                    continue;
+                }
+                foreach (object item in xtraTabControl.TabPages[i].Controls)
+                {
+                    if (item is Form && item is Form frm)
+                    {
+                        frm.Dispose();
+                    }
+                }
+                lRemovePages.Add(xtraTabControl.TabPages[i]);
+            }
+            foreach (XtraTabPage item2 in lRemovePages)
+            {
+                xtraTabControl.TabPages.Remove(item2);
+            }
+            GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced);
+            GC.WaitForPendingFinalizers();
+
+            //Point pt = base.Location;
+            //pt.Offset(base.Width / 2, base.Height / 2);
+            //radialMenu.ShowPopup(pt);
+            //radialMenu.Expand();
         }
 
         private void SekmeleriKapatItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -187,6 +252,10 @@ namespace RemziCicek
             GC.WaitForPendingFinalizers();
         
     
+        }
+        private void LoadShortCuts()
+        {
+
         }
     }
 }

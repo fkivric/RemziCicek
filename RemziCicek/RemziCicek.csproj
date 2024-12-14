@@ -32,8 +32,8 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>index.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.5.%2a</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.7.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -196,6 +196,7 @@
     <Compile Include="Class\Shell.cs" />
     <Compile Include="Class\SqliteConnection.cs" />
     <Compile Include="Class\Volant.cs" />
+    <Compile Include="Class\VolClass.cs" />
     <Compile Include="Connected Services\ShellServiceClient\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -285,6 +286,12 @@
     <Compile Include="frmServisler.Designer.cs">
       <DependentUpon>frmServisler.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -365,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmServisler.resx">
       <DependentUpon>frmServisler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSplashScreen.resx">
       <DependentUpon>frmSplashScreen.cs</DependentUpon>
@@ -528,6 +538,11 @@
     <None Include="Resources\shoppingcart_32x32.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\hideproduct_32x321.png" />
+    <None Include="Resources\excel.png" />
+    <None Include="Resources\hideproduct_32x32.png" />
+    <None Include="Resources\showtestreport_32x32.png" />
+    <None Include="Resources\logo.ico" />
     <None Include="Connected Services\ShellServiceClient\TTSWebServices.disco" />
     <None Include="Connected Services\ShellServiceClient\configuration91.svcinfo" />
     <None Include="Connected Services\ShellServiceClient\configuration.svcinfo" />

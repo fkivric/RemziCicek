@@ -97,7 +97,7 @@ namespace RemziCicek
 
                 lblUyarı.Visible = true;
                 lblUyarı.Text = "Günlük Sorgu hakkı bitti";
-                button4.Enabled = false;
+                button4.Tag = 1;
             }
             DateTime ilkgun = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).AddMonths(-1);
             DateTime songun = ilkgun.AddMonths(1).AddDays(-1);
@@ -249,33 +249,54 @@ namespace RemziCicek
         internal MainForm mdiParent;
 
         private void button4_Click(object sender, EventArgs e)
-        {
+        {   
             baslangıc = Convert.ToDateTime(dteStart.EditValue).ToString("yyyy-MM-ddTHH:mm:ss");
             bitis = Convert.ToDateTime(dteEnd.EditValue).ToString("yyyy-MM-ddTHH:mm:ss");
             plaka = cmbPlaka.SelectedValue.ToString().Replace(" ", "");
 
+            int sira;
 
+            DataTable dt = new DataTable();
             TTSWebServicesSoapClient client = new TTSWebServicesSoapClient();
             RemziCicek.ShellServiceClient.CUSTOMERSALESTRANSACTIONS result = new CUSTOMERSALESTRANSACTIONS();
             if (togArac.IsOn)
-            {                
-                result = client.GetCustomerSalesTransaction(Kodu, Adı, Sifre, Kodu, Convert.ToDateTime(baslangıc), Convert.ToDateTime(bitis), "", "", "", "");
-                lblUyarı.Text = "Günlük Sorgu hakkı bitti";
-                lblUyarı.Tag = "1";
+            {
+                sira = 1;
+                if (lblUyarı.Tag.ToString() != "1")
+                {
+                    result = client.GetCustomerSalesTransaction(Kodu, Adı, Sifre, Kodu, Convert.ToDateTime(baslangıc), Convert.ToDateTime(bitis), "", "", "", "");
+                    lblUyarı.Text = "Günlük Sorgu hakkı bitti";
+                    button4.Tag = "1";
+                }
+                else
+                {
+                    SqlDataAdapter da = new SqlDataAdapter("select * from ARACYAKIT where Tarih between '" + Convert.ToDateTime(baslangıc).ToString("yyyy-MM-dd") + "' and '" + Convert.ToDateTime(bitis).ToString("yyyy-MM-dd") + "'", conn);
+                    da.Fill(dt);
+                }
             }
             else
             {
-                result = client.GetCustomerSalesTransaction(Kodu, Adı, Sifre, "", Convert.ToDateTime(baslangıc), Convert.ToDateTime(bitis), plaka, "", "", "");
+                sira = 2;
+                   result = client.GetCustomerSalesTransaction(Kodu, Adı, Sifre, "", Convert.ToDateTime(baslangıc), Convert.ToDateTime(bitis), plaka, "", "", "");
                 SorguHakkı(2);
                 lblUyarı.Text = "Günlük Kalan Sorgu Hakkı =" + sorguadeti.ToString();
             }
-             
-            
+
+            int adet;
+
+            if (result.COUNTOFSALESTRANSACTIONLIST != 0)
+            {
+                adet = result.COUNTOFSALESTRANSACTIONLIST;
+            }
+            else
+            {
+                adet = dt.Rows.Count;
+            }
             //var limit = client.GetCardLimitCountandDays(Kodu, Adı, Sifre, "", "", plaka, "");
             ProgressBarFrm progressForm = new ProgressBarFrm()
             {
                 Start = 0,
-                Finish = result.COUNTOFSALESTRANSACTIONLIST,
+                Finish = adet,
                 Position = 0,
             };
 
@@ -283,66 +304,159 @@ namespace RemziCicek
             int error = 0;
             this.Enabled = false;
             var Yakitlar = new List<Yakit>();
-            executeBackground(
-       () =>
-       {
            progressForm.Show(this);
-           try
-           {
-               //if (limit.PROCESSRESULT.Success == true)
-               //{
-               //    foreach (var item in limit.CARD_LIMITDAYANDCOUNT)
-               //    {
+            try
+            {
+                if (sira == 1)
+                {
+                    if (lblUyarı.Tag.ToString() != "1")
+                    {
+                        if (result.PROCESSRESULT.Success == true)
+                        {
+                            foreach (var item in result.LISTOFSALESTRANSACTION)
+                            {
+                                var yk = new Yakit();
+                                yk.Sales_Type = item.Sales_type;
+                                yk.Plate_Cd = item.Plate_cd;
+                                yk.Transaction_Date = item.Transaction_date;
+                                yk.Retail_Outlet_Name = item.Retail_outlet_name;
+                                yk.Rtl_Otlt_Province = item.Rtl_otlt_province;
+                                yk.Fuel_Name = item.Fuel_name;
+                                yk.Unit_Price = item.Unit_price;
+                                yk.Volume = item.Volume;
+                                yk.Sales_Total_Amount = item.Sales_total_amount;
+                                yk.Invoice_No = item.Invoice_no;
+                                yk.durum = "Aktarım Kontrolü";
+                                Yakitlar.Add(yk);
+                                progressForm.PerformStep(this);
+                                success++;
+                            }
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show(result.LISTOFSALESTRANSACTION.ToString());
+                        }
+                    }
+                    else
+                    {
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            var yk = new Yakit();
+                            yk.Sales_Type = dt.Rows[i]["YakıtTipi"].ToString();
+                            yk.Plate_Cd = dt.Rows[i]["Plaka"].ToString();
+                            yk.Transaction_Date = Convert.ToDateTime(dt.Rows[i]["Tarih"].ToString());
+                            yk.Retail_Outlet_Name = dt.Rows[i]["IstasyonAdı"].ToString();
+                            yk.Rtl_Otlt_Province = dt.Rows[i]["IL"].ToString();
+                            yk.Fuel_Name = dt.Rows[i]["YakıtAdı"].ToString();
+                            yk.Unit_Price = decimal.Parse(dt.Rows[i]["YakıtFiyatı"].ToString());
+                            yk.Volume = decimal.Parse(dt.Rows[i]["YakıtMiktarı"].ToString());
+                            yk.Sales_Total_Amount = decimal.Parse(dt.Rows[i]["YakıtTutarı"].ToString());
+                            yk.Invoice_No = dt.Rows[i]["FaturaNo"].ToString();
+                            yk.durum = "Kayıtlı Liste";
+                            Yakitlar.Add(yk);
+                            progressForm.PerformStep(this);
+                            success++;
+                        }
+                    }
 
-               //    }
-               //}
+                }
+                else
+                {
+                    if (result.PROCESSRESULT.Success == true)
+                    {
+                        foreach (var item in result.LISTOFSALESTRANSACTION)
+                        {
+                            var yk = new Yakit();
+                            yk.Sales_Type = item.Sales_type;
+                            yk.Plate_Cd = item.Plate_cd;
+                            yk.Transaction_Date = item.Transaction_date;
+                            yk.Retail_Outlet_Name = item.Retail_outlet_name;
+                            yk.Rtl_Otlt_Province = item.Rtl_otlt_province;
+                            yk.Fuel_Name = item.Fuel_name;
+                            yk.Unit_Price = item.Unit_price;
+                            yk.Volume = item.Volume;
+                            yk.Sales_Total_Amount = item.Sales_total_amount;
+                            yk.Invoice_No = item.Invoice_no;
+                            yk.durum = "Aktarım Kontrolü";
+                            Yakitlar.Add(yk);
+                            progressForm.PerformStep(this);
+                            success++;
+                        }
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show(result.LISTOFSALESTRANSACTION.ToString());
+                    }
+                }
+                //if (result.PROCESSRESULT.Success == true)
+                //{
+                //    if (button4.Tag.ToString() != "1")
+                //    {
+                //        foreach (var item in result.LISTOFSALESTRANSACTION)
+                //        {
+                //            var yk = new Yakit();
+                //            yk.Sales_Type = item.Sales_type;
+                //            yk.Plate_Cd = item.Plate_cd;
+                //            yk.Transaction_Date = item.Transaction_date;
+                //            yk.Retail_Outlet_Name = item.Retail_outlet_name;
+                //            yk.Rtl_Otlt_Province = item.Rtl_otlt_province;
+                //            yk.Fuel_Name = item.Fuel_name;
+                //            yk.Unit_Price = item.Unit_price;
+                //            yk.Volume = item.Volume;
+                //            yk.Sales_Total_Amount = item.Sales_total_amount;
+                //            yk.Invoice_No = item.Invoice_no;
+                //            yk.durum = "Aktarım Kontrolü";
+                //            Yakitlar.Add(yk);
+                //            progressForm.PerformStep(this);
+                //            success++;
+                //        }
+                //    }
+                //    else
+                //    {
+                //        for (int i = 0; i < dt.Rows.Count; i++)
+                //        {
+                //            var yk = new Yakit();
+                //            yk.Sales_Type = dt.Rows[i]["YakıtTipi"].ToString();
+                //            yk.Plate_Cd = dt.Rows[i]["Plaka"].ToString();
+                //            yk.Transaction_Date = Convert.ToDateTime(dt.Rows[i]["Tarih"].ToString());
+                //            yk.Retail_Outlet_Name = dt.Rows[i]["IstasyonAdı"].ToString();
+                //            yk.Rtl_Otlt_Province = dt.Rows[i]["IL"].ToString();
+                //            yk.Fuel_Name = dt.Rows[i]["YakıtAdı"].ToString();
+                //            yk.Unit_Price = decimal.Parse(dt.Rows[i]["YakıtFiyatı"].ToString());
+                //            yk.Volume = decimal.Parse(dt.Rows[i]["YakıtMiktarı"].ToString());
+                //            yk.Sales_Total_Amount = decimal.Parse(dt.Rows[i]["YakıtTutarı"].ToString());
+                //            yk.Invoice_No = dt.Rows[i]["FaturaNo"].ToString();
+                //            yk.durum = "Kayıtlı Liste";
+                //            Yakitlar.Add(yk);
+                //            progressForm.PerformStep(this);
+                //        }
+                //    }
+                //}
+                //else
+                //{
+                //    XtraMessageBox.Show(result.LISTOFSALESTRANSACTION.ToString());
+                //}
+            }
+            catch (Exception ex)
+            {
 
-               if (result.PROCESSRESULT.Success == true)
-               {
-                   foreach (var item in result.LISTOFSALESTRANSACTION)
-                   {
-                       var yk = new Yakit();
-                       yk.Sales_Type = item.Sales_type;
-                       yk.Plate_Cd = item.Plate_cd;
-                       yk.Transaction_Date = item.Transaction_date;
-                       yk.Retail_Outlet_Name = item.Retail_outlet_name;
-                       yk.Rtl_Otlt_Province = item.Rtl_otlt_province;
-                       yk.Fuel_Name = item.Fuel_name;
-                       yk.Unit_Price = item.Unit_price;
-                       yk.Volume = item.Volume;
-                       yk.Sales_Total_Amount = item.Sales_total_amount;
-                       yk.Invoice_No = item.Invoice_no;                       
-                       yk.durum = "Aktarım Kontrolü";
-                       Yakitlar.Add(yk);
-                       progressForm.PerformStep(this);
-                       success++;
-                   }
-               }
-           }
-           catch (Exception ex)
-           {
+                MessageBox.Show(ex.Message);
+                //error++;
+            }
 
-               MessageBox.Show(ex.Message);
-               //error++;
-           }
-           
-           
-       },
-                     null,
-                     () =>
-                     {
-                         gridControl1.DataSource = Yakitlar;
-                         gridView1.OptionsView.BestFitMaxRowCount = -1;
-                         gridView1.BestFitColumns(true);
-                         completeProgress();
-                         progressForm.Hide(this);
-                         XtraMessageBox.Show("Alım tamamlandı. Toplam Başarılı : ." + success + " Toplam Hatalı : " + error, "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                     });
+
+            gridControl1.DataSource = Yakitlar;
+            gridView1.OptionsView.BestFitMaxRowCount = -1;
+            gridView1.BestFitColumns(true);
+            this.Enabled = true;
+            progressForm.Hide(this);
+            XtraMessageBox.Show("Alım tamamlandı. Toplam Başarılı : ." + success + " Toplam Hatalı : " + error, "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 
         }
-    
 
-    
+
+
 
         private void label7_Click(object sender, EventArgs e)
         {
@@ -431,8 +545,8 @@ namespace RemziCicek
         }
         private void btnExcell_Click(object sender, EventArgs e)
         {
-            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Shell Kontrol", Convert.ToDateTime(dteStart.EditValue.ToString()).ToString("yyyyMMdd") + ".xls");
-            CreateDirectoryIfNotExists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Shell Kontrol"));
+            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Arac Masraf", "Shell Kontrol", Convert.ToDateTime(dteStart.EditValue.ToString()).ToString("yyyyMMdd") + ".xls");
+            CreateDirectoryIfNotExists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Arac Masraf","Shell Kontrol"));
 
 
             gridView1.ExportToXls(filePath, new XlsExportOptions
@@ -458,9 +572,6 @@ namespace RemziCicek
             int success = 0;
             int error = 0;
             this.Enabled = false;
-            executeBackground(
-       () =>
-       {
            progressForm.Show(this);
            try
            {
@@ -477,45 +588,46 @@ namespace RemziCicek
                    yk.Add("YakıtAdı", gridView1.GetRowCellValue(i, "Fuel_Name").ToString());
                    yk.Add("YakıtFiyatı", gridView1.GetRowCellValue(i, "Unit_Price").ToString());
                    yk.Add("YakıtMiktarı", gridView1.GetRowCellValue(i, "Volume").ToString());
-                   yk.Add("YakıtTutarı", gridView1.GetRowCellValue(i, "Sales_Total_Amount").ToString());
-                   yk.Add("FaturaNo", gridView1.GetRowCellValue(i, "Invoice_No").ToString());
-                   var dt = sql.MDEQuery("ARACYAKITEKLE", yk);
-                   if (dt.Rows[0][0].ToString() == "1")
-                   {
-                       gridView1.SetRowCellValue(i, "durum", "Aktarıldı");
-                       gridView1.RefreshRow(i);
-                       progressForm.PerformStep(this);
-                       success++;
-                   }
-                   else if (dt.Rows[0][0].ToString() == "2")
-                   {
-                       gridView1.SetRowCellValue(i, "durum", "Takip Dışı Araç");
-                       gridView1.RefreshRow(i);
-                       progressForm.PerformStep(this);
-                   }
-                   else
-                   {
-                       gridView1.SetRowCellValue(i, "durum", "Aktarılmadı");
-                       gridView1.RefreshRow(i);
-                       progressForm.PerformStep(this);
-                       error++;
-                   }
-               }
-           }
-           catch (Exception ex)
-           {
-               MessageBox.Show(ex.Message);
-               error++;
-           }
+                    yk.Add("YakıtTutarı", gridView1.GetRowCellValue(i, "Sales_Total_Amount").ToString());
+                    yk.Add("FaturaNo", gridView1.GetRowCellValue(i, "Invoice_No").ToString());
+                    var dt = sql.MDEQuery("ARACYAKITEKLE", yk);
+                    if (dt.Rows[0][0].ToString() == "1")
+                    {
+                        gridView1.SetRowCellValue(i, "durum", "Aktarıldı");
+                        gridView1.RefreshRow(i);
+                        progressForm.PerformStep(this);
+                        success++;
+                    }
+                    else if (dt.Rows[0][0].ToString() == "2")
+                    {
+                        gridView1.SetRowCellValue(i, "durum", "Takip Dışı Araç");
+                        gridView1.RefreshRow(i);
+                        progressForm.PerformStep(this);
+                    }
+                    else
+                    {
+                        gridView1.SetRowCellValue(i, "durum", "Güncellendi");
+                        gridView1.RefreshRow(i);
+                        progressForm.PerformStep(this);
+                        error++;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                error++;
+            }
 
-       },
-                     null,
-                     () =>
-                     {
-                         completeProgress();
-                         progressForm.Hide(this);
-                         XtraMessageBox.Show("Toplam Başarılı : ." + success + " Adet; Toplam Hatalı : " + error + " Adet Kayıt Yapıldı Listeyi kontrol edin", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                     });
+            //},
+            //              null,
+            //              () =>
+            //              {
+            this.Enabled = true;
+            //              completeProgress();
+            progressForm.Hide(this);
+            XtraMessageBox.Show("Toplam Başarılı : ." + success + " Adet; Toplam Hatalı : " + error + " Adet Kayıt Yapıldı Listeyi kontrol edin", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //              });
 
         }
     }

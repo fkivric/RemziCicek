@@ -113,6 +113,46 @@ namespace RemziCicek.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap excel {
+            get {
+                object obj = ResourceManager.GetObject("excel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap hideproduct_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("hideproduct_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap hideproduct_32x321 {
+            get {
+                object obj = ResourceManager.GetObject("hideproduct_32x321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo {
+            get {
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap openhyperlink_32x32 {
             get {
                 object obj = ResourceManager.GetObject("openhyperlink_32x32", resourceCulture);
@@ -126,6 +166,16 @@ namespace RemziCicek.Properties {
         internal static System.Drawing.Bitmap shoppingcart_32x32 {
             get {
                 object obj = ResourceManager.GetObject("shoppingcart_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap showtestreport_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("showtestreport_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

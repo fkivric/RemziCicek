@@ -31,6 +31,7 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.dteMasrafTarihi = new DevExpress.XtraEditors.DateEdit();
             this.cmbMasraf = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -58,7 +59,6 @@
             this.tileBarGroup2 = new DevExpress.XtraBars.Navigation.TileBarGroup();
             this.btnKaydet = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.tileBar1 = new DevExpress.XtraBars.Navigation.TileBar();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -103,6 +103,14 @@
             this.groupControl1.Size = new System.Drawing.Size(1213, 80);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Masraf Ekleme";
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Location = new System.Drawing.Point(779, 43);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(103, 23);
+            this.simpleButton2.TabIndex = 5;
+            this.simpleButton2.Text = "Excel den Veri Ekle";
             // 
             // dteMasrafTarihi
             // 
@@ -222,6 +230,7 @@
             this.Evrak});
             this.viewKalemler.GridControl = this.gridKalemler;
             this.viewKalemler.Name = "viewKalemler";
+            this.viewKalemler.OptionsView.ColumnAutoWidth = false;
             this.viewKalemler.OptionsView.ShowFooter = true;
             this.viewKalemler.OptionsView.ShowGroupPanel = false;
             // 
@@ -356,14 +365,6 @@
             this.tileBar1.Size = new System.Drawing.Size(1217, 67);
             this.tileBar1.TabIndex = 3;
             this.tileBar1.Text = "tileBar1";
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Location = new System.Drawing.Point(779, 43);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(103, 23);
-            this.simpleButton2.TabIndex = 5;
-            this.simpleButton2.Text = "Excel den Veri Ekle";
             // 
             // frmMasraf
             // 

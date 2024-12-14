@@ -184,7 +184,7 @@ namespace RemziCicek
 				request.Credentials = new NetworkCredential(pass, uys);
 				FtpWebResponse response = (FtpWebResponse)request.GetResponse();
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 
 			}
@@ -231,6 +231,8 @@ namespace RemziCicek
                                 Fullpath = System.IO.Path.GetFullPath(file.FileName);
                                 masraflistesi.Rows.Add(cmbArac.EditValue, cmbArac.Text,dteMasrafTarihi.EditValue, cmbMasraf.EditValue.ToString(), cmbMasraf.Text, txtAdet.Text, txtFiyat.Text,(int.Parse(txtAdet.Text.ToString())*double.Parse(txtFiyat.Text.ToString())).ToString(), Fullpath);
                                 gridKalemler.DataSource = masraflistesi;
+                                viewKalemler.OptionsView.BestFitMaxRowCount = -1;
+                                viewKalemler.BestFitColumns(true);
                             }
                         }
                         else

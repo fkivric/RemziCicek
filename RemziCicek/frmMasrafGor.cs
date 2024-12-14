@@ -1,5 +1,6 @@
 ﻿using DevExpress.LookAndFeel;
 using DevExpress.XtraEditors;
+using DevExpress.XtraPrinting;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -121,21 +122,22 @@ namespace RemziCicek
 		}
 		void MasrafTipi()
 		{
-			string q = string.Format(@"select PROVAL,PRONAME from PRODUCTS where PROKIND = 6");
+			string q = string.Format(@"select PROID,PRONAME from PRODUCTS where PROKIND = 6");
 			SqlDataAdapter da = new SqlDataAdapter(q, vol);
 			DataTable dt = new DataTable();
 			da.Fill(dt);
 			cmbMasraf.Properties.DisplayMember = "PRONAME";
-			cmbMasraf.Properties.ValueMember = "PROVAL";
+			cmbMasraf.Properties.ValueMember = "PROID";
 			cmbMasraf.Properties.DataSource = dt;
 		}
-
 		string Fullpath = "";
 		string pass = "Kama";
 		string uys = "Kama2023!";
 		string url = "ftp://192.168.4.22//Arac/";
 		string folder = "";
-		public void FtpTransfer(string fullPath)
+        internal MainForm mdiParent;
+
+        public void FtpTransfer(string fullPath)
 		{
 
 			string From = "/"+ cmbArac.Text + "//" + Convert.ToDateTime(dteMasrafstart.EditValue).ToString("yyyyMMdd") +"//"+ Path.GetFileName(fullPath);
@@ -198,8 +200,8 @@ namespace RemziCicek
 			{
 				try
 				{
-                    CreateFolderFTP(directoryPath);
-					//Directory.CreateDirectory(directoryPath);
+                    //CreateFolderFTP(directoryPath);
+					Directory.CreateDirectory(directoryPath);
 					MessageBox.Show($"'{directoryPath}' dizini oluşturuldu.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
 				catch (Exception ex)
@@ -224,7 +226,7 @@ namespace RemziCicek
             }
             if (cmbMasraf.Text != "Seçiniz...!")
             {
-                qq = qq + string.Format(@"AND MASRAFTIPIID = {0}", cmbMasraf.EditValue.ToString());
+                qq = qq + string.Format(@"AND MASRAFTIPIID = {0}", cmbMasraf.EditValue);
             }
             SqlDataAdapter da = new SqlDataAdapter(qq, arac);
             DataTable dt = new DataTable();
@@ -232,6 +234,8 @@ namespace RemziCicek
             if (dt.Rows.Count > 0)
             {
                 gridKalemler.DataSource = dt;
+                viewKalemler.OptionsView.BestFitMaxRowCount = -1;
+                viewKalemler.BestFitColumns(true);
             }
             else
             {
@@ -340,6 +344,23 @@ namespace RemziCicek
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Arac Masraf","Masraf Raporu", Convert.ToDateTime(dteMasrafstart.EditValue.ToString()).ToString("yyyyMMdd") + ".xls");
+            string filePaths = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Arac Masraf", "Masraf Raporu", Convert.ToDateTime(dteMasrafstart.EditValue.ToString()).ToString("yyyyMMdd") + ".xlsx");
+            CreateDirectoryIfNotExists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Arac Masraf", "Masraf Raporu"));
+
+            viewKalemler.ExportToXlsx(filePaths);
+            viewKalemler.ExportToXls(filePath, new XlsExportOptions
+            {
+                ExportMode = XlsExportMode.SingleFile,
+                TextExportMode = TextExportMode.Value,
+                ShowGridLines = true,
+                FitToPrintedPageWidth = true,
+                FitToPrintedPageHeight = true,
+            });
         }
     }
 }

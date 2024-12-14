@@ -150,7 +150,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(257, 48);
             this.button4.TabIndex = 5;
-            this.button4.Text = "Güncelle";
+            this.button4.Text = "Shell Sorgu";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -351,6 +351,7 @@
             this.gridColumn10});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // YakıtTipi

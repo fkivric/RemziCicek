@@ -60,6 +60,7 @@
             this.Evrak = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnEvrakGor = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.btnExcel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -93,6 +94,7 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.btnExcel);
             this.groupControl1.Controls.Add(this.simpleButton1);
             this.groupControl1.Controls.Add(this.panelControl2);
             this.groupControl1.Controls.Add(this.panelControl3);
@@ -105,10 +107,11 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.simpleButton1.Location = new System.Drawing.Point(623, 22);
+            this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.simpleButton1.ImageOptions.Image = global::RemziCicek.Properties.Resources.hideproduct_32x321;
+            this.simpleButton1.Location = new System.Drawing.Point(623, 23);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(171, 56);
+            this.simpleButton1.Size = new System.Drawing.Size(80, 55);
             this.simpleButton1.TabIndex = 2;
             this.simpleButton1.Text = "Listele";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -119,9 +122,9 @@
             this.panelControl2.Controls.Add(this.dteMasrafend);
             this.panelControl2.Controls.Add(this.labelControl5);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl2.Location = new System.Drawing.Point(351, 22);
+            this.panelControl2.Location = new System.Drawing.Point(351, 23);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(272, 56);
+            this.panelControl2.Size = new System.Drawing.Size(272, 55);
             this.panelControl2.TabIndex = 7;
             // 
             // dteMasrafstart
@@ -152,7 +155,7 @@
             // 
             this.labelControl5.Location = new System.Drawing.Point(111, 5);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(55, 13);
+            this.labelControl5.Size = new System.Drawing.Size(56, 13);
             this.labelControl5.TabIndex = 1;
             this.labelControl5.Text = "Tarih Aralıgı";
             // 
@@ -163,9 +166,9 @@
             this.panelControl3.Controls.Add(this.cmbMasraf);
             this.panelControl3.Controls.Add(this.labelControl1);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl3.Location = new System.Drawing.Point(2, 22);
+            this.panelControl3.Location = new System.Drawing.Point(2, 23);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(349, 56);
+            this.panelControl3.Size = new System.Drawing.Size(349, 55);
             this.panelControl3.TabIndex = 4;
             // 
             // cmbArac
@@ -190,7 +193,7 @@
             // 
             this.labelControl2.Location = new System.Drawing.Point(12, 4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(44, 13);
+            this.labelControl2.Size = new System.Drawing.Size(42, 13);
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "Araç Seç";
             // 
@@ -264,6 +267,7 @@
             this.gridColumn2});
             this.viewKalemler.GridControl = this.gridKalemler;
             this.viewKalemler.Name = "viewKalemler";
+            this.viewKalemler.OptionsView.ColumnAutoWidth = false;
             this.viewKalemler.OptionsView.ShowFooter = true;
             this.viewKalemler.OptionsView.ShowGroupPanel = false;
             // 
@@ -363,6 +367,17 @@
             this.btnEvrakGor.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEvrakGor.Click += new System.EventHandler(this.btnEvrakGor_Click);
             // 
+            // btnExcel
+            // 
+            this.btnExcel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnExcel.Location = new System.Drawing.Point(703, 23);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(80, 55);
+            this.btnExcel.TabIndex = 2;
+            this.btnExcel.Text = "Kaydet";
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
             // frmMasrafGor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -435,5 +450,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem btnSil;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraEditors.SimpleButton btnExcel;
     }
 }

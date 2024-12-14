@@ -18,6 +18,8 @@ namespace RemziCicek
     public partial class frmAracMasrafRaporu : DevExpress.XtraEditors.XtraForm
     {
         SqlConnection arac = new SqlConnection(Properties.Settings.Default.YonavmAracDatasıConnectionString);
+        internal MainForm mdiParent;
+
         public frmAracMasrafRaporu()
         {
             InitializeComponent();
