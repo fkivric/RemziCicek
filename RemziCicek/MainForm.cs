@@ -146,8 +146,16 @@ namespace RemziCicek
         {
             try
             {
-                TileBar acco = sender as TileBar;
-                return acco.SelectedItem.Name;
+                TileBarItem acco = sender as TileBarItem;
+                if (acco != null)
+                {
+                    return acco.Name;
+                }
+                else
+                {
+                    TileBar acco2 = sender as TileBar;
+                    return acco2.SelectedItem.Name;
+                }
             }
             catch
             {
