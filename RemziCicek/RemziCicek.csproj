@@ -61,42 +61,69 @@
     <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>FA4EAB8F64D42DB698B5D2FADB935B3D6CEA774A</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>50FC25E654793F26E8E1DE409D6F585D240DB049</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>RemziCicek_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>RemziCicek_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>..\..\..\..\Desktop\Bunifu_UI_v1.5.3.dll</HintPath>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\..\Porjeler\SignUpDemo\SignUpDemo\bin\Debug\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v20.1" />
+    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v20.1" />
     <Reference Include="DevExpress.Data.v20.1" />
+    <Reference Include="DevExpress.DataAccess.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v20.1.UI, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.ExpressApp.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Images.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Pdf.v20.1.Drawing, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Persistent.Base.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Spreadsheet.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v20.1" />
     <Reference Include="DevExpress.Sparkline.v20.1.Core" />
+    <Reference Include="DevExpress.Utils.v20.1.UI, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Xpo.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v20.1" />
     <Reference Include="DevExpress.Printing.v20.1.Core" />
     <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPdfViewer.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPivotGrid.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraSpreadsheet.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraTreeList.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Infragistics4.Documents.Excel.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -193,7 +220,11 @@
   <ItemGroup>
     <Compile Include="Araclar.cs" />
     <Compile Include="Class\CRUID.cs" />
+    <Compile Include="Class\CustomMessageBox.cs" />
+    <Compile Include="Class\DataTableExtensions.cs" />
+    <Compile Include="Class\ListtoDataTableConverter.cs" />
     <Compile Include="Class\Shell.cs" />
+    <Compile Include="Class\Siniflar.cs" />
     <Compile Include="Class\SqliteConnection.cs" />
     <Compile Include="Class\Volant.cs" />
     <Compile Include="Class\VolClass.cs" />
@@ -208,10 +239,10 @@
     <Compile Include="frmAracIslemleri.Designer.cs">
       <DependentUpon>frmAracIslemleri.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAracMasrafRaporu.cs">
+    <Compile Include="Arac\frmAracMasrafRaporu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAracMasrafRaporu.Designer.cs">
+    <Compile Include="Arac\frmAracMasrafRaporu.Designer.cs">
       <DependentUpon>frmAracMasrafRaporu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAracSec.cs">
@@ -232,16 +263,10 @@
     <Compile Include="frmIslemler.Designer.cs">
       <DependentUpon>frmIslemler.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Arac\frmArac_TTS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmArac_TTS.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmArac_TTS.Designer.cs">
+    <Compile Include="Arac\frmArac_TTS.Designer.cs">
       <DependentUpon>frmArac_TTS.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAraçlar.cs">
@@ -256,29 +281,35 @@
     <Compile Include="frmIslem_Pdf.Designer.cs">
       <DependentUpon>frmIslem_Pdf.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmKilitEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKilitEkrani.Designer.cs">
+      <DependentUpon>frmKilitEkrani.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmManu.cs">
+    <Compile Include="Arac\frmMasrafGor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmManu.Designer.cs">
-      <DependentUpon>frmManu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmMasrafGor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMasrafGor.Designer.cs">
+    <Compile Include="Arac\frmMasrafGor.Designer.cs">
       <DependentUpon>frmMasrafGor.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMasraf.cs">
+    <Compile Include="Arac\frmMasraf.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMasraf.Designer.cs">
+    <Compile Include="Arac\frmMasraf.Designer.cs">
       <DependentUpon>frmMasraf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMessageBox.Designer.cs">
+      <DependentUpon>frmMessageBox.cs</DependentUpon>
     </Compile>
     <Compile Include="frmServisler.cs">
       <SubType>Form</SubType>
@@ -286,10 +317,10 @@
     <Compile Include="frmServisler.Designer.cs">
       <DependentUpon>frmServisler.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSettings.cs">
+    <Compile Include="Arac\frmSettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSettings.Designer.cs">
+    <Compile Include="Arac\frmSettings.Designer.cs">
       <DependentUpon>frmSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSplashScreen.cs">
@@ -304,17 +335,78 @@
     <Compile Include="frmUrunSec.Designer.cs">
       <DependentUpon>frmUrunSec.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMasrafPDF.cs">
+    <Compile Include="Arac\frmMasrafPDF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMasrafPDF.Designer.cs">
+    <Compile Include="Arac\frmMasrafPDF.Designer.cs">
       <DependentUpon>frmMasrafPDF.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="frmYapıSec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="frmYapıSec.Designer.cs">
+      <DependentUpon>frmYapıSec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Arac\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Arac\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prim\DataTableClass.cs" />
+    <Compile Include="Prim\frmExcelAl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prim\frmExcelAl.Designer.cs">
+      <DependentUpon>frmExcelAl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prim\frmKotaRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prim\frmKotaRaporu.Designer.cs">
+      <DependentUpon>frmKotaRaporu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prim\frmMagazaKotasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prim\frmMagazaKotasi.Designer.cs">
+      <DependentUpon>frmMagazaKotasi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prim\frmPrimMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prim\frmPrimMain.Designer.cs">
+      <DependentUpon>frmPrimMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prim\frmOzelGunRapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prim\frmOzelGunRapor.Designer.cs">
+      <DependentUpon>frmOzelGunRapor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prim\frmOzelGunTanimlama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prim\frmOzelGunTanimlama.Designer.cs">
+      <DependentUpon>frmOzelGunTanimlama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prim\frmPersonel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prim\frmPersonel.Designer.cs">
+      <DependentUpon>frmPersonel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prim\frmPrimCarpan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prim\frmPrimCarpan.Designer.cs">
+      <DependentUpon>frmPrimCarpan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prim\frmPrimRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prim\frmPrimRaporu.Designer.cs">
+      <DependentUpon>frmPrimRaporu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProgressBarFrm.cs">
@@ -324,17 +416,35 @@
       <DependentUpon>ProgressBarFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sayım\SayımRapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sayım\SayımRapor.Designer.cs">
+      <DependentUpon>SayımRapor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sayım\frmSayımMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sayım\frmSayımMain.Designer.cs">
+      <DependentUpon>frmSayımMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sayım\frmSayim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sayım\frmSayim.Designer.cs">
+      <DependentUpon>frmSayim.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlConnectionObject.cs" />
     <Compile Include="Web References\com.turkiyeshell.ttstest\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <Compile Include="Yakit.cs" />
+    <Compile Include="Class\Yakit.cs" />
     <EmbeddedResource Include="frmAracIslemleri.resx">
       <DependentUpon>frmAracIslemleri.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAracMasrafRaporu.resx">
+    <EmbeddedResource Include="Arac\frmAracMasrafRaporu.resx">
       <DependentUpon>frmAracMasrafRaporu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAracSec.resx">
@@ -346,10 +456,7 @@
     <EmbeddedResource Include="frmIslemler.resx">
       <DependentUpon>frmIslemler.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmArac_TTS.resx">
+    <EmbeddedResource Include="Arac\frmArac_TTS.resx">
       <DependentUpon>frmArac_TTS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAraçlar.resx">
@@ -358,22 +465,25 @@
     <EmbeddedResource Include="frmIslem_Pdf.resx">
       <DependentUpon>frmIslem_Pdf.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmKilitEkrani.resx">
+      <DependentUpon>frmKilitEkrani.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmManu.resx">
-      <DependentUpon>frmManu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMasrafGor.resx">
+    <EmbeddedResource Include="Arac\frmMasrafGor.resx">
       <DependentUpon>frmMasrafGor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMasraf.resx">
+    <EmbeddedResource Include="Arac\frmMasraf.resx">
       <DependentUpon>frmMasraf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMessageBox.resx">
+      <DependentUpon>frmMessageBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmServisler.resx">
       <DependentUpon>frmServisler.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSettings.resx">
+    <EmbeddedResource Include="Arac\frmSettings.resx">
       <DependentUpon>frmSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSplashScreen.resx">
@@ -382,11 +492,41 @@
     <EmbeddedResource Include="frmUrunSec.resx">
       <DependentUpon>frmUrunSec.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMasrafPDF.resx">
+    <EmbeddedResource Include="Arac\frmMasrafPDF.resx">
       <DependentUpon>frmMasrafPDF.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="frmYapıSec.resx">
+      <DependentUpon>frmYapıSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Arac\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prim\frmExcelAl.resx">
+      <DependentUpon>frmExcelAl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prim\frmKotaRaporu.resx">
+      <DependentUpon>frmKotaRaporu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prim\frmMagazaKotasi.resx">
+      <DependentUpon>frmMagazaKotasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prim\frmPrimMain.resx">
+      <DependentUpon>frmPrimMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prim\frmOzelGunRapor.resx">
+      <DependentUpon>frmOzelGunRapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prim\frmOzelGunTanimlama.resx">
+      <DependentUpon>frmOzelGunTanimlama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prim\frmPersonel.resx">
+      <DependentUpon>frmPersonel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prim\frmPrimCarpan.resx">
+      <DependentUpon>frmPrimCarpan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prim\frmPrimRaporu.resx">
+      <DependentUpon>frmPrimRaporu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProgressBarFrm.resx">
       <DependentUpon>ProgressBarFrm.cs</DependentUpon>
@@ -402,6 +542,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Sayım\SayımRapor.resx">
+      <DependentUpon>SayımRapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sayım\frmSayımMain.resx">
+      <DependentUpon>frmSayımMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sayım\frmSayim.resx">
+      <DependentUpon>frmSayim.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Connected Services\ShellServiceClient\RemziCicek.ShellServiceClient.CARDLIMITUPDATERESULT.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -470,6 +619,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ShellServiceClient\TTSWebServices.wsdl" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -479,7 +629,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="RemziCicek_TemporaryKey.pfx" />
     <None Include="Web References\com.turkiyeshell.ttstest\CARDLIMITUPDATERESULT.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
@@ -538,6 +687,9 @@
     <None Include="Resources\shoppingcart_32x32.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\question_32x32.png" />
+    <None Include="Resources\bodetails_32x32.png" />
+    <None Include="Resources\Entegref-_1_.png" />
     <None Include="Resources\hideproduct_32x321.png" />
     <None Include="Resources\excel.png" />
     <None Include="Resources\hideproduct_32x32.png" />
@@ -550,6 +702,8 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="cash.png" />
+    <None Include="barcode_reader.png" />
     <Content Include="logo.ico" />
     <None Include="Resources\close_32x32.png" />
     <None Include="Resources\driving_32x32.png" />

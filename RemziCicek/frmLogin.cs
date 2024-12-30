@@ -30,10 +30,23 @@ namespace RemziCicek
         private string clientName;
         public static string userID;
 
+        string version = "";
         public frmLogin()
         {
             Thread.Sleep(300);
             InitializeComponent();
+            if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
+            {
+                System.Deployment.Application.ApplicationDeployment ad = System.Deployment.Application.ApplicationDeployment.CurrentDeployment;
+                lblversion.Text = "Version : " + ad.CurrentVersion.Major + "." + ad.CurrentVersion.Minor + "." + ad.CurrentVersion.Build + "." + ad.CurrentVersion.Revision;
+                version = ad.CurrentVersion.Revision.ToString();
+            }
+            else
+            {
+                string _s1 = Application.ProductVersion; // versiyon
+                lblversion.Text = "Version : " + _s1;
+                version = _s1;
+            }
         }
         private List<eDatabase> lDatabase;
         List<Firma> firmas = new List<Firma>();
@@ -41,19 +54,16 @@ namespace RemziCicek
         {
             VolXml();
             DataCek();
-            if (btnNewDatabase.Enabled)
-            {
-                txtKreidPuanUser.Enabled = false;
-                txtKreidPuanPass.Enabled = false;
-                simpleButton2.Enabled = false;
-                navigationPage1.Enabled = false;
-                navigationFrame.SelectedPage = navigationPage2;
-            }
             DataTable Compny = Sorgu("select distinct CATALOG_NAME from INFORMATION_SCHEMA.SCHEMATA", Settings.Default.VolConnection);
             cmbVolantSirket.Properties.DataSource = firmas;// Compny;
             cmbVolantSirket.Properties.DisplayMember = "COMPANYNAME";
             cmbVolantSirket.Properties.ValueMember = "COMPANYDB";
-            cmbVolantSirket.EditValue = Compny.Rows[0]["CATALOG_NAME"];            
+            cmbVolantSirket.EditValue = Compny.Rows[0]["CATALOG_NAME"];
+            string company = Properties.Settings.Default.Company;
+            if (company.Contains("YON") || company.Contains("KAMALAR"))
+            {
+                pictureEdit2.Visible = true;
+            }
         }
         private void VolXml()
         {
@@ -115,33 +125,6 @@ namespace RemziCicek
                     AllDataBase dts = new AllDataBase { DbNAme = database["database_name"].ToString() };
                     allDatas.Add(dts);
                     string databaseName = database["database_name"].ToString();
-                    if (databaseName == cmbDatabase.Text || databaseName == txtKrediPuanDbName.Text)
-                    {
-                        cmbDatabase.Properties.DataSource = databases;
-                        cmbDatabase.Properties.DisplayMember = "database_name";
-                        cmbDatabase.Properties.ValueMember = "dbid";
-                        cmbDatabase.EditValue = database["dbid"];
-                        btnNewDatabase.Enabled = false;
-                        txtKreidPuanUser.Enabled = true;
-                        txtKreidPuanPass.Enabled = true;
-                        simpleButton2.Enabled = true;
-                        navigationPage1.Enabled = true;
-                        tablePanel4.Rows[0].Visible = true;
-                        tablePanel4.Rows[1].Visible = false;
-                        tablePanel4.Rows[2].Visible = false;
-                        tablePanel4.Rows[3].Visible = true;
-                        tablePanel4.Rows[4].Visible = true;
-                        Settings.Default.DbName = cmbDatabase.Text;
-                        Settings.Default.Save();
-                    }
-                    else
-                    {
-                        tablePanel4.Rows[0].Visible = false;
-                        tablePanel4.Rows[1].Visible = true;
-                        tablePanel4.Rows[2].Visible = true;
-                        tablePanel4.Rows[3].Visible = false;
-                        tablePanel4.Rows[4].Visible = false;
-                    }
                     var dd = Sorgu(string.Format("select COMPANYVAL,COMPANYNAME from {0}.dbo.COMPANY", database["database_name"]), Settings.Default.VolConnection);
                     if (dd != null)
                     {
@@ -200,7 +183,7 @@ namespace RemziCicek
             {
                 userID = yetki.Rows[0][0].ToString();
                 this.Hide();
-                MainForm main = new MainForm();
+                frmYapıSec main = new frmYapıSec();
                 main.ShowDialog();
                 this.Close();
             }
@@ -249,50 +232,7 @@ namespace RemziCicek
                 txtVolantPassword.Text = "Parola";
                 txtVolantPassword.ForeColor = SystemColors.GrayText;
             }
-        }
-
-        private void btnNewDatabase_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var path = Path.GetDirectoryName(Application.ExecutablePath);
-                // SQL.script dosyasını okuyun
-                string scriptContent = File.ReadAllText("NewKrediPuan.sql");
-                using (SqlConnection con = new SqlConnection(Settings.Default.VolConnection))
-                {
-                    con.Open();
-                    using (SqlCommand cmd = new SqlCommand("USE master\r\nCreate Database KrediPuan\r\n",con))
-                    {
-                        cmd.ExecuteNonQuery();
-                    }
-                    con.Close();
-                }
-                using (SqlConnection connection = new SqlConnection(Settings.Default.VolConnection))
-                {
-                    connection.Open();
-
-                    // SQL sorgusunu çalıştırın
-                    using (SqlCommand command = new SqlCommand(scriptContent, connection))
-                    {
-                        command.ExecuteNonQuery();
-                    }
-
-                    MessageBox.Show(txtKrediPuanDbName.Text + " başarıyla oluşturuldu.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Settings.Default.DbName = txtKrediPuanDbName.Text;
-                    Settings.Default.Save();
-                    connection.Close(); 
-                }
-
-                DataCek();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Settings.Default.DbName = "";
-                Settings.Default.Save();
-            }
-            //txtKrediPuanDbName.Text;
-        }
+        }        
 
         private void txtVolantUser_TextChanged(object sender, EventArgs e)
         {

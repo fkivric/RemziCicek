@@ -17,9 +17,22 @@ namespace RemziCicek
 {
     public partial class MainForm : DevExpress.XtraEditors.XtraForm
     {
+        string version = "";
         public MainForm()
         {
             InitializeComponent();
+            if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
+            {
+                System.Deployment.Application.ApplicationDeployment ad = System.Deployment.Application.ApplicationDeployment.CurrentDeployment;
+                this.Text = "Version : " + ad.CurrentVersion.Major + "." + ad.CurrentVersion.Minor + "." + ad.CurrentVersion.Build + "." + ad.CurrentVersion.Revision;
+                version = ad.CurrentVersion.Revision.ToString();
+            }
+            else
+            {
+                string _s1 = Application.ProductVersion; // versiyon
+                this.Text = "Version : " + _s1;
+                version = _s1;
+            }
         }
         private void tileBar_SelectedItemChanged(object sender, TileItemEventArgs e)
         {

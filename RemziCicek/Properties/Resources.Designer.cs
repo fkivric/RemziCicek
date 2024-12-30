@@ -73,9 +73,39 @@ namespace RemziCicek.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap barcode_reader {
+            get {
+                object obj = ResourceManager.GetObject("barcode_reader", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap Benzin {
             get {
                 object obj = ResourceManager.GetObject("Benzin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap bodetails_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("bodetails_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap cash {
+            get {
+                object obj = ResourceManager.GetObject("cash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +136,16 @@ namespace RemziCicek.Properties {
         internal static System.Drawing.Bitmap driving_32x32 {
             get {
                 object obj = ResourceManager.GetObject("driving_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap Entegref__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Entegref__1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +196,16 @@ namespace RemziCicek.Properties {
         internal static System.Drawing.Bitmap openhyperlink_32x32 {
             get {
                 object obj = ResourceManager.GetObject("openhyperlink_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap question_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("question_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

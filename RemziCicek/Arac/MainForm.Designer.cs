@@ -294,7 +294,9 @@
             this.Controls.Add(this.barDockControlTop);
             this.IconOptions.Image = global::RemziCicek.Properties.Resources.logo;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Araç Takip Ssitemi";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).EndInit();
             this.xtraTabControl.ResumeLayout(false);

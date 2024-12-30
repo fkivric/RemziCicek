@@ -187,6 +187,37 @@ namespace RemziCicek
             }
 
         }
+        public String GetValue(string query)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.VolConnection))
+            {
+                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                da.Fill(dt);
+            }
+            if (dt.Rows != null)
+            {
+                return dt.Rows[0][0].ToString();
+            }
+            else
+            {
+                return "";
+            }
+        }
+        public DataTable GetData(string spName, SqlConnection sql)
+        {
+            DataTable returnType = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(spName, sql);
+            da.Fill(returnType);
+            if (returnType.Rows.Count > 0)
+            {
+                return returnType;
+            }
+            else
+            {
+                return null;
+            }
+        }
         public DataTable ToDataTable<T>(List<T> items)
         {
             DataTable dataTable = new DataTable(typeof(T).Name);
