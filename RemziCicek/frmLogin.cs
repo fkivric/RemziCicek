@@ -160,6 +160,21 @@ namespace RemziCicek
             Settings.Default.Company = cmbVolantSirket.EditValue.ToString();
             Settings.Default.Save();
             FirmaBilgileri();
+            string company = cmbVolantSirket.EditValue.ToString();
+            if (company.Contains("YON"))
+            {
+                pictureEdit2.Visible = true;
+                pictureEdit2.Image = Properties.Resources.YON_AVM_400;
+            }
+            else if (company.Contains("KAMALAR"))
+            {
+                pictureEdit2.Visible = true;
+                pictureEdit2.Image = Properties.Resources.Kamalar_logo;
+            }
+            else
+            {
+                pictureEdit2.Visible = false;
+            }
         }       
         public DataTable Sorgu(string sorgu, string connection)
         {

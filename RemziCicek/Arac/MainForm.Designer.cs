@@ -30,13 +30,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement10 = new DevExpress.XtraEditors.TileItemElement();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement11 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement12 = new DevExpress.XtraEditors.TileItemElement();
             this.tileBar = new DevExpress.XtraBars.Navigation.TileBar();
             this.tileBarGroupTables = new DevExpress.XtraBars.Navigation.TileBarGroup();
             this.AracMasrafGiris = new DevExpress.XtraBars.Navigation.TileBarItem();
@@ -55,6 +55,7 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
             this.xtraTabControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radialMenu)).BeginInit();
@@ -108,11 +109,11 @@
             this.AracMasrafGiris.AppearanceItem.Normal.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.AracMasrafGiris.AppearanceItem.Normal.Options.UseBackColor = true;
             this.AracMasrafGiris.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement1.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement1.ImageOptions.ImageUri.Uri = "business%20objects/bo_order_item";
-            tileItemElement1.Text = "Araç Masraf Girişi";
-            this.AracMasrafGiris.Elements.Add(tileItemElement1);
+            tileItemElement7.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement7.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement7.ImageOptions.ImageUri.Uri = "business%20objects/bo_order_item";
+            tileItemElement7.Text = "Araç Masraf Girişi";
+            this.AracMasrafGiris.Elements.Add(tileItemElement7);
             this.AracMasrafGiris.Name = "AracMasrafGiris";
             this.AracMasrafGiris.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileBar_SelectedItemChanged);
             // 
@@ -122,11 +123,11 @@
             this.AracMasrafGor.AppearanceItem.Normal.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.AracMasrafGor.AppearanceItem.Normal.Options.UseBackColor = true;
             this.AracMasrafGor.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement2.ImageOptions.Image = global::RemziCicek.Properties.Resources.driving_32x32;
-            tileItemElement2.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileItemElement2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement2.Text = "Araç Masraf Gör";
-            this.AracMasrafGor.Elements.Add(tileItemElement2);
+            tileItemElement8.ImageOptions.Image = global::RemziCicek.Properties.Resources.driving_32x32;
+            tileItemElement8.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileItemElement8.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement8.Text = "Araç Masraf Gör";
+            this.AracMasrafGor.Elements.Add(tileItemElement8);
             this.AracMasrafGor.Id = 8;
             this.AracMasrafGor.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.AracMasrafGor.Name = "AracMasrafGor";
@@ -138,11 +139,11 @@
             this.AracYakitGiris.AppearanceItem.Normal.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.AracYakitGiris.AppearanceItem.Normal.Options.UseBackColor = true;
             this.AracYakitGiris.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement3.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileItemElement3.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement3.ImageOptions.ImageUri.Uri = "reports/gaugestylehalfcircular";
-            tileItemElement3.Text = "Araç Yakıt Bilgisi";
-            this.AracYakitGiris.Elements.Add(tileItemElement3);
+            tileItemElement9.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileItemElement9.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement9.ImageOptions.ImageUri.Uri = "reports/gaugestylehalfcircular";
+            tileItemElement9.Text = "Araç Yakıt Bilgisi";
+            this.AracYakitGiris.Elements.Add(tileItemElement9);
             this.AracYakitGiris.Id = 2;
             this.AracYakitGiris.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.AracYakitGiris.Name = "AracYakitGiris";
@@ -154,11 +155,11 @@
             this.AracMasrafRapor.AppearanceItem.Normal.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.AracMasrafRapor.AppearanceItem.Normal.Options.UseBackColor = true;
             this.AracMasrafRapor.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            tileItemElement4.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileItemElement4.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement4.Text = "Raporlar";
-            this.AracMasrafRapor.Elements.Add(tileItemElement4);
+            tileItemElement10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            tileItemElement10.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileItemElement10.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement10.Text = "Raporlar";
+            this.AracMasrafRapor.Elements.Add(tileItemElement10);
             this.AracMasrafRapor.Id = 3;
             this.AracMasrafRapor.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.AracMasrafRapor.Name = "AracMasrafRapor";
@@ -176,11 +177,11 @@
             this.tileBarItem2.AppearanceItem.Normal.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(196)))));
             this.tileBarItem2.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileBarItem2.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement5.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement5.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement5.ImageOptions.ImageUri.Uri = "Delete";
-            tileItemElement5.Text = "Sekmeleri Kapat";
-            this.tileBarItem2.Elements.Add(tileItemElement5);
+            tileItemElement11.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement11.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement11.ImageOptions.ImageUri.Uri = "Delete";
+            tileItemElement11.Text = "Sekmeleri Kapat";
+            this.tileBarItem2.Elements.Add(tileItemElement11);
             this.tileBarItem2.Id = 6;
             this.tileBarItem2.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem2.Name = "tileBarItem2";
@@ -192,13 +193,13 @@
             this.btnSettings.AppearanceItem.Normal.BackColor2 = System.Drawing.Color.Black;
             this.btnSettings.AppearanceItem.Normal.Options.UseBackColor = true;
             this.btnSettings.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement6.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement6.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
-            tileItemElement6.ImageOptions.ImageToTextIndent = 0;
-            tileItemElement6.ImageOptions.ImageUri.Uri = "scheduling/viewsettings";
-            tileItemElement6.Text = "Ayarlar";
-            tileItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.btnSettings.Elements.Add(tileItemElement6);
+            tileItemElement12.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement12.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
+            tileItemElement12.ImageOptions.ImageToTextIndent = 0;
+            tileItemElement12.ImageOptions.ImageUri.Uri = "scheduling/viewsettings";
+            tileItemElement12.Text = "Ayarlar";
+            tileItemElement12.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.btnSettings.Elements.Add(tileItemElement12);
             this.btnSettings.Id = 7;
             this.btnSettings.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Medium;
             this.btnSettings.Name = "btnSettings";
@@ -279,6 +280,10 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 561);
             // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // MainForm
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -292,7 +297,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.IconOptions.Image = global::RemziCicek.Properties.Resources.logo;
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("MainForm.IconOptions.Image")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Araç Takip Ssitemi";
@@ -327,5 +332,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.Navigation.TileBarItem btnSettings;
         private DevExpress.XtraBars.Navigation.TileBarItem AracMasrafGor;
+        private System.Windows.Forms.Timer timer2;
     }
 }

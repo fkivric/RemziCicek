@@ -183,6 +183,16 @@ namespace RemziCicek.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap Kamalar_logo {
+            get {
+                object obj = ResourceManager.GetObject("Kamalar_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
@@ -246,6 +256,16 @@ namespace RemziCicek.Properties {
         internal static System.Drawing.Bitmap truck_40px {
             get {
                 object obj = ResourceManager.GetObject("truck_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap YON_AVM_400 {
+            get {
+                object obj = ResourceManager.GetObject("YON_AVM_400", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSayımMain));
-            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.tileBar1 = new DevExpress.XtraBars.Navigation.TileBar();
             this.tileBarGroup2 = new DevExpress.XtraBars.Navigation.TileBarGroup();
@@ -74,12 +74,12 @@
             // BaritemKontrol
             // 
             this.BaritemKontrol.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            tileItemElement1.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement1.Text = "Sayım Başlanğıç Kontrolleri";
-            tileItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.BaritemKontrol.Elements.Add(tileItemElement1);
+            tileItemElement3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            tileItemElement3.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement3.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement3.Text = "Sayım Başlanğıç Kontrolleri";
+            tileItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.BaritemKontrol.Elements.Add(tileItemElement3);
             this.BaritemKontrol.Id = 0;
             this.BaritemKontrol.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.BaritemKontrol.Name = "BaritemKontrol";
@@ -88,11 +88,11 @@
             // BaritemRapor
             // 
             this.BaritemRapor.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            tileItemElement2.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement2.Text = "Sayım Raporları";
-            this.BaritemRapor.Elements.Add(tileItemElement2);
+            tileItemElement4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            tileItemElement4.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement4.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement4.Text = "Sayım Raporları";
+            this.BaritemRapor.Elements.Add(tileItemElement4);
             this.BaritemRapor.Id = 1;
             this.BaritemRapor.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.BaritemRapor.Name = "BaritemRapor";
@@ -114,16 +114,16 @@
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // frmMain
+            // frmSayımMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1233, 673);
             this.Controls.Add(this.xtraTabControl);
             this.Controls.Add(this.tileBar1);
-            this.IconOptions.Image = global::RemziCicek.Properties.Resources.Entegref__1_;
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("frmSayımMain.IconOptions.Image")));
             this.IsMdiContainer = true;
-            this.Name = "frmMain";
+            this.Name = "frmSayımMain";
             this.Text = "Volant Sayım";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Load);

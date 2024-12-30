@@ -12,6 +12,9 @@ using DevExpress.XtraBars.Navigation;
 using DevExpress.Utils;
 using DevExpress.XtraTab;
 using RemziCicek.Class;
+using DevExpress.LookAndFeel;
+using System.Threading;
+using System.IO;
 
 namespace RemziCicek
 {
@@ -20,6 +23,10 @@ namespace RemziCicek
         string version = "";
         public MainForm()
         {
+            DevExpress.LookAndFeel.UserLookAndFeel.Default.SkinName = "McSkin";
+            DefaultLookAndFeel defaultLookAndFeel = new DefaultLookAndFeel();
+            defaultLookAndFeel.LookAndFeel.SkinName = "McSkin";
+            DevExpress.Skins.SkinManager.EnableFormSkins();
             InitializeComponent();
             if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
             {
@@ -32,6 +39,147 @@ namespace RemziCicek
                 string _s1 = Application.ProductVersion; // versiyon
                 this.Text = "Version : " + _s1;
                 version = _s1;
+            }
+        }
+        private bool isLockForm = false;
+
+        private IslemReturnDlg IslemReturnHandler;
+        private delegate void IslemReturnDlg(int durum);
+        private frmKilitEkrani kilitForm = null;
+        public void IslemReturn(int durum)
+        {
+            try
+            {
+                if (durum == 1)
+                {
+                    this.Enabled = true;
+                    isLockForm = false;
+                }
+            }
+            catch (Exception exp)
+            {
+                CustomMessageBox.ShowMessage("", exp.ToString(), this, "Uyarı", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+        }
+        private const int idleThresholdSeconds = 600; // Kullanıcının etkileşimde bulunmadığı süre eşiği (saniye cinsinden)
+        public static int idleCounter = 0;
+        public void ResetIdleCounter()
+        {
+            idleCounter = 0;
+        }
+        //arka plan işlemleri
+        private BackgroundWorker _backgroundWorker;
+        private ManualResetEvent _workerCompletedEvent = new ManualResetEvent(false);
+        private const string READY_TEXT = "Hazır";
+        private void executeBackground(Action doWorkAction, Action progressAction = null, Action completedAction = null)
+        {
+            try
+            {
+                if (_backgroundWorker != null)
+                {
+
+
+                    if (_backgroundWorker.IsBusy)
+                    {
+                        //XtraMessageBox.Show("Her oturum açıldığında 1 işlem yapacak. Eğer bu girişteki ilk işlemse uygulama çalışmaktadır. Lütfen Bekleyiniz");
+                        return;
+                    }
+                }
+                _backgroundWorker = new BackgroundWorker
+                {
+                    WorkerSupportsCancellation = true
+                };
+                _backgroundWorker.DoWork += (x, y) =>
+                {
+                    try
+                    {
+                        doWorkAction.Invoke();
+                    }
+                    catch (Exception ex)
+                    {
+                        y.Cancel = true;
+                        CustomMessageBox.ShowMessage("Bilinmeyen Hata. Detay : " + ex.Message, ex.ToString(), this, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // throw;
+                    }
+                };
+                if (progressAction != null)
+                {
+                    _backgroundWorker.ProgressChanged += (x, y) =>
+                    {
+                        progressAction.Invoke();
+                    };
+                }
+                if (completedAction != null)
+                {
+                    _backgroundWorker.RunWorkerCompleted += (x, y) =>
+                    {
+                        completedAction.Invoke();
+                    };
+                }
+                _backgroundWorker.RunWorkerAsync();
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            idleCounter++;
+            if (base.DesignMode)
+            {
+                return;
+            }
+            lock (this)
+            {
+                if (idleCounter >= idleThresholdSeconds && !isLockForm)
+                {
+                    isLockForm = true;
+                    IslemReturnHandler = IslemReturn;
+                    this.Enabled = false;
+                    if (kilitForm == null || kilitForm.IsDisposed)
+                    {
+                        kilitForm = new frmKilitEkrani();
+                    }
+                    kilitForm.onCloseHandler = IslemReturnHandler;
+                    kilitForm.ShowDialog();
+                    ResetIdleCounter();
+                }
+            }
+        }
+        private void completeProgress()
+        {
+            try
+            {
+                _backgroundWorker.Dispose();
+                _backgroundWorker = null;
+                if (!this.Enabled)
+                {
+                    this.Enabled = true;
+                }
+
+            }
+            finally
+            {
+                //this.Cursor = Cursors.Default;
+                _workerCompletedEvent.Set();
+
+            }
+        }
+        private void CreateDirectoryIfNotExists(string directoryPath)
+        {
+            if (!Directory.Exists(directoryPath))
+            {
+                try
+                {
+                    Directory.CreateDirectory(directoryPath);
+                    MessageBox.Show($"'{directoryPath}' dizini oluşturuldu.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"'{directoryPath}' dizini oluşturulurken hata oluştu: {ex.Message}", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
         private void tileBar_SelectedItemChanged(object sender, TileItemEventArgs e)
