@@ -85,13 +85,35 @@ namespace RemziCicek
         private void btnListesi_Click(object sender, EventArgs e)
         {
             string q = "";
-            if (srcMagaza.EditValue != null)
+            if (srcMagaza.EditValue != "Tümü" && srcMagaza.EditValue !=  null)
             {
-                q = $"SET LANGUAGE Turkish; select SATGDIMONTH as AY, DATENAME(month, DATEADD(month, SATGDIMONTH - 1, '1900-01-01')) AS AyAdi,DIVVAL,DIVNAME, SATGDIAMOUNT KOTA from SALTARGETDIVISON left outer join DIVISON on DIVVAL = SATGDIDIVISON  where SATGDIDIVISON = '{srcMagaza.EditValue.ToString()}' and SATGDIYEAR = '{srcYil.EditValue.ToString()}' order by DIVVAL,AY";
+                q = $@"SET LANGUAGE Turkish; 
+                select AY,AyAdi,DIVVAL,DIVNAME, SATGDIAMOUNT KOTA from (
+                select SATGMMONTH as AY, DATENAME(month, DATEADD(month, SATGMMONTH - 1, '1900-01-01')) AS AyAdi,DIVVAL,DIVNAME from SALTARGETMONTH,DIVISON
+                where DIVSTS = 1 and DIVSALESTS = 1 and DIVVAL = '{srcMagaza.EditValue.ToString()}'
+                ) sira
+                left outer join (select * from SALTARGETDIVISON ) kota on SATGDIDIVISON = DIVVAL and SATGDIMONTH = AY and SATGDIYEAR = {srcYil.EditValue.ToString()}";
+            }
+            else if (srcBolge.EditValue != null)
+            {
+                q = $@"SET LANGUAGE Turkish; 
+                select AY,AyAdi,DIVVAL,DIVNAME, SATGDIAMOUNT KOTA from (
+                select SATGMMONTH as AY, DATENAME(month, DATEADD(month, SATGMMONTH - 1, '1900-01-01')) AS AyAdi,DIVVAL,DIVNAME from SALTARGETMONTH,DIVISON
+                where DIVSTS = 1 and DIVSALESTS = 1 and DIVREGION = '{srcBolge.EditValue.ToString()}'
+                ) sira
+                left outer join (select * from SALTARGETDIVISON ) kota on SATGDIDIVISON = DIVVAL and SATGDIMONTH = AY and SATGDIYEAR = {srcYil.EditValue.ToString()}";
+
+                //q = $"SET LANGUAGE Turkish; select SATGDIMONTH as AY, DATENAME(month, DATEADD(month, SATGDIMONTH - 1, '1900-01-01')) AS AyAdi,DIVVAL,DIVNAME, SATGDIAMOUNT KOTA  from SALTARGETDIVISON left outer join DIVISON on DIVVAL = SATGDIDIVISON where DIVREGION = '{srcBolge.EditValue.ToString()}' and SATGDIYEAR = '{srcYil.EditValue.ToString()}' and DIVSALESTS = 1 order by DIVVAL,AY";
             }
             else
             {
-                q = $"SET LANGUAGE Turkish; select SATGDIMONTH as AY, DATENAME(month, DATEADD(month, SATGDIMONTH - 1, '1900-01-01')) AS AyAdi,DIVVAL,DIVNAME, SATGDIAMOUNT KOTA  from SALTARGETDIVISON left outer join DIVISON on DIVVAL = SATGDIDIVISON where DIVREGION = '{srcBolge.EditValue.ToString()}' and SATGDIYEAR = '{srcYil.EditValue.ToString()}' and DIVSALESTS = 1 order by DIVVAL,AY";
+                q = $@"SET LANGUAGE Turkish; 
+                select AY,AyAdi,DIVVAL,DIVNAME, SATGDIAMOUNT KOTA from (
+                select SATGMMONTH as AY, DATENAME(month, DATEADD(month, SATGMMONTH - 1, '1900-01-01')) AS AyAdi,DIVVAL,DIVNAME from SALTARGETMONTH,DIVISON
+                where DIVSTS = 1 and DIVSALESTS = 1 
+                ) sira
+                left outer join (select * from SALTARGETDIVISON ) kota on SATGDIDIVISON = DIVVAL and SATGDIMONTH = AY and SATGDIYEAR = {srcYil.EditValue.ToString()}";
+
             }
             SqlDataAdapter da = new SqlDataAdapter(q, sql);
             DataTable dt = new DataTable();
@@ -156,6 +178,7 @@ namespace RemziCicek
             srcMagaza.EditValue = null;
             srcMagaza.Enabled = false;
             btnMagazaGuncelle.Enabled = false;
+            btnListesi.Enabled = true;
         }
     }
 }
