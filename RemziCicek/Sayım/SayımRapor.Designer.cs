@@ -40,6 +40,9 @@
             this.tileBarItem1 = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.tileBarItem3 = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.srcYIL = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.btnEkle = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.srcMagaza = new DevExpress.XtraEditors.SearchLookUpEdit();
@@ -81,6 +84,8 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.srcYIL.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.srcMagaza.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMagazalar)).BeginInit();
@@ -110,9 +115,9 @@
             // 
             this.panelControl2.Controls.Add(this.tileBar1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(262, 23);
+            this.panelControl2.Location = new System.Drawing.Point(378, 23);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1032, 89);
+            this.panelControl2.Size = new System.Drawing.Size(916, 89);
             this.panelControl2.TabIndex = 5;
             // 
             // tileBar1
@@ -126,7 +131,7 @@
             this.tileBar1.Name = "tileBar1";
             this.tileBar1.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.tileBar1.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
-            this.tileBar1.Size = new System.Drawing.Size(1028, 85);
+            this.tileBar1.Size = new System.Drawing.Size(912, 85);
             this.tileBar1.TabIndex = 3;
             this.tileBar1.Text = "tileBar1";
             // 
@@ -172,14 +177,42 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.srcYIL);
+            this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.btnEkle);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.srcMagaza);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl1.Location = new System.Drawing.Point(2, 23);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(260, 89);
+            this.panelControl1.Size = new System.Drawing.Size(376, 89);
             this.panelControl1.TabIndex = 2;
+            // 
+            // srcYIL
+            // 
+            this.srcYIL.Location = new System.Drawing.Point(11, 22);
+            this.srcYIL.Name = "srcYIL";
+            this.srcYIL.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.srcYIL.Properties.NullText = "Seçiniz....!";
+            this.srcYIL.Properties.PopupView = this.gridView2;
+            this.srcYIL.Size = new System.Drawing.Size(100, 20);
+            this.srcYIL.TabIndex = 5;
+            // 
+            // gridView2
+            // 
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(40, 5);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(43, 13);
+            this.labelControl2.TabIndex = 4;
+            this.labelControl2.Text = "Sayım Yılı";
             // 
             // btnEkle
             // 
@@ -188,14 +221,14 @@
             this.btnEkle.Appearance.Options.UseBackColor = true;
             this.btnEkle.Location = new System.Drawing.Point(11, 49);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(244, 23);
+            this.btnEkle.Size = new System.Drawing.Size(361, 23);
             this.btnEkle.TabIndex = 2;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(11, 4);
+            this.labelControl1.Location = new System.Drawing.Point(214, 5);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(72, 13);
             this.labelControl1.TabIndex = 1;
@@ -203,7 +236,7 @@
             // 
             // srcMagaza
             // 
-            this.srcMagaza.Location = new System.Drawing.Point(10, 22);
+            this.srcMagaza.Location = new System.Drawing.Point(128, 22);
             this.srcMagaza.Name = "srcMagaza";
             this.srcMagaza.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -528,14 +561,14 @@
             // 
             this.tileBarGroup3.Name = "tileBarGroup3";
             // 
-            // Form1
+            // SayımRapor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1296, 758);
             this.Controls.Add(this.navigationFrame1);
             this.IconOptions.Image = global::RemziCicek.Properties.Resources.Entegref__1_;
-            this.Name = "Form1";
+            this.Name = "SayımRapor";
             this.Text = "Sayım Raporları";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -546,6 +579,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.srcYIL.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.srcMagaza.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMagazalar)).EndInit();
@@ -606,6 +641,9 @@
         private DevExpress.XtraBars.Navigation.TileBarGroup tileBarGroup1;
         private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem2;
         private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem4;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.SearchLookUpEdit srcYIL;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
     }
 }
 

@@ -22,6 +22,7 @@ namespace RemziCicek
     {
         SqlConnectionObject conn = new SqlConnectionObject();
         SqlConnection sql = new SqlConnection(Properties.Settings.Default.VolConnection);
+        public List<string> YIL = new List<string>();
         public SayımRapor()
         {
             try
@@ -47,6 +48,15 @@ namespace RemziCicek
 
             // Expand all groups 
             gridView1.ExpandAllGroups();
+            
+            YIL = new List<string>
+            {
+                "2023",
+                "2024",
+                "2025"
+            };
+            srcYIL.Properties.DataSource = YIL;
+            srcYIL.EditValue = DateTime.Now.ToString("yyyy");
         }
         private void MGZ()
         {
@@ -173,14 +183,14 @@ namespace RemziCicek
         {
 
             StringBuilder cenID = new StringBuilder();
-            string q = @"select distinct DEEDID,
+            string q =@"select distinct DEEDID,
             case when DEEDDPBHEVAL = 120 then 'SONRADA EKLENEN' else 'SONRADAN ÇIKARTILAN'end as DPDEEDNAME,
             DSTORNAME,DEEDDATE,PROBHNOTES,sum(PROBHQUAN) as PROBHQUAN from DEEDS
 						            left outer join DEFPRODUCTDEED on DEEDDPBHEVAL = DPDEEDBHVAL
 			                        left outer join PRODUCTSBEHAVE on PROBHDEEDID = DEEDID
 			                        left outer join DEFSTORAGE ON DSTORID=DEEDSTORID
 			                        where DEFSTORAGE.DSTORDIVISON  in ('{0}') AND DEEDDPBHEVAL IN (-1,1,6,7,120,130,620,630,640,803,806,807,808,999,2,802)
-			                        and DATEPART(YYYY,PROBHDATE) = DATEPART(YYYY,GETDATE())  
+			                        and DATEPART(YYYY,PROBHDATE) = '{1}'  
 			                        and DEEDDPBHEVAL in (620,120)
 						            and not exists (select * from CENSUS where CENID = DEEDDCENID)
             group by DEEDID,DEEDDATE,DEEDDPBHEVAL,PROBHNOTES,DSTORNAME
@@ -192,7 +202,7 @@ namespace RemziCicek
 			                        left outer join PRODUCTSBEHAVE on PROBHDEEDID = DEEDID
 			                        left outer join DEFSTORAGE ON DSTORID=DEEDSTORID
 			                        where DEFSTORAGE.DSTORDIVISON  in ('{0}') AND DEEDDPBHEVAL IN (-1,1,6,7,120,130,620,630,640,803,806,807,808,999,2,802)
-			                        and DATEPART(YYYY,PROBHDATE) = DATEPART(YYYY,GETDATE())  
+			                        and DATEPART(YYYY,PROBHDATE) = '{1}'  
 			                        and DEEDDPBHEVAL in (620,120)
 						            and exists (select * from CENSUS where CENID = DEEDDCENID)
             group by DEEDID,DEEDDATE,DPDEEDNAME,PROBHNOTES,DSTORNAME
@@ -201,7 +211,7 @@ namespace RemziCicek
             left outer join DEFSTORAGE on DSTORID = CENSTORID
             where DSTORVAL = '{0}'
             and CENCONFIRM = 1
-            and DATEPART(YYYY,CENDATE) = DATEPART(YYYY,getdate())";
+            and DATEPART(YYYY,CENDATE) = '{1}'";
             string divval;
             string divname;
             int sayac;
@@ -256,7 +266,7 @@ namespace RemziCicek
 
                    });
 
-                    var dt = conn.GetData(String.Format(q, divval), sql);
+                    var dt = conn.GetData(String.Format(q, divval, srcYIL.EditValue.ToString()), sql);
                     if (dt != null)
                     {
                         List<Sayim> sysm = dt.ToList<Sayim>();
@@ -271,7 +281,7 @@ namespace RemziCicek
                        gridSayim.Refresh();
 
                    });
-                    string sorgu = String.Format(w, divval);
+                    string sorgu = String.Format(w, divval, srcYIL.EditValue.ToString());
                     var ct = conn.GetData(sorgu, sql);
                     if (ct != null)
                     {
@@ -316,7 +326,7 @@ namespace RemziCicek
                    gridMagazalar.Refresh();
                });
 
-                var dt = conn.GetData(String.Format(q, divval), sql);
+                var dt = conn.GetData(String.Format(q, divval, srcYIL.EditValue.ToString()), sql);
                 List<Sayim> sysm = dt.ToList<Sayim>();
                 Sayims.AddRange(sysm);
 
@@ -328,7 +338,7 @@ namespace RemziCicek
                    // gridSayim'ı güncelle 
                    gridSayim.Refresh();
                });
-                string sorgu = String.Format(w, divval);
+                string sorgu = String.Format(w, divval, srcYIL.EditValue.ToString());
                 var ct = conn.GetData(sorgu, sql);
                 if (ct.Rows.Count > 0 && !string.IsNullOrEmpty(ct.Rows[0]["CENID"].ToString()))
                 {
@@ -413,7 +423,7 @@ namespace RemziCicek
                 where DEFSTORAGE.DSTORDIVISON  in ({0}) AND DEEDDPBHEVAL IN (-1,1,6,7,120,130,620,630,640,803,806,807,808,999,2,802)
 	            and DEEDID in ({1})
                 and PROBHPROID = PROID
-                and DATEPART(YYYY,PROBHDATE) = DATEPART(YYYY,GETDATE())  
+                and DATEPART(YYYY,PROBHDATE) = '{2}'  
                 and DEEDDPBHEVAL = 120) FAZLA
             outer apply(select DSTORID,PROBHQUAN as EKSIK from DEEDS
                 left outer join PRODUCTSBEHAVE on PROBHDEEDID = DEEDID
@@ -421,13 +431,13 @@ namespace RemziCicek
                 where DEFSTORAGE.DSTORDIVISON  in ({0}) AND DEEDDPBHEVAL IN (-1,1,6,7,120,130,620,630,640,803,806,807,808,999,2,802)
 	            and DEEDID in ({1})
                 and PROBHPROID = PROID
-                and DATEPART(YYYY,PROBHDATE) = DATEPART(YYYY,GETDATE())  
+                and DATEPART(YYYY,PROBHDATE) = '{2}'  
                 and DEEDDPBHEVAL = 620) EKSIK
             outer apply(select DSTORID,stok.PROVAL,stok.PRONAME,sum(CENCHQUAN) as SAYILAN from CENSUS
                 LEFT OUTER JOIN DEFSTORAGE ON DSTORID=CENSTORID 
                 LEFT OUTER JOIN DIVISON on DIVVAL = DSTORDIVISON
                 LEFT OUTER JOIN CENSUSCHILD on CENID = CENCHCENID
-                where DIVVAL in ({0}) and DATEPART(YYYY,CENDATE) = DATEPART(YYYY,GETDATE())
+                where DIVVAL in ({0}) and DATEPART(YYYY,CENDATE) = '{2}'
                 and stok.PROID = CENCHPROID
 	            and CENCONFIRM = 1
                 group by DSTORID) SAYIM
@@ -458,11 +468,11 @@ namespace RemziCicek
                string divval = ViewMagazalar.GetRowCellValue(i, "DIVVAL").ToString();
                if (i == 0)
                {
-                   sorgu = String.Format(q, $"'{divval}'", DEEDID);
+                   sorgu = String.Format(q, $"'{divval}'", DEEDID ,srcYIL.EditValue.ToString());
                }
                else
                {
-                   sorgu = sorgu + " union " + String.Format(q, $"'{divval}'", DEEDID);  //$",'{divval}'";
+                   sorgu = sorgu + " union " + String.Format(q, $"'{divval}'", DEEDID, srcYIL.EditValue.ToString());  //$",'{divval}'";
                }
            }
            sorgu += " order by PROUNAME,PRONAME,MAGAZA";
@@ -487,13 +497,21 @@ namespace RemziCicek
             });
         }
 
-
+        ListtoDataTableConverter converter = new ListtoDataTableConverter();
         private void tileBarItem2_ItemClick(object sender, TileItemEventArgs e)
         {
-
-            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Sayım Sonucu", Magazalars[0].DIVNAME);
+            var sonuc = converter.ToDataTable(Magazalars);
+            var groupedData = sonuc.AsEnumerable()
+                .GroupBy(row => row.Field<string>("DIVNAME").Split(' ').Take(1).Aggregate((a, b) => a + " " + b))
+                .Select((grp, index) => new
+                {
+                    ProductName = grp.Key,
+                    TotalCount = grp.Count(),
+                    //NewID = grp.First().Field<long>("DIVVAL"), // Gruptaki ilk öğenin ORDCHID değeri //UrunSorgu.Rows[index+1+ grp.Count()]["ORDCHID"].ToString() // Sıra numarası olarak grubun indeksi
+                }).ToList();
+            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Sayım Sonucu", groupedData[0].ProductName + " Birleştirilmiş Liste");
             CreateDirectoryIfNotExists(path);
-            string file = Path.Combine(path, Magazalars[0].DIVNAME + ".xlsx");
+            string file = Path.Combine(path, groupedData[0].ProductName + srcYIL.EditValue + "_Sayımı.xlsx");
             gridView1.ExportToXlsx(file);
             //Process.Start(path + ".xlsx");
         }
