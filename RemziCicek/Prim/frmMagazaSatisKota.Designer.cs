@@ -1,6 +1,6 @@
-﻿namespace RemziCicek
+﻿namespace RemziCicek.Prim
 {
-    partial class frmPrimRaporu
+    partial class frmMagazaSatisKota
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrimRaporu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMagazaSatisKota));
+            this.gridPrim = new DevExpress.XtraGrid.GridControl();
+            this.ViewPrim = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnPrimExcel = new DevExpress.XtraEditors.SimpleButton();
             this.tglDetay = new DevExpress.XtraEditors.ToggleSwitch();
@@ -37,28 +39,44 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.srcYil = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.srcAy = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.srcMagaza = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridPrim = new DevExpress.XtraGrid.GridControl();
-            this.ViewPrim = new DevExpress.XtraGrid.Views.Grid.GridView();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPrim)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewPrim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tglDetay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).BeginInit();
             this.tablePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.srcYil.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.srcAy.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.srcMagaza.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridPrim)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ViewPrim)).BeginInit();
             this.SuspendLayout();
+            // 
+            // gridPrim
+            // 
+            this.gridPrim.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridPrim.Location = new System.Drawing.Point(0, 83);
+            this.gridPrim.MainView = this.ViewPrim;
+            this.gridPrim.Name = "gridPrim";
+            this.gridPrim.Size = new System.Drawing.Size(1252, 412);
+            this.gridPrim.TabIndex = 0;
+            this.gridPrim.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.ViewPrim});
+            // 
+            // ViewPrim
+            // 
+            this.ViewPrim.GridControl = this.gridPrim;
+            this.ViewPrim.Name = "ViewPrim";
+            this.ViewPrim.OptionsView.ShowFooter = true;
+            this.ViewPrim.OptionsView.ShowGroupPanel = false;
             // 
             // groupControl1
             // 
@@ -69,8 +87,8 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1327, 83);
-            this.groupControl1.TabIndex = 2;
+            this.groupControl1.Size = new System.Drawing.Size(1252, 83);
+            this.groupControl1.TabIndex = 3;
             this.groupControl1.Text = "Filitreler";
             // 
             // btnPrimExcel
@@ -93,7 +111,7 @@
             this.tglDetay.Name = "tglDetay";
             this.tglDetay.Properties.OffText = "Detaylı";
             this.tglDetay.Properties.OnText = "Kümülatif";
-            this.tglDetay.Size = new System.Drawing.Size(149, 18);
+            this.tglDetay.Size = new System.Drawing.Size(95, 18);
             this.tglDetay.TabIndex = 8;
             // 
             // btnPrimListesi
@@ -157,17 +175,17 @@
             this.srcYil.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.srcYil.Properties.NullText = "Seçiniz...!";
-            this.srcYil.Properties.PopupView = this.gridView1;
+            this.srcYil.Properties.PopupView = this.gridView2;
             this.tablePanel2.SetRow(this.srcYil, 1);
             this.srcYil.Size = new System.Drawing.Size(209, 20);
             this.srcYil.TabIndex = 5;
             // 
-            // gridView1
+            // gridView2
             // 
-            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // labelControl2
             // 
@@ -219,33 +237,18 @@
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
-            // gridPrim
-            // 
-            this.gridPrim.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridPrim.Location = new System.Drawing.Point(0, 83);
-            this.gridPrim.MainView = this.ViewPrim;
-            this.gridPrim.Name = "gridPrim";
-            this.gridPrim.Size = new System.Drawing.Size(1327, 632);
-            this.gridPrim.TabIndex = 3;
-            this.gridPrim.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.ViewPrim});
-            // 
-            // ViewPrim
-            // 
-            this.ViewPrim.GridControl = this.gridPrim;
-            this.ViewPrim.Name = "ViewPrim";
-            this.ViewPrim.OptionsView.ShowGroupPanel = false;
-            // 
-            // frmPrimRaporu
+            // frmMagazaSatisKota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1327, 715);
+            this.ClientSize = new System.Drawing.Size(1252, 495);
             this.Controls.Add(this.gridPrim);
             this.Controls.Add(this.groupControl1);
-            this.Name = "frmPrimRaporu";
-            this.Text = "Prim Raporu";
-            this.Load += new System.EventHandler(this.frmPrimRaporu_Load);
+            this.Name = "frmMagazaSatisKota";
+            this.Text = "frmMagazaSatisKota";
+            this.Load += new System.EventHandler(this.frmMagazaSatisKota_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gridPrim)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewPrim)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tglDetay.Properties)).EndInit();
@@ -253,34 +256,32 @@
             this.tablePanel2.ResumeLayout(false);
             this.tablePanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.srcYil.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.srcAy.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.srcMagaza.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridPrim)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ViewPrim)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private DevExpress.XtraGrid.GridControl gridPrim;
+        private DevExpress.XtraGrid.Views.Grid.GridView ViewPrim;
         private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.SimpleButton btnPrimExcel;
+        private DevExpress.XtraEditors.ToggleSwitch tglDetay;
         private DevExpress.XtraEditors.SimpleButton btnPrimListesi;
         private DevExpress.Utils.Layout.TablePanel tablePanel2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.SearchLookUpEdit srcYil;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.SearchLookUpEdit srcAy;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit2View;
         private DevExpress.XtraEditors.SearchLookUpEdit srcMagaza;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
-        private DevExpress.XtraGrid.GridControl gridPrim;
-        private DevExpress.XtraGrid.Views.Grid.GridView ViewPrim;
-        private DevExpress.XtraEditors.ToggleSwitch tglDetay;
-        private DevExpress.XtraEditors.SimpleButton btnPrimExcel;
     }
 }

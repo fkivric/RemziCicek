@@ -408,7 +408,7 @@ namespace RemziCicek
             //  ) SAYIM
             //WHERE PROSTS = 1 AND FAZLA is not NULL or EKSIK is not NULL OR SAYILAN is not NULL";
             string q = @"SELECT 
-              PROUNAME,
+              PROUNAME,PROUNAME as Filitre,
               (select DSTORNAME from DEFSTORAGE where DSTORID in (SAYIM.DSTORID,FAZLA.DSTORID,EKSIK.DSTORID)) as MAGAZA,
               stok.PROVAL,stok.PRONAME,
               ISNULL(SAYILAN,0)-ISNULL(FAZLA,0)+ISNULL(EKSIK,0) ENVANTER,

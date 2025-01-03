@@ -206,5 +206,10 @@ namespace RemziCicek
             tileBarItem3.Enabled = false;            
             srcMagaza.EditValue = null;
         }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            MGZ();
+        }
     }
 }
