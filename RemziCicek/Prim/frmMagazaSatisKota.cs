@@ -2,29 +2,28 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
-using System.Text;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using System.Data.SqlClient;
-using System.IO;
-using System.Diagnostics;
 
-namespace RemziCicek
+namespace RemziCicek.Prim
 {
-    public partial class frmPrimRaporu : DevExpress.XtraEditors.XtraForm
+    public partial class frmMagazaSatisKota : Form
     {
         SqlConnection sql = new SqlConnection(Properties.Settings.Default.VolConnection);
-        public frmPrimRaporu()
+        public frmMagazaSatisKota()
         {
             InitializeComponent();
         }
+
         DataTable dtYear = new DataTable();
         DataTable dtMonths = new DataTable();
-
-        private void frmPrimRaporu_Load(object sender, EventArgs e)
+        private void frmMagazaSatisKota_Load(object sender, EventArgs e)
         {
             dtMonths.Columns.Add("AY", typeof(string));
             dtMonths.Columns.Add("ayi", typeof(int));
@@ -56,6 +55,7 @@ namespace RemziCicek
             srcMagaza.Properties.DisplayMember = "DIVNAME";
             srcMagaza.Properties.ValueMember = "DIVVAL";
         }
+
         private void btnPrimListesi_Click(object sender, EventArgs e)
         {
             string magaza = "";
@@ -87,13 +87,12 @@ namespace RemziCicek
             DateTime bas = new DateTime(yyyy, mm, 1);
             string btarih = bas.ToString("yyyy-MM-dd");
             string bit = new DateTime(bas.Year, bas.Month, 1).AddMonths(1).AddDays(-1).ToString("yyyy-MM-dd");
-            string q = string.Format("exec Fk_sp_calculate_bonus '{0}','{1}','{2}','{3}'", magaza, btarih, bit, kumu);
+            string q = string.Format("exec Fk_sp_calculate_bonus2 '{0}','{1}','{2}','{3}'", magaza, btarih, bit, kumu);
             SqlDataAdapter da = new SqlDataAdapter(q, sql);
             DataTable dt = new DataTable();
             da.Fill(dt);
             gridPrim.DataSource = dt;
             dosyaadi = bas.ToString("yyyy-MM-dd") + " Prim Listesi";
-            
         }
         string rootPath1 = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);// "c:\\Siparisler";
         private void directoryCreator(string path)
@@ -104,9 +103,10 @@ namespace RemziCicek
             }
         }
         string dosyaadi = "";
+
         private void btnPrimExcel_Click(object sender, EventArgs e)
         {
-            string subPathXSLT = rootPath1 + @"\\Mağaza Ciro Kota Oran\";
+            string subPathXSLT = rootPath1 + @"\\Mağaza Personel Listeleri\";
             //Directory.Delete(subPathXSLT);
             directoryCreator(subPathXSLT);
             var isim = subPathXSLT + @"\\" + dosyaadi;
@@ -114,6 +114,7 @@ namespace RemziCicek
             gridPrim.ExportToXlsx(path);
             // Open the created XLSX file with the default application.
             Process.Start(path);
+
         }
     }
 }

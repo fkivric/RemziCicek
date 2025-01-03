@@ -373,6 +373,12 @@
     <Compile Include="Prim\frmMagazaKotasi.Designer.cs">
       <DependentUpon>frmMagazaKotasi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Prim\frmMagazaSatisKota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prim\frmMagazaSatisKota.Designer.cs">
+      <DependentUpon>frmMagazaSatisKota.cs</DependentUpon>
+    </Compile>
     <Compile Include="Prim\frmPrimMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -417,6 +423,12 @@
       <DependentUpon>ProgressBarFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sayım\frmSayimDosyaKontrol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sayım\frmSayimDosyaKontrol.Designer.cs">
+      <DependentUpon>frmSayimDosyaKontrol.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sayım\SayımRapor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -510,6 +522,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Prim\frmMagazaKotasi.resx">
       <DependentUpon>frmMagazaKotasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prim\frmMagazaSatisKota.resx">
+      <DependentUpon>frmMagazaSatisKota.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prim\frmPrimMain.resx">
       <DependentUpon>frmPrimMain.cs</DependentUpon>
@@ -688,6 +703,8 @@
     <None Include="Resources\shoppingcart_32x32.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\newemployee_16x16.png" />
+    <None Include="Resources\newemployee_32x32.png" />
     <None Include="Resources\Kamalar_logo.png" />
     <None Include="Resources\YON_AVM_400.png" />
     <None Include="Resources\question_32x32.png" />

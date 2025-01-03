@@ -13,6 +13,7 @@ using DevExpress.XtraSplashScreen;
 using DevExpress.LookAndFeel;
 using System.Threading;
 using System.IO;
+using RemziCicek.Prim;
 
 namespace RemziCicek
 {
@@ -414,6 +415,11 @@ namespace RemziCicek
         private void btnCarpan_ItemClick(object sender, ItemClickEventArgs e)
         {
             OpenTabForm(new frmPrimCarpan());
+        }
+
+        private void barButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenTabForm(new frmMagazaSatisKota());
         }
     }
 }

@@ -55,6 +55,7 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -312,6 +313,7 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn5,
+            this.gridColumn4,
             this.gridColumn6,
             this.gridColumn7,
             this.gridColumn8,
@@ -327,11 +329,19 @@
             // 
             // gridColumn5
             // 
-            this.gridColumn5.Caption = "GRUP ADI:";
+            this.gridColumn5.Caption = "GRUP ADI";
             this.gridColumn5.FieldName = "PROUNAME";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 0;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Ürün Grubu";
+            this.gridColumn4.FieldName = "Filitre";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 1;
             // 
             // gridColumn6
             // 
@@ -339,7 +349,7 @@
             this.gridColumn6.FieldName = "MAGAZA";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 1;
+            this.gridColumn6.VisibleIndex = 2;
             // 
             // gridColumn7
             // 
@@ -347,7 +357,7 @@
             this.gridColumn7.FieldName = "PROVAL";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 2;
+            this.gridColumn7.VisibleIndex = 3;
             // 
             // gridColumn8
             // 
@@ -355,7 +365,7 @@
             this.gridColumn8.FieldName = "PRONAME";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 3;
+            this.gridColumn8.VisibleIndex = 4;
             // 
             // gridColumn9
             // 
@@ -365,7 +375,7 @@
             this.gridColumn9.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ENVANTER", "{0:00}")});
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 4;
+            this.gridColumn9.VisibleIndex = 5;
             // 
             // gridColumn10
             // 
@@ -375,7 +385,7 @@
             this.gridColumn10.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SAYILAN", "{0:00}")});
             this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 5;
+            this.gridColumn10.VisibleIndex = 6;
             // 
             // gridColumn11
             // 
@@ -385,7 +395,7 @@
             this.gridColumn11.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "FAZLA", "{0:00}")});
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 6;
+            this.gridColumn11.VisibleIndex = 7;
             // 
             // gridColumn12
             // 
@@ -395,7 +405,7 @@
             this.gridColumn12.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "EKSIK", "{0:00}")});
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 7;
+            this.gridColumn12.VisibleIndex = 8;
             // 
             // navigationFrame1
             // 
@@ -644,6 +654,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.SearchLookUpEdit srcYIL;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
     }
 }
 
