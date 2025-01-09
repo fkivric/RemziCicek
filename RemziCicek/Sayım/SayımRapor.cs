@@ -409,7 +409,7 @@ namespace RemziCicek
             //WHERE PROSTS = 1 AND FAZLA is not NULL or EKSIK is not NULL OR SAYILAN is not NULL";
             string q = @"SELECT 
               PROUNAME,PROUNAME as Filitre,
-              (select DSTORNAME from DEFSTORAGE where DSTORID in (SAYIM.DSTORID,FAZLA.DSTORID,EKSIK.DSTORID)) as MAGAZA,
+              (select DSTORNAME from DEFSTORAGE where DSTORVAL in (SAYIM.DIVVAL,FAZLA.DIVVAL,EKSIK.DIVVAL)) as MAGAZA,
               stok.PROVAL,stok.PRONAME,
               ISNULL(SAYILAN,0)-ISNULL(FAZLA,0)+ISNULL(EKSIK,0) ENVANTER,
               SAYILAN,
@@ -417,30 +417,32 @@ namespace RemziCicek
               ISNULL(EKSIK,0) as EKSIK
             FROM PRODUCTS stok
             LEFT OUTER JOIN PRODUCTSUNITED ON PROUID = PROPROUID
-            outer apply(select DSTORID,PROBHQUAN as FAZLA from DEEDS
+            outer apply(select DIVVAL,PROBHQUAN as FAZLA from DEEDS
 	            left outer join PRODUCTSBEHAVE on PROBHDEEDID = DEEDID
                 left outer join DEFSTORAGE ON DSTORID=DEEDSTORID
+				left outer join DIVISON on DIVVAL = DSTORVAL
                 where DEFSTORAGE.DSTORDIVISON  in ({0}) AND DEEDDPBHEVAL IN (-1,1,6,7,120,130,620,630,640,803,806,807,808,999,2,802)
 	            and DEEDID in ({1})
                 and PROBHPROID = PROID
                 and DATEPART(YYYY,PROBHDATE) = '{2}'  
                 and DEEDDPBHEVAL = 120) FAZLA
-            outer apply(select DSTORID,PROBHQUAN as EKSIK from DEEDS
+            outer apply(select DIVVAL,PROBHQUAN as EKSIK from DEEDS
                 left outer join PRODUCTSBEHAVE on PROBHDEEDID = DEEDID
                 left outer join DEFSTORAGE ON DSTORID=DEEDSTORID
+				left outer join DIVISON on DIVVAL = DSTORVAL
                 where DEFSTORAGE.DSTORDIVISON  in ({0}) AND DEEDDPBHEVAL IN (-1,1,6,7,120,130,620,630,640,803,806,807,808,999,2,802)
 	            and DEEDID in ({1})
                 and PROBHPROID = PROID
                 and DATEPART(YYYY,PROBHDATE) = '{2}'  
                 and DEEDDPBHEVAL = 620) EKSIK
-            outer apply(select DSTORID,stok.PROVAL,stok.PRONAME,sum(CENCHQUAN) as SAYILAN from CENSUS
+            outer apply(select DIVVAL,stok.PROVAL,stok.PRONAME,sum(CENCHQUAN) as SAYILAN from CENSUS
                 LEFT OUTER JOIN DEFSTORAGE ON DSTORID=CENSTORID 
                 LEFT OUTER JOIN DIVISON on DIVVAL = DSTORDIVISON
                 LEFT OUTER JOIN CENSUSCHILD on CENID = CENCHCENID
                 where DIVVAL in ({0}) and DATEPART(YYYY,CENDATE) = '{2}'
                 and stok.PROID = CENCHPROID
 	            and CENCONFIRM = 1
-                group by DSTORID) SAYIM
+                group by DIVVAL) SAYIM
             WHERE FAZLA is not NULL or EKSIK is not NULL OR SAYILAN is not NULL";
             ProgressBarFrm progressForm = new ProgressBarFrm()
             {

@@ -1,0 +1,12 @@
+;aiu;
+
+[Update]
+Name = YonAvm® Tools
+ProductVersion = 1.0.11.0
+URL = http://192.168.4.8:84/YonTools.exe
+Size = 103807032
+SHA256 = F3DF0DCC9C65BD9AEFC3EA650E1279B0F017EECA32B7A64736E61248791DCC1B
+MD5 = 8e16a9cab34ee60169e18f3837b3a498
+ServerFileName = YonTools.exe
+FilePath = [APPDIR]YourApplication.exe
+Version = 1.0.11.0
