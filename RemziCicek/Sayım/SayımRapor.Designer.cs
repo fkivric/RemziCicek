@@ -116,9 +116,9 @@
             // 
             this.panelControl2.Controls.Add(this.tileBar1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(378, 23);
+            this.panelControl2.Location = new System.Drawing.Point(378, 16);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(916, 89);
+            this.panelControl2.Size = new System.Drawing.Size(916, 96);
             this.panelControl2.TabIndex = 5;
             // 
             // tileBar1
@@ -132,7 +132,7 @@
             this.tileBar1.Name = "tileBar1";
             this.tileBar1.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.tileBar1.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
-            this.tileBar1.Size = new System.Drawing.Size(912, 85);
+            this.tileBar1.Size = new System.Drawing.Size(912, 92);
             this.tileBar1.TabIndex = 3;
             this.tileBar1.Text = "tileBar1";
             // 
@@ -184,9 +184,9 @@
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.srcMagaza);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl1.Location = new System.Drawing.Point(2, 23);
+            this.panelControl1.Location = new System.Drawing.Point(2, 16);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(376, 89);
+            this.panelControl1.Size = new System.Drawing.Size(376, 96);
             this.panelControl1.TabIndex = 2;
             // 
             // srcYIL
@@ -211,7 +211,7 @@
             // 
             this.labelControl2.Location = new System.Drawing.Point(40, 5);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(43, 13);
+            this.labelControl2.Size = new System.Drawing.Size(46, 13);
             this.labelControl2.TabIndex = 4;
             this.labelControl2.Text = "Sayım Yılı";
             // 
@@ -231,7 +231,7 @@
             // 
             this.labelControl1.Location = new System.Drawing.Point(214, 5);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(72, 13);
+            this.labelControl1.Size = new System.Drawing.Size(78, 13);
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Mağaza / Depo";
             // 
@@ -324,6 +324,7 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ColumnAutoWidth = false;
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
@@ -424,7 +425,6 @@
             // 
             // navigationPage1
             // 
-            this.navigationPage1.Caption = "navigationPage1";
             this.navigationPage1.Controls.Add(this.gridSayim);
             this.navigationPage1.Controls.Add(this.gridMagazalar);
             this.navigationPage1.Controls.Add(this.groupControl1);

@@ -201,6 +201,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Security" />
@@ -223,6 +224,7 @@
     <Compile Include="Class\CRUID.cs" />
     <Compile Include="Class\CustomMessageBox.cs" />
     <Compile Include="Class\DataTableExtensions.cs" />
+    <Compile Include="Class\Entegref.cs" />
     <Compile Include="Class\ListtoDataTableConverter.cs" />
     <Compile Include="Class\Shell.cs" />
     <Compile Include="Class\Siniflar.cs" />
@@ -759,6 +761,12 @@
     </PackageReference>
     <PackageReference Include="MetroModernUI">
       <Version>1.4.0</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="SKGL">
+      <Version>2.0.5.3</Version>
     </PackageReference>
     <PackageReference Include="System.Data.SQLite">
       <Version>1.0.118</Version>

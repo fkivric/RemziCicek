@@ -52,5 +52,17 @@
     <Setting Name="Vol_SOCODE" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="VKN" Type="System.String" Scope="User">
+      <Value Profile="(Default)">6200080458</Value>
+    </Setting>
+    <Setting Name="EntegrefAIPToken" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="YeniGun" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="EntegrefSecretPhase" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

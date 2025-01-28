@@ -49,6 +49,7 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroupControlContainer3 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
@@ -234,7 +235,7 @@
             this.gridMagaza.Name = "gridMagaza";
             this.gridMagaza.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
-            this.gridMagaza.Size = new System.Drawing.Size(1064, 598);
+            this.gridMagaza.Size = new System.Drawing.Size(776, 598);
             this.gridMagaza.TabIndex = 1;
             this.gridMagaza.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.ViewMagaza});
@@ -246,7 +247,8 @@
             this.gridColumn2,
             this.gridColumn4,
             this.gridColumn5,
-            this.gridColumn3});
+            this.gridColumn3,
+            this.gridColumn6});
             this.ViewMagaza.GridControl = this.gridMagaza;
             this.ViewMagaza.Name = "ViewMagaza";
             this.ViewMagaza.OptionsView.BestFitMode = DevExpress.XtraGrid.Views.Grid.GridBestFitMode.Full;
@@ -308,6 +310,14 @@
             this.repositoryItemTextEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Üst Çarpan";
+            this.gridColumn6.FieldName = "SATGDIRATE";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 4;
+            // 
             // navBarControl1
             // 
             this.navBarControl1.ActiveGroup = this.navBarGroup3;
@@ -315,13 +325,12 @@
             this.navBarControl1.Dock = System.Windows.Forms.DockStyle.Right;
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.navBarGroup3});
-            this.navBarControl1.Location = new System.Drawing.Point(1064, 83);
+            this.navBarControl1.Location = new System.Drawing.Point(776, 83);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 320;
-            this.navBarControl1.OptionsNavPane.NavPaneState = DevExpress.XtraNavBar.NavPaneState.Collapsed;
             this.navBarControl1.OptionsNavPane.ShowOverflowPanel = false;
             this.navBarControl1.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.NavigationPane;
-            this.navBarControl1.Size = new System.Drawing.Size(32, 659);
+            this.navBarControl1.Size = new System.Drawing.Size(320, 659);
             this.navBarControl1.TabIndex = 18;
             // 
             // navBarGroup3
@@ -348,7 +357,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl1.Location = new System.Drawing.Point(0, 681);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1064, 61);
+            this.panelControl1.Size = new System.Drawing.Size(776, 61);
             this.panelControl1.TabIndex = 19;
             // 
             // btnMagazaGuncelle
@@ -423,5 +432,6 @@
         private DevExpress.XtraEditors.SearchLookUpEdit srcBolge;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit2View;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
     }
 }

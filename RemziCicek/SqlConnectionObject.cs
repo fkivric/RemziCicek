@@ -14,6 +14,28 @@ namespace RemziCicek
         string database = Properties.Settings.Default.YonavmAracDatasıConnectionString;
         string db;
 
+        public string QueryEntegref(string q, SqlConnection conn)
+        {
+            try
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(q, conn);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                if (dataTable != null)
+                {
+                    return dataTable.Rows[0][0].ToString();
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
         public DataTable MDEQuery(string spName, Dictionary<string, string> param)
         {
             DataTable returnType = new DataTable();
