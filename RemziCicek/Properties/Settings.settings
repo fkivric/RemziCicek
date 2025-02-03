@@ -14,7 +14,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="RemziCicek_com_turkiyeshell_ttstest_TTSWebServices" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://ttstest.turkiyeshell.com/tts/TTSWebServices.asmx</Value>
+      <Value Profile="(Default)">https://ttstest.turkiyeshell.com/tts/TTSWebServices.asmx</Value>
     </Setting>
     <Setting Name="servisGuncelle" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

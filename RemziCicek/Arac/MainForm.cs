@@ -426,5 +426,10 @@ namespace RemziCicek
         {
 
         }
+
+        private void btnSettings_ItemClick(object sender, TileItemEventArgs e)
+        {
+
+        }
     }
 }

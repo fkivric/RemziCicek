@@ -33,10 +33,11 @@
     <WebPage>index.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.11.%2a</ApplicationVersion>
+    <ApplicationVersion>1.0.12.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -122,6 +123,7 @@
     <Reference Include="DevExpress.XtraPdfViewer.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPivotGrid.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraRichEdit.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraSpreadsheet.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -236,10 +238,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="frmAracIslemleri.cs">
+    <Compile Include="Arac\frmAracIslemleri.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAracIslemleri.Designer.cs">
+    <Compile Include="Arac\frmAracIslemleri.Designer.cs">
       <DependentUpon>frmAracIslemleri.cs</DependentUpon>
     </Compile>
     <Compile Include="Arac\frmAracMasrafRaporu.cs">
@@ -248,10 +250,10 @@
     <Compile Include="Arac\frmAracMasrafRaporu.Designer.cs">
       <DependentUpon>frmAracMasrafRaporu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAracSec.cs">
+    <Compile Include="Arac\frmAracSec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAracSec.Designer.cs">
+    <Compile Include="Arac\frmAracSec.Designer.cs">
       <DependentUpon>frmAracSec.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEvraklar.cs">
@@ -272,10 +274,10 @@
     <Compile Include="Arac\frmArac_TTS.Designer.cs">
       <DependentUpon>frmArac_TTS.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAraçlar.cs">
+    <Compile Include="Arac\frmAraçlar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAraçlar.Designer.cs">
+    <Compile Include="Arac\frmAraçlar.Designer.cs">
       <DependentUpon>frmAraçlar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmIslem_Pdf.cs">
@@ -307,6 +309,12 @@
     </Compile>
     <Compile Include="Arac\frmMasraf.Designer.cs">
       <DependentUpon>frmMasraf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMessageBox.cs">
       <SubType>Form</SubType>
@@ -363,11 +371,23 @@
     <Compile Include="Prim\frmExcelAl.Designer.cs">
       <DependentUpon>frmExcelAl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Prim\frmKotaRaporu.cs">
+    <Compile Include="Prim\frmMagazaKotaRaporu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Prim\frmKotaRaporu.Designer.cs">
-      <DependentUpon>frmKotaRaporu.cs</DependentUpon>
+    <Compile Include="Prim\frmMagazaKotaRaporu.Designer.cs">
+      <DependentUpon>frmMagazaKotaRaporu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prim\frmPersonel - Kopyala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prim\frmPersonel - Kopyala.Designer.cs">
+      <DependentUpon>frmPersonel - Kopyala.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prim\frmPersonelKotaRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prim\frmPersonelKotaRaporu.Designer.cs">
+      <DependentUpon>frmPersonelKotaRaporu.cs</DependentUpon>
     </Compile>
     <Compile Include="Prim\frmMagazaKotasi.cs">
       <SubType>Form</SubType>
@@ -399,11 +419,11 @@
     <Compile Include="Prim\frmOzelGunTanimlama.Designer.cs">
       <DependentUpon>frmOzelGunTanimlama.cs</DependentUpon>
     </Compile>
-    <Compile Include="Prim\frmPersonel.cs">
+    <Compile Include="Prim\frmPersonelKotaTanımlama.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Prim\frmPersonel.Designer.cs">
-      <DependentUpon>frmPersonel.cs</DependentUpon>
+    <Compile Include="Prim\frmPersonelKotaTanımlama.Designer.cs">
+      <DependentUpon>frmPersonelKotaTanımlama.cs</DependentUpon>
     </Compile>
     <Compile Include="Prim\frmPrimCarpan.cs">
       <SubType>Form</SubType>
@@ -456,13 +476,13 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="Class\Yakit.cs" />
-    <EmbeddedResource Include="frmAracIslemleri.resx">
+    <EmbeddedResource Include="Arac\frmAracIslemleri.resx">
       <DependentUpon>frmAracIslemleri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Arac\frmAracMasrafRaporu.resx">
       <DependentUpon>frmAracMasrafRaporu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAracSec.resx">
+    <EmbeddedResource Include="Arac\frmAracSec.resx">
       <DependentUpon>frmAracSec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEvraklar.resx">
@@ -474,7 +494,7 @@
     <EmbeddedResource Include="Arac\frmArac_TTS.resx">
       <DependentUpon>frmArac_TTS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAraçlar.resx">
+    <EmbeddedResource Include="Arac\frmAraçlar.resx">
       <DependentUpon>frmAraçlar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmIslem_Pdf.resx">
@@ -491,6 +511,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Arac\frmMasraf.resx">
       <DependentUpon>frmMasraf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMessageBox.resx">
       <DependentUpon>frmMessageBox.cs</DependentUpon>
@@ -519,8 +542,14 @@
     <EmbeddedResource Include="Prim\frmExcelAl.resx">
       <DependentUpon>frmExcelAl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Prim\frmKotaRaporu.resx">
-      <DependentUpon>frmKotaRaporu.cs</DependentUpon>
+    <EmbeddedResource Include="Prim\frmMagazaKotaRaporu.resx">
+      <DependentUpon>frmMagazaKotaRaporu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prim\frmPersonel - Kopyala.resx">
+      <DependentUpon>frmPersonel - Kopyala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prim\frmPersonelKotaRaporu.resx">
+      <DependentUpon>frmPersonelKotaRaporu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prim\frmMagazaKotasi.resx">
       <DependentUpon>frmMagazaKotasi.cs</DependentUpon>
@@ -537,8 +566,8 @@
     <EmbeddedResource Include="Prim\frmOzelGunTanimlama.resx">
       <DependentUpon>frmOzelGunTanimlama.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Prim\frmPersonel.resx">
-      <DependentUpon>frmPersonel.cs</DependentUpon>
+    <EmbeddedResource Include="Prim\frmPersonelKotaTanımlama.resx">
+      <DependentUpon>frmPersonelKotaTanımlama.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prim\frmPrimCarpan.resx">
       <DependentUpon>frmPrimCarpan.cs</DependentUpon>
@@ -678,6 +707,9 @@
     <None Include="Web References\com.turkiyeshell.ttstest\GETCARDSTATUSRESULT.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
+    <None Include="Web References\com.turkiyeshell.ttstest\GETCARDSTATUSWITHCANCELRESULT.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\com.turkiyeshell.ttstest\GETINVOICEDETAILRESULT.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
@@ -706,6 +738,16 @@
     <None Include="Resources\shoppingcart_32x32.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Entegref-_1_.jpg" />
+    <None Include="Resources\technology_32x32.png" />
+    <None Include="Resources\colormixer_32x32.png" />
+    <None Include="Resources\botask_16x16.png" />
+    <None Include="Resources\botask_32x32.png" />
+    <None Include="Resources\driving_16x16.png" />
+    <None Include="Resources\driving_32x321.png" />
+    <None Include="Resources\showhidecomment_16x16.png" />
+    <None Include="Resources\showhidecomment_32x32.png" />
+    <None Include="Resources\printincludeevaluations_32x32.png" />
     <None Include="Resources\newemployee_16x16.png" />
     <None Include="Resources\newemployee_32x32.png" />
     <None Include="Resources\Kamalar_logo.png" />
@@ -724,6 +766,7 @@
     <None Include="Connected Services\ShellServiceClient\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="cash.png" />
     <None Include="barcode_reader.png" />
@@ -751,13 +794,13 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="EntityFramework">
-      <Version>6.2.0</Version>
+      <Version>6.5.1</Version>
     </PackageReference>
     <PackageReference Include="ExcelDataReader">
-      <Version>3.6.0</Version>
+      <Version>3.7.0</Version>
     </PackageReference>
     <PackageReference Include="ExcelDataReader.DataSet">
-      <Version>3.6.0</Version>
+      <Version>3.7.0</Version>
     </PackageReference>
     <PackageReference Include="MetroModernUI">
       <Version>1.4.0</Version>
@@ -769,7 +812,7 @@
       <Version>2.0.5.3</Version>
     </PackageReference>
     <PackageReference Include="System.Data.SQLite">
-      <Version>1.0.118</Version>
+      <Version>1.0.119</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

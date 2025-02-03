@@ -17,6 +17,7 @@ namespace RemziCicek
             public int SMENID { get; set; }
             public string SMENVAL { get; set; }
             public string SMENNAME{ get; set; }
+            public string RATE { get; set; }
             public string AMOUNT{ get; set; }
         }
     }    

@@ -80,6 +80,12 @@
           <s:element minOccurs="0" maxOccurs="1" name="Invoice_no" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Customer_Reference" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Shell_Reference" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Invoice_Total_Amount" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Invoice_Net_Amount" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Utts_Isutts" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Utts_Tim_Status" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Utts_Vehicle_Owner_Type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Utts_Plate_No" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="GetCustomerSalesTransaction_with_rid">
@@ -139,9 +145,15 @@
           <s:element minOccurs="1" maxOccurs="1" name="Sales_total_amount" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="Sales_vat_amount" type="s:decimal" />
           <s:element minOccurs="0" maxOccurs="1" name="Invoice_no" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Invoice_Total_Amount" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Invoice_Net_Amount" nillable="true" type="s:decimal" />
           <s:element minOccurs="0" maxOccurs="1" name="Customer_Reference" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Shell_Reference" type="s:decimal" />
           <s:element minOccurs="0" maxOccurs="1" name="RID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Utts_Isutts" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Utts_Tim_Status" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Utts_Vehicle_Owner_Type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Utts_Plate_No" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="GetBranchLimitandSales">
@@ -352,6 +364,8 @@
           <s:element minOccurs="0" maxOccurs="1" name="allowed_days" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="card_monthly_sales" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="card_monthly_Sales_liter" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="montaj_id" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="last_programing_date" type="s:dateTime" />
         </s:sequence>
       </s:complexType>
       <s:element name="GetCardLimitCountandDaysV2">
@@ -414,6 +428,8 @@
           <s:element minOccurs="1" maxOccurs="1" name="card_annually_sales_liter" nillable="true" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="card_quarterly_sales" nillable="true" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="card_quarterly_sales_liter" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="montaj_id" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="last_programing_date" type="s:dateTime" />
         </s:sequence>
       </s:complexType>
       <s:element name="SetCardLimitCountandDays">
@@ -582,6 +598,10 @@
           <s:element minOccurs="0" maxOccurs="1" name="Dept_code" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Dept_name" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="financial_cust_code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Utts_Isutts" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Utts_Tim_Status" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Utts_Vehicle_Owner_Type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Utts_Plate_No" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="RO_GetOnlineTransaction">
@@ -657,6 +677,50 @@
           <s:element minOccurs="0" maxOccurs="1" name="card_no" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="card_status_code" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="card_status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPlateStatusWithCancel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cust_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="branch_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="plate_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_status_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customer_reference" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlateStatusWithCancelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPlateStatusWithCancelResult" type="tns:GETCARDSTATUSWITHCANCELRESULT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GETCARDSTATUSWITHCANCELRESULT">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PROCESSRESULT" type="tns:HelperResult" />
+          <s:element minOccurs="1" maxOccurs="1" name="NUMBEROFCARD" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CARD_STATUS" type="tns:ArrayOfCARDSTATUSINFOWITHCANCEL" />
+          <s:element minOccurs="0" maxOccurs="1" name="CUSTOMER_REFERENCE" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SHELL_REFERENCE" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCARDSTATUSINFOWITHCANCEL">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CARDSTATUSINFOWITHCANCEL" nillable="true" type="tns:CARDSTATUSINFOWITHCANCEL" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CARDSTATUSINFOWITHCANCEL">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="plate_code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="card_no" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="card_status_code" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="card_status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="card_active_cancel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="card_active_cancel_nm" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="SetPlateStatus">
@@ -828,6 +892,12 @@
   <wsdl:message name="GetPlateStatusSoapOut">
     <wsdl:part name="parameters" element="tns:GetPlateStatusResponse" />
   </wsdl:message>
+  <wsdl:message name="GetPlateStatusWithCancelSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlateStatusWithCancel" />
+  </wsdl:message>
+  <wsdl:message name="GetPlateStatusWithCancelSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlateStatusWithCancelResponse" />
+  </wsdl:message>
   <wsdl:message name="SetPlateStatusSoapIn">
     <wsdl:part name="parameters" element="tns:SetPlateStatus" />
   </wsdl:message>
@@ -892,6 +962,10 @@
     <wsdl:operation name="GetPlateStatus">
       <wsdl:input message="tns:GetPlateStatusSoapIn" />
       <wsdl:output message="tns:GetPlateStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlateStatusWithCancel">
+      <wsdl:input message="tns:GetPlateStatusWithCancelSoapIn" />
+      <wsdl:output message="tns:GetPlateStatusWithCancelSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="SetPlateStatus">
       <wsdl:input message="tns:SetPlateStatusSoapIn" />
@@ -1014,6 +1088,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetPlateStatus">
       <soap:operation soapAction="https://tts.turkiyeshell.com/GetPlateStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlateStatusWithCancel">
+      <soap:operation soapAction="https://tts.turkiyeshell.com/GetPlateStatusWithCancel" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1159,6 +1242,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetPlateStatusWithCancel">
+      <soap12:operation soapAction="https://tts.turkiyeshell.com/GetPlateStatusWithCancel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SetPlateStatus">
       <soap12:operation soapAction="https://tts.turkiyeshell.com/SetPlateStatus" style="document" />
       <wsdl:input>
@@ -1180,10 +1272,10 @@
   </wsdl:binding>
   <wsdl:service name="TTSWebServices">
     <wsdl:port name="TTSWebServicesSoap" binding="tns:TTSWebServicesSoap">
-      <soap:address location="http://ttstest.turkiyeshell.com/tts/TTSWebServices.asmx" />
+      <soap:address location="https://ttstest.turkiyeshell.com/tts/TTSWebServices.asmx" />
     </wsdl:port>
     <wsdl:port name="TTSWebServicesSoap12" binding="tns:TTSWebServicesSoap12">
-      <soap12:address location="http://ttstest.turkiyeshell.com/tts/TTSWebServices.asmx" />
+      <soap12:address location="https://ttstest.turkiyeshell.com/tts/TTSWebServices.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

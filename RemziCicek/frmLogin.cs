@@ -104,41 +104,60 @@ namespace RemziCicek
             }
 
             RegistryKey key2 = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\EntegreFYonAvmTools");
-            if (key2.GetValue("ComputerLisansingID") == null)
+            string[] valueNames = key2.GetValueNames();
+            if (!valueNames.Contains("ApplicationSetupComplate"))
             {
-                //CustomMessageBox.ShowMessage("Lütfen Bekleyin: ", "Propgram Lisanslanıyor", this, "Dikkat", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                var pcİsmi = key2.GetValue("ComputerName");
-                var pcModeli = key2.GetValue("ComputerID");
-                var Cpuid = key2.GetValue("CPU");
-                var Motherboardid = key2.GetValue("motherboardid");
-                var vknvar = key2.GetValue("ApplicationVKN");
-                Entegref client = new Entegref();
-                string response = await client.UpdateLicensingUser(vknvar.ToString(), pcİsmi.ToString(), pcModeli.ToString(), version, ProductName);
-                //Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(responseData);
-                List<Sonuc> myDeserializedClass = JsonConvert.DeserializeObject<List<Sonuc>>(response);
-                var ConnectionLisansingID = myDeserializedClass[0].message;
-                string response2 = await client.UpdateLicensing(vknvar.ToString(), ConnectionLisansingID.ToString(), Cpuid.ToString(), Motherboardid.ToString(), ProductName);
-                List<Sonuc> myDeserializedClass2 = JsonConvert.DeserializeObject<List<Sonuc>>(response2);
-                string[] valueNames = key2.GetValueNames();
-                if (valueNames.Contains("ApplicationSecretPhase"))
+                if (!valueNames.Contains("ComputerLisansingID"))
                 {
-                    string SecretPhase = key2.GetValue("ApplicationSecretPhase").ToString();
-
-                    if (string.IsNullOrEmpty(SecretPhase))
+                    //CustomMessageBox.ShowMessage("Lütfen Bekleyin: ", "Propgram Lisanslanıyor", this, "Dikkat", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    var pcİsmi = key2.GetValue("ComputerName");
+                    var pcModeli = key2.GetValue("ComputerID");
+                    var Cpuid = key2.GetValue("CPU");
+                    var Motherboardid = key2.GetValue("motherboardid");
+                    Entegref client = new Entegref();
+                    string response = await client.UpdateLicensingUser(VKN, pcİsmi.ToString(), pcModeli.ToString(), version, ProductName);
+                    //Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(responseData);
+                    List<Sonuc> myDeserializedClass = JsonConvert.DeserializeObject<List<Sonuc>>(response);
+                    var ConnectionLisansingID = myDeserializedClass[0].message;
+                    string response2 = await client.UpdateLicensing(VKN, ConnectionLisansingID.ToString(), Cpuid.ToString(), Motherboardid.ToString(), ProductName);
+                    List<Sonuc> myDeserializedClass2 = JsonConvert.DeserializeObject<List<Sonuc>>(response2);
+                    if (!valueNames.Contains("ApplicationSecretPhase"))
                     {
-                        Lisansing(key2.GetValue("ApplicationVKN").ToString());
+                        //string SecretPhase = key2.GetValue("ApplicationSecretPhase").ToString();
+
+                        //if (string.IsNullOrEmpty(SecretPhase))
+                        //{
+                        Lisansing(VKN);
+                        //await Task.Delay(1000);
+                        RegistryKey lisans = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\EntegreFYonAvmTools");
+                        SKGL.Validate validate = new SKGL.Validate();
+                        validate.secretPhase = VKN;
+                        validate.Key = lisans.GetValue("ApplicationSecretPhase").ToString();
+                        txtLisansing2.Text = "Başlangıç Tarihi : \r\n " + validate.CreationDate.ToShortDateString();
+                        txtLisansing3.Text = "Sona Erme Tarihi : \r\n " + validate.ExpireDate.ToShortDateString();
+                        txtLisansing1.Text = "Kalan Gün : \r\n " + validate.DaysLeft;
+                        lisansKalan = validate.DaysLeft;
+
+                        if (Properties.Settings.Default.EntegrefSecretPhase != "")
+                        {
+
+                            key2.SetValue("ApplicationSetupComplate", "true");
+                            key2.SetValue("ApplicationSecretPhase", Properties.Settings.Default.EntegrefSecretPhase);// Properties.Settings.Default.EntegrefSecretPhase);
+                        }
+                        if (validate.DaysLeft > 20)
+                        {
+                            pnlLisans.Visible = false;
+                            this.Size = new Size(718, 325);
+                        }
+                        //}
                     }
+                    key2.SetValue("ComputerLisansingID", myDeserializedClass2[0].message);
+                    key2.SetValue("ApplicationSetupComplate", true);
+                    key2.Close();
                 }
-                else
-                {
-                    Lisansing(key2.GetValue("ApplicationVKN").ToString());
-                }
-                key2.SetValue("ComputerLisansingID", myDeserializedClass2[0].message);
-                txtVolantUser.Focus();
             }
             else
             {
-
                 var vknvar = key2.GetValue("ApplicationVKN");
                 var pcİsmi = key2.GetValue("ComputerName");
                 Entegref client = new Entegref();
@@ -158,7 +177,7 @@ namespace RemziCicek
                         this.Enabled = false;
                         try
                         {
-                            string pathToUpdater = @"Tools Updater.exe"; // updater.exe dosyasının adını belirtin
+                            string pathToUpdater = @"Kasa Update.exe"; // updater.exe dosyasının adını belirtin
 
                             ProcessStartInfo startInfo = new ProcessStartInfo
                             {
@@ -176,13 +195,6 @@ namespace RemziCicek
                         }
                     }
                 }
-                txtVolantUser.Focus();
-            }
-            CultureInfo culture = new CultureInfo("tr-TR");
-            bugun = DateTime.Now.ToString("d", culture);
-            var secretPhaseValue = key2.GetValue("ApplicationSecretPhase");
-            if (secretPhaseValue != null)
-            {
                 SKGL.Validate validate = new SKGL.Validate();
                 validate.secretPhase = VKN;
                 validate.Key = key2.GetValue("ApplicationSecretPhase").ToString();
@@ -190,30 +202,33 @@ namespace RemziCicek
                 txtLisansing3.Text = "Sona Erme Tarihi : \r\n " + validate.ExpireDate.ToShortDateString();
                 txtLisansing1.Text = "Kalan Gün : \r\n" + validate.DaysLeft;
                 lisansKalan = validate.DaysLeft;
-                if (validate.DaysLeft > 2)
+                if (Properties.Settings.Default.EntegrefSecretPhase != "")
+                {
+
+                    key2.SetValue("ApplicationSetupComplate", "true");
+                    key2.SetValue("ApplicationSecretPhase", Properties.Settings.Default.EntegrefSecretPhase);// Properties.Settings.Default.EntegrefSecretPhase);
+                }
+                if (validate.DaysLeft > 20)
                 {
                     pnlLisans.Visible = false;
                     this.Size = new Size(718, 325);
                 }
+                else
+                {
+                    CustomMessageBox.ShowMessage("Entegref ile iletişime geçerek Lütfen Lisansınızı uzatınız", "", this, "Dikkat", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            else
+            if (lisansKalan <= 0)
             {
-                await Task.Delay(10000);
-                Lisansing(key2.GetValue("ApplicationVKN").ToString());
-                RegistryKey lisans = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\EntegreFYonAvmTools");
-                SKGL.Validate validate = new SKGL.Validate();
-                validate.secretPhase = VKN;
-                validate.Key = lisans.GetValue("ApplicationSecretPhase").ToString();
-                txtLisansing2.Text = "Başlangıç Tarihi : \r\n " + validate.CreationDate.ToShortDateString();
-                txtLisansing3.Text = "Sona Erme Tarihi : \r\n " + validate.ExpireDate.ToShortDateString();
-                txtLisansing1.Text = "Kalan Gün : \r\n " + validate.DaysLeft;
-                lisansKalan = validate.DaysLeft;
-                if (validate.DaysLeft > 2)
-                {
-                    pnlLisans.Visible = false;
-                    this.Size = new Size(718, 325);
-                }
+                CustomMessageBox.ShowMessage("Entegref ile iletişime geçerek Lütfen Lisansınızı uzatınız", "Kullanım süreniz dolmuştur. Programnı Kullanmay devam etmek için lütfen Yeni Lisans Anahtarı Satın Alın", this, "Dikkat", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //XtraMessageBox.Show("Entegref ile iletişime geçerek Lütfen Lisansınızı uzatınız");
+                Properties.Settings.Default.EntegrefSecretPhase = "";
+                Properties.Settings.Default.Save();
+                Application.Exit();
             }
+
+            pnlLisans.Visible = false;
+            this.Size = new Size(718, 325);
         }
 
         DateTime now = DateTime.Now;
@@ -455,8 +470,8 @@ namespace RemziCicek
             {
                 userID = yetki.Rows[0][0].ToString();
                 this.Hide();
-                frmYapıSec main = new frmYapıSec();
-                main.ShowDialog();
+                frmMain newmain = new frmMain();
+                newmain.ShowDialog();
                 this.Close();
             }
             else

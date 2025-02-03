@@ -404,7 +404,7 @@ namespace RemziCicek
 
         private void btnKotaRaporu_ItemClick(object sender, ItemClickEventArgs e)
         {
-            OpenTabForm(new frmKotaRaporu());
+            OpenTabForm(new frmMagazaKotaRaporu());
         }
 
         private void btnExcelAl_ItemClick(object sender, ItemClickEventArgs e)
@@ -420,6 +420,16 @@ namespace RemziCicek
         private void barButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
         {
             OpenTabForm(new frmMagazaSatisKota());
+        }
+
+        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 }

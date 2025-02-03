@@ -49,7 +49,7 @@ namespace RemziCicek.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://ttstest.turkiyeshell.com/tts/TTSWebServices.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://ttstest.turkiyeshell.com/tts/TTSWebServices.asmx")]
         public string RemziCicek_com_turkiyeshell_ttstest_TTSWebServices {
             get {
                 return ((string)(this["RemziCicek_com_turkiyeshell_ttstest_TTSWebServices"]));

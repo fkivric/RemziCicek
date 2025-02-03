@@ -98,7 +98,14 @@ namespace RemziCicek
 
         private void frmExcelAl_Load(object sender, EventArgs e)
         {
-            dteMONTH.EditValue = DateTime.Now;
+            srcAy.Properties.DataSource = conn.GetData("select* from SALTARGETMONTH", sql);
+            srcAy.Properties.DisplayMember = "SATGMMONTH";
+            srcAy.Properties.ValueMember = "SATGMMONTHNAME";
+
+            srcyil.Properties.DataSource = conn.GetData("select* from SATGYYEAR", sql);
+            srcyil.Properties.DisplayMember = "SATGYYEAR";
+            srcyil.Properties.ValueMember = "SATGYYEAR";
+            
         }
         private void tileBarItem1_ItemClick(object sender, TileItemEventArgs e)
         {
@@ -206,8 +213,10 @@ namespace RemziCicek
                    DataTableClass.Personel personel = new DataTableClass.Personel();
                    var range = usedRange[rowIndex, HarfinSirasi(txtVal.Text) - 1];
                    var range2 = usedRange[rowIndex, HarfinSirasi(txtKota.Text) - 1];
+                   var range3 = usedRange[rowIndex, HarfinSirasi(textCarpan.Text) - 1];
                    string SMENVAL = (range != null) ? range.Value.ToString() : "";
                    string AMOUNT = (range2 != null) ? range2.Value.ToString() : "250000";
+                   string RATE = (range3 != null) ? range3.Value.ToString() : "20";
                    if (range2.Value.ToString() != "")
                    {
                        AMOUNT = range2.Value.ToString();
@@ -227,6 +236,7 @@ namespace RemziCicek
                            personel.DIVVAL = usedRange[rowIndex, HarfinSirasi(txtMagaza.Text) - 1].Value.ToString();
                            personel.SMENVAL = usedRange[rowIndex, HarfinSirasi(txtVal.Text) - 1].Value.ToString();
                            personel.SMENNAME = usedRange[rowIndex, HarfinSirasi(txtName.Text) - 1].Value.ToString();
+                           personel.RATE = RATE;
                            personel.AMOUNT = AMOUNT;
                        }
 
@@ -283,16 +293,15 @@ namespace RemziCicek
                    string SMENID = ViewPersonelKota.GetRowCellValue(i, "SMENID").ToString();
                    string magaza = conn.GetValue($"select DIVVAL from DIVISON where DIVNAME like '%{ ViewPersonelKota.GetRowCellValue(i, "DIVVAL").ToString()}%'");
                    string AMOUNT = ViewPersonelKota.GetRowCellValue(i, "AMOUNT").ToString().Replace(".00 ", "").Replace(".", "").Substring(0, 6);
-                   string yil = Convert.ToDateTime(dteMONTH.EditValue.ToString()).ToString("yyyy");
-                   string ay = Convert.ToDateTime(dteMONTH.EditValue.ToString()).ToString("yyyy");
-                   string tarih = Convert.ToDateTime(dteMONTH.EditValue.ToString()).ToString("yyyy-MM-dd");
-                   string kontrol = String.Format(@"select * from SALTARGETSALESMEN where SATGSAYEAR =  YEAR('{0}') and SATGSAMONTH =  MONTH('{0}') and SATGSASMENID = '{1}'", tarih, SMENID);
+                   string yil = Convert.ToDateTime(srcyil.EditValue.ToString()).ToString("yyyy");
+                   string ay = Convert.ToDateTime(srcAy.EditValue.ToString()).ToString("MM");
+                   string kontrol = String.Format(@"select * from SALTARGETSALESMEN where SATGSAYEAR =  YEAR('{0}') and SATGSAMONTH =  MONTH('{2}') and SATGSASMENID = '{1}'", yil, SMENID, ay);
                    SqlDataAdapter da = new SqlDataAdapter(kontrol, sql);
                    DataTable dt = new DataTable();
                    da.Fill(dt);
                    if (dt.Rows.Count > 0)
                    {
-                       string q = String.Format(@"update SALTARGETSALESMEN set SATGSAAMOUNT = '{1}',SATGSARATE = 0 where SATGSASMENID = {0}  and SATGSAYEAR = YEAR('{2}') and SATGSAMONTH = MONTH('{2}')", SMENID, AMOUNT, tarih);
+                       string q = String.Format(@"update SALTARGETSALESMEN set SATGSAAMOUNT = '{1}',SATGSARATE = 0 where SATGSASMENID = {0}  and SATGSAYEAR = YEAR('{2}') and SATGSAMONTH = MONTH('{3}')", SMENID, AMOUNT, yil,ay);
                        SqlCommand cmd = new SqlCommand(q, sql);
                        cmd.ExecuteNonQuery();
                        progressForm.PerformStep(this);
@@ -300,7 +309,7 @@ namespace RemziCicek
                    }
                    else
                    {
-                       string q = String.Format("insert into SALTARGETSALESMEN values('01','{0}','{1}',YEAR('{2}'),MONTH('{2}'),'0','{3}')", magaza,SMENID, tarih, AMOUNT);
+                       string q = String.Format("insert into SALTARGETSALESMEN values('01','{0}','{1}',YEAR('{4}'),MONTH('{2}'),'0','{3}')", magaza,SMENID, ay, AMOUNT, yil);
                        SqlCommand cmd = new SqlCommand(q, sql);
                        cmd.ExecuteNonQuery();
                        success++;

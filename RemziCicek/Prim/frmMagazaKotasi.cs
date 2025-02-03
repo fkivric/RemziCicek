@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Data.SqlClient;
 using System.Threading;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace RemziCicek
 {
@@ -21,10 +22,8 @@ namespace RemziCicek
         {
             InitializeComponent();
         }
-        DataTable dtMonths = new DataTable();
         DataTable dtYear = new DataTable();
         string magaza = "";
-        DataTable MGZ = new DataTable();
         //arka plan işlemleri
         private BackgroundWorker _backgroundWorker;
         private ManualResetEvent _workerCompletedEvent = new ManualResetEvent(false);
@@ -106,118 +105,120 @@ namespace RemziCicek
         }
         private void frmMagazaKotasi_Load(object sender, EventArgs e)
         {
-            dtMonths.Columns.Add("AY", typeof(string));
-            dtMonths.Columns.Add("ayi", typeof(int));
 
             dtYear.Columns.Add("Yil", typeof(int));
-
-            string[] monthNames = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.MonthNames;
-            for (int i = 0; i < 12; i++)
-            {
-                dtMonths.Rows.Add(monthNames[i], i + 1);
-            }
             for (int i = 0; i < 3; i++)
             {
                 dtYear.Rows.Add(DateTime.Now.AddYears(i*-1).Year);
             }
             srcYil.Properties.DataSource = dtYear;
             srcYil.Properties.DisplayMember = "Yil";
-            srcYil.Properties.ValueMember = "Yil";
-
-            SqlDataAdapter dab = new SqlDataAdapter("select distinct DIVREGION from DIVISON where DIVREGION is not NULL", sql);
-            DataTable dtb = new DataTable();
-            dab.Fill(dtb);
-            srcBolge.Properties.DataSource = dtb;
-            srcBolge.Properties.DisplayMember = "DIVREGION";
-            srcBolge.Properties.ValueMember = "DIVREGION";            
+            srcYil.Properties.ValueMember = "Yil";       
         }
 
         private void srcYil_EditValueChanged(object sender, EventArgs e)
         {
             if (srcYil.EditValue != null)
             {
+                srcBolge.Properties.DataSource = conn.GetData("select distinct DIVREGION from DIVISON where DIVSTS = 1 and DIVSALESTS = 1", sql);
+                srcBolge.Properties.DisplayMember = "DIVREGION";
+                srcBolge.Properties.ValueMember = "DIVREGION";
                 srcBolge.Enabled = true;
+                srcMagaza.Enabled = true;
+                srcMagaza.EditValue = null;
+                srcBolge.EditValue = null;
             }
         }
         private void srcBolge_EditValueChanged(object sender, EventArgs e)
         {
-            MGZ.Clear();
-            if (srcBolge.EditValue != null)
-            {
-                SqlDataAdapter da = new SqlDataAdapter($"select DIVVAL,DIVNAME from DIVISON where DIVSTS = 1 and DIVSALESTS = 1 and DIVREGION = '{srcBolge.EditValue.ToString()}'", sql);
-                da.Fill(MGZ);
-                srcMagaza.Properties.DataSource = MGZ;
-                srcMagaza.Properties.DisplayMember = "DIVNAME";
-                srcMagaza.Properties.ValueMember = "DIVVAL";
-                srcMagaza.Enabled = true;
-                srcMagaza.EditValue = null;
-            }
+            srcMagaza.Properties.DataSource = conn.GetData($"select DIVVAL,DIVNAME from DIVISON where DIVSTS = 1 and DIVSALESTS = 1 and DIVREGION = '{srcBolge.EditValue.ToString()}'", sql);
+            srcMagaza.Properties.DisplayMember = "DIVNAME";
+            srcMagaza.Properties.ValueMember = "DIVVAL";
+            srcMagaza.EditValue = null;
+
         }
 
-        private void srcMagaza_EditValueChanged(object sender, EventArgs e)
-        {
-            if (srcMagaza.EditValue != null)
-            {
-                magaza = srcMagaza.EditValue.ToString();
-            }
-
-            btnListesi.Enabled = true;
-        }
+        DataTable dt = new DataTable();
         private void btnListesi_Click(object sender, EventArgs e)
         {
-            string q = "";
-            if (srcMagaza.EditValue.ToString() != "Tümü" && srcMagaza.EditValue !=  null)
+            dt.Clear();
+            dt.Rows.Clear();
+            navBarControl1.OptionsNavPane.NavPaneState = DevExpress.XtraNavBar.NavPaneState.Expanded;
+            gridAy.DataSource = conn.GetData("select SATGMMONTH,SATGMMONTHNAME from SALTARGETMONTH", sql);
+            string q = @"select * from (
+            select DIVVAL,DIVNAME,DIVREGION,'Ana Kotası' as SMENVAL,DIVMDRNAME as SMENNAME,SATGYYEAR,SATGMMONTH,SATGMMONTHNAME,SATGDIAMOUNT,SATGDIRATE from (
+            select DIVISON.DIVVAL,DIVREGION,DIVISON.DIVNAME,yil.SATGYYEAR,ay.SATGMMONTH,DIVMDRNAME,ay.SATGMMONTHNAME from [W].[Yonavm_Web_Siparis].[dbo].[VolantMagazaIletisim] i
+            left outer join DIVISON DIVISON on DIVISON.DIVVAL = i.DIVVAL
+            outer apply (select * from SATGYYEAR) yil
+            outer apply (select * from SALTARGETMONTH) ay 
+            where DIVSALESTS = 1 and DIVSTS = 1 and DIVISON.DIVVAL not in ('00','WB')) magaza
+            outer apply (select SATGDIAMOUNT,SATGDIRATE from SALTARGETDIVISON where SATGDIDIVISON = magaza.DIVVAL and SATGDIYEAR = magaza.SATGYYEAR and SATGDIMONTH = magaza.SATGMMONTH) kota
+            ) sonuc";
+            string w = "select SMENID,SMENVAL,SMENNAME from SALESMEN where SMENSTS = 1";
+            if (srcMagaza.EditValue != null)
             {
-                q = $@"SET LANGUAGE Turkish; 
-                select AY,AyAdi,DIVVAL,DIVNAME, SATGDIAMOUNT KOTA,SATGDIRATE from (
-                select SATGMMONTH as AY, DATENAME(month, DATEADD(month, SATGMMONTH - 1, '1900-01-01')) AS AyAdi,DIVVAL,DIVNAME from SALTARGETMONTH,DIVISON
-                where DIVSTS = 1 and DIVSALESTS = 1 and DIVVAL = '{srcMagaza.EditValue.ToString()}'
-                ) sira
-                left outer join (select * from SALTARGETDIVISON ) kota on SATGDIDIVISON = DIVVAL and SATGDIMONTH = AY and SATGDIYEAR = {srcYil.EditValue.ToString()}";
-            }
-            else if (srcBolge.EditValue != null)
-            {
-                q = $@"SET LANGUAGE Turkish; 
-                select AY,AyAdi,DIVVAL,DIVNAME, SATGDIAMOUNT KOTA,SATGDIRATE from (
-                select SATGMMONTH as AY, DATENAME(month, DATEADD(month, SATGMMONTH - 1, '1900-01-01')) AS AyAdi,DIVVAL,DIVNAME from SALTARGETMONTH,DIVISON
-                where DIVSTS = 1 and DIVSALESTS = 1 and DIVREGION = '{srcBolge.EditValue.ToString()}'
-                ) sira
-                left outer join (select * from SALTARGETDIVISON ) kota on SATGDIDIVISON = DIVVAL and SATGDIMONTH = AY and SATGDIYEAR = {srcYil.EditValue.ToString()}";
-
-                //q = $"SET LANGUAGE Turkish; select SATGDIMONTH as AY, DATENAME(month, DATEADD(month, SATGDIMONTH - 1, '1900-01-01')) AS AyAdi,DIVVAL,DIVNAME, SATGDIAMOUNT KOTA  from SALTARGETDIVISON left outer join DIVISON on DIVVAL = SATGDIDIVISON where DIVREGION = '{srcBolge.EditValue.ToString()}' and SATGDIYEAR = '{srcYil.EditValue.ToString()}' and DIVSALESTS = 1 order by DIVVAL,AY";
+                q += $" where DIVVAL = '{srcMagaza.EditValue}'";
+                q += $" and SATGYYEAR ='{srcYil.EditValue}'";
             }
             else
             {
-                if (srcYil.EditValue != null)
+                if (srcBolge.EditValue != null)
                 {
-                    q = $@"SET LANGUAGE Turkish; 
-                select AY,AyAdi,DIVVAL,DIVNAME, SATGDIAMOUNT KOTA,SATGDIRATE from (
-                select SATGMMONTH as AY, DATENAME(month, DATEADD(month, SATGMMONTH - 1, '1900-01-01')) AS AyAdi,DIVVAL,DIVNAME from SALTARGETMONTH,DIVISON
-                where DIVSTS = 1 and DIVSALESTS = 1 
-                ) sira
-                left outer join (select * from SALTARGETDIVISON ) kota on SATGDIDIVISON = DIVVAL and SATGDIMONTH = AY and SATGDIYEAR = {srcYil.EditValue.ToString()}";
-
+                    q += $" where DIVREGION = '{srcBolge.EditValue}'";
+                    q += $" and SATGYYEAR ='{srcYil.EditValue}'";
                 }
                 else
                 {
-                    q = $@"SET LANGUAGE Turkish; 
-                select AY,AyAdi,DIVVAL,DIVNAME, SATGDIAMOUNT KOTA,SATGDIRATE from (
-                select SATGMMONTH as AY, DATENAME(month, DATEADD(month, SATGMMONTH - 1, '1900-01-01')) AS AyAdi,DIVVAL,DIVNAME from SALTARGETMONTH,DIVISON
-                where DIVSTS = 1 and DIVSALESTS = 1 
-                ) sira
-                left outer join (select * from SALTARGETDIVISON ) kota on SATGDIDIVISON = DIVVAL and SATGDIMONTH = AY and SATGDIYEAR = {DateTime.Now.Year}";
+                    q += $" where SATGYYEAR ='{srcYil.EditValue}'";
                 }
-
             }
-            SqlDataAdapter da = new SqlDataAdapter(q, sql);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            gridMagaza.DataSource = dt;
+            q += " order by 1,4,8";
+            dt = conn.GetData(q, sql);
+            //gridMagaza.DataSource = dt;
             srcBolge.Enabled = false;
             srcYil.Enabled = false;
             srcMagaza.Enabled = false;
             btnListesi.Enabled = false;
             btnMagazaGuncelle.Enabled = true;
+            CustomMessageBox.ShowMessage("Lütfen istenilern ayı seçin.", "", this, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private List<object> GetSelectedValues(GridView gridView, string columnName)
+        {
+            List<object> selectedValues = new List<object>();
+            foreach (int rowHandle in gridView.GetSelectedRows())
+            {
+                object value = gridView.GetRowCellValue(rowHandle, columnName);
+                if (value != null)
+                {
+                    selectedValues.Add(value);
+                }
+            }
+            return selectedValues;
+        }
+        private void ViewAy_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            FilterGridSatici();
+        }
+
+        private void ViewSatiscilar_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            FilterGridSatici();
+        }
+        private void FilterGridSatici()
+        {
+            List<object> selectedMonths = GetSelectedValues(ViewAy, "SATGMMONTH");
+
+            if (selectedMonths.Count == 0 )
+            {
+                gridMagaza.DataSource = null;
+                return;
+            }
+
+            string filterQuery = $"SATGMMONTH IN ({string.Join(",", selectedMonths)})";
+
+            DataView dv = new DataView(dt);
+            dv.RowFilter = filterQuery;
+            gridMagaza.DataSource = dv;
         }
         private void btnMagazaGuncelle_Click(object sender, EventArgs e)
         {
@@ -239,6 +240,7 @@ namespace RemziCicek
             progressForm.Show(this);
             for (int i = 0; i < ViewMagaza.RowCount; i++)
             {
+
                 if (sql.State == ConnectionState.Closed)
                 {
                     sql.Open();
@@ -246,22 +248,24 @@ namespace RemziCicek
                 try
                 {
                     string q = "";
-                    string ay = ViewMagaza.GetRowCellValue(i, "AY").ToString();
+                    var Month = ViewMagaza.GetRowCellValue(i, "SATGMMONTHNAME").ToString();
+                    string ay = conn.GetValue($"select SATGMMONTH from SALTARGETMONTH where SATGMMONTHNAME = '{Month}'");
                     string magaza = ViewMagaza.GetRowCellValue(i, "DIVVAL").ToString();
+                    string SATGYYEAR = srcYil.EditValue.ToString();
                     string kota = "0";
-                    if (ViewMagaza.GetRowCellValue(i, "SATGDIRATE").ToString() != "")
+                    if (ViewMagaza.GetRowCellValue(i, "SATGDIAMOUNT").ToString() != "")
                     {
-                        kota = double.Parse(ViewMagaza.GetRowCellValue(i, "KOTA").ToString()).ToString();
+                        kota = double.Parse(ViewMagaza.GetRowCellValue(i, "SATGDIAMOUNT").ToString()).ToString();
                     }
                     string carpan = "0";
                     if (ViewMagaza.GetRowCellValue(i, "SATGDIRATE").ToString() != "")
                     {
                         carpan = double.Parse(ViewMagaza.GetRowCellValue(i, "SATGDIRATE").ToString()).ToString();
                     }
-                    var kontrol = conn.GetValue("select count(*) from SALTARGETDIVISON where SATGDIYEAR = 2025 and SATGDIMONTH = 2");
+                    var kontrol = conn.GetValue($"select count(*) from SALTARGETDIVISON where SATGDIYEAR = {SATGYYEAR} and SATGDIMONTH = {ay} and SATGDIDIVISON = '{magaza}'");
                     if (kontrol == "0")
                     {
-                        q = String.Format("insert into SALTARGETDIVISON values ('01','{0}',{1},{2},'{3}','{4}')", magaza, srcYil.EditValue.ToString(), ay,kota,carpan);
+                        q = String.Format("insert into SALTARGETDIVISON values ('01','{0}',{1},{2},'{3}','{4}')", magaza, srcYil.EditValue.ToString(), ay, kota, carpan);
                     }
                     else
                     {
@@ -269,7 +273,7 @@ namespace RemziCicek
 
                     }
                     SqlCommand cmd = new SqlCommand(q, sql);
-                    cmd.ExecuteNonQuery();
+                    var sonuc = cmd.ExecuteNonQuery();
                     success++;
                     progressForm.PerformStep(this);
                 }
@@ -279,6 +283,7 @@ namespace RemziCicek
                     error++;
                     progressForm.PerformStep(this);
                 }
+
             }
         },
                                 null,
@@ -293,7 +298,9 @@ namespace RemziCicek
 
         private void btnMagazaYeni_Click(object sender, EventArgs e)
         {
+            navBarControl1.OptionsNavPane.NavPaneState = DevExpress.XtraNavBar.NavPaneState.Collapsed;
             gridMagaza.DataSource = null;
+            gridAy.DataSource = null;
             srcYil.EditValue = null;
             srcYil.Enabled = true;
             srcBolge.EditValue = null;

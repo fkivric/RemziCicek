@@ -24,7 +24,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="TTSWebServicesSoap", Namespace="https://tts.turkiyeshell.com")]
@@ -56,6 +56,8 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
         private System.Threading.SendOrPostCallback RO_GetOnlineTransactionOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetPlateStatusOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetPlateStatusWithCancelOperationCompleted;
         
         private System.Threading.SendOrPostCallback SetPlateStatusOperationCompleted;
         
@@ -137,6 +139,9 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
         
         /// <remarks/>
         public event GetPlateStatusCompletedEventHandler GetPlateStatusCompleted;
+        
+        /// <remarks/>
+        public event GetPlateStatusWithCancelCompletedEventHandler GetPlateStatusWithCancelCompleted;
         
         /// <remarks/>
         public event SetPlateStatusCompletedEventHandler SetPlateStatusCompleted;
@@ -857,6 +862,47 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tts.turkiyeshell.com/GetPlateStatusWithCancel", RequestNamespace="https://tts.turkiyeshell.com", ResponseNamespace="https://tts.turkiyeshell.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public GETCARDSTATUSWITHCANCELRESULT GetPlateStatusWithCancel(string cust_code, string user_id, string password, string branch_code, string plate_code, string card_status_code, string customer_reference) {
+            object[] results = this.Invoke("GetPlateStatusWithCancel", new object[] {
+                        cust_code,
+                        user_id,
+                        password,
+                        branch_code,
+                        plate_code,
+                        card_status_code,
+                        customer_reference});
+            return ((GETCARDSTATUSWITHCANCELRESULT)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetPlateStatusWithCancelAsync(string cust_code, string user_id, string password, string branch_code, string plate_code, string card_status_code, string customer_reference) {
+            this.GetPlateStatusWithCancelAsync(cust_code, user_id, password, branch_code, plate_code, card_status_code, customer_reference, null);
+        }
+        
+        /// <remarks/>
+        public void GetPlateStatusWithCancelAsync(string cust_code, string user_id, string password, string branch_code, string plate_code, string card_status_code, string customer_reference, object userState) {
+            if ((this.GetPlateStatusWithCancelOperationCompleted == null)) {
+                this.GetPlateStatusWithCancelOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetPlateStatusWithCancelOperationCompleted);
+            }
+            this.InvokeAsync("GetPlateStatusWithCancel", new object[] {
+                        cust_code,
+                        user_id,
+                        password,
+                        branch_code,
+                        plate_code,
+                        card_status_code,
+                        customer_reference}, this.GetPlateStatusWithCancelOperationCompleted, userState);
+        }
+        
+        private void OnGetPlateStatusWithCancelOperationCompleted(object arg) {
+            if ((this.GetPlateStatusWithCancelCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetPlateStatusWithCancelCompleted(this, new GetPlateStatusWithCancelCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("https://tts.turkiyeshell.com/SetPlateStatus", RequestNamespace="https://tts.turkiyeshell.com", ResponseNamespace="https://tts.turkiyeshell.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public SETCARDSTATUSRESULT SetPlateStatus(string cust_code, string user_id, string password, string branch_code, string plate_code, string card_status_code, string card_status_reason, string customer_reference) {
             object[] results = this.Invoke("SetPlateStatus", new object[] {
@@ -962,7 +1008,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1007,7 +1053,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1017,7 +1063,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HelperResult))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1062,7 +1108,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1119,7 +1165,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1236,7 +1282,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1305,7 +1351,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1350,7 +1396,157 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://tts.turkiyeshell.com")]
+    public partial class CARDSTATUSINFOWITHCANCEL {
+        
+        private string plate_codeField;
+        
+        private string card_noField;
+        
+        private int card_status_codeField;
+        
+        private string card_statusField;
+        
+        private string card_active_cancelField;
+        
+        private string card_active_cancel_nmField;
+        
+        /// <remarks/>
+        public string plate_code {
+            get {
+                return this.plate_codeField;
+            }
+            set {
+                this.plate_codeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string card_no {
+            get {
+                return this.card_noField;
+            }
+            set {
+                this.card_noField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int card_status_code {
+            get {
+                return this.card_status_codeField;
+            }
+            set {
+                this.card_status_codeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string card_status {
+            get {
+                return this.card_statusField;
+            }
+            set {
+                this.card_statusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string card_active_cancel {
+            get {
+                return this.card_active_cancelField;
+            }
+            set {
+                this.card_active_cancelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string card_active_cancel_nm {
+            get {
+                return this.card_active_cancel_nmField;
+            }
+            set {
+                this.card_active_cancel_nmField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://tts.turkiyeshell.com")]
+    public partial class GETCARDSTATUSWITHCANCELRESULT {
+        
+        private HelperResult pROCESSRESULTField;
+        
+        private int nUMBEROFCARDField;
+        
+        private CARDSTATUSINFOWITHCANCEL[] cARD_STATUSField;
+        
+        private string cUSTOMER_REFERENCEField;
+        
+        private decimal sHELL_REFERENCEField;
+        
+        /// <remarks/>
+        public HelperResult PROCESSRESULT {
+            get {
+                return this.pROCESSRESULTField;
+            }
+            set {
+                this.pROCESSRESULTField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int NUMBEROFCARD {
+            get {
+                return this.nUMBEROFCARDField;
+            }
+            set {
+                this.nUMBEROFCARDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public CARDSTATUSINFOWITHCANCEL[] CARD_STATUS {
+            get {
+                return this.cARD_STATUSField;
+            }
+            set {
+                this.cARD_STATUSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CUSTOMER_REFERENCE {
+            get {
+                return this.cUSTOMER_REFERENCEField;
+            }
+            set {
+                this.cUSTOMER_REFERENCEField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public decimal SHELL_REFERENCE {
+            get {
+                return this.sHELL_REFERENCEField;
+            }
+            set {
+                this.sHELL_REFERENCEField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1407,7 +1603,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1476,7 +1672,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1545,7 +1741,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1589,6 +1785,14 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
         private string dept_nameField;
         
         private string financial_cust_codeField;
+        
+        private string utts_IsuttsField;
+        
+        private System.Nullable<int> utts_Tim_StatusField;
+        
+        private string utts_Vehicle_Owner_TypeField;
+        
+        private string utts_Plate_NoField;
         
         /// <remarks/>
         public string cust_code {
@@ -1779,10 +1983,51 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
                 this.financial_cust_codeField = value;
             }
         }
+        
+        /// <remarks/>
+        public string Utts_Isutts {
+            get {
+                return this.utts_IsuttsField;
+            }
+            set {
+                this.utts_IsuttsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<int> Utts_Tim_Status {
+            get {
+                return this.utts_Tim_StatusField;
+            }
+            set {
+                this.utts_Tim_StatusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Utts_Vehicle_Owner_Type {
+            get {
+                return this.utts_Vehicle_Owner_TypeField;
+            }
+            set {
+                this.utts_Vehicle_Owner_TypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Utts_Plate_No {
+            get {
+                return this.utts_Plate_NoField;
+            }
+            set {
+                this.utts_Plate_NoField = value;
+            }
+        }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1851,7 +2096,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1896,7 +2141,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1953,7 +2198,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2022,7 +2267,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2067,7 +2312,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2121,6 +2366,10 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
         private System.Nullable<decimal> card_quarterly_salesField;
         
         private System.Nullable<decimal> card_quarterly_sales_literField;
+        
+        private string montaj_idField;
+        
+        private System.DateTime last_programing_dateField;
         
         /// <remarks/>
         public string cust_code {
@@ -2367,10 +2616,30 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
                 this.card_quarterly_sales_literField = value;
             }
         }
+        
+        /// <remarks/>
+        public string montaj_id {
+            get {
+                return this.montaj_idField;
+            }
+            set {
+                this.montaj_idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime last_programing_date {
+            get {
+                return this.last_programing_dateField;
+            }
+            set {
+                this.last_programing_dateField = value;
+            }
+        }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2439,7 +2708,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2473,6 +2742,10 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
         private decimal card_monthly_salesField;
         
         private decimal card_monthly_Sales_literField;
+        
+        private string montaj_idField;
+        
+        private System.DateTime last_programing_dateField;
         
         /// <remarks/>
         public string cust_code {
@@ -2613,10 +2886,30 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
                 this.card_monthly_Sales_literField = value;
             }
         }
+        
+        /// <remarks/>
+        public string montaj_id {
+            get {
+                return this.montaj_idField;
+            }
+            set {
+                this.montaj_idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime last_programing_date {
+            get {
+                return this.last_programing_dateField;
+            }
+            set {
+                this.last_programing_dateField = value;
+            }
+        }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2685,7 +2978,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2730,7 +3023,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2931,7 +3224,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3048,7 +3341,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3129,7 +3422,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3258,7 +3551,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3327,7 +3620,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3408,7 +3701,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3455,11 +3748,23 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
         
         private string invoice_noField;
         
+        private System.Nullable<decimal> invoice_Total_AmountField;
+        
+        private System.Nullable<decimal> invoice_Net_AmountField;
+        
         private string customer_ReferenceField;
         
         private decimal shell_ReferenceField;
         
         private string rIDField;
+        
+        private string utts_IsuttsField;
+        
+        private System.Nullable<int> utts_Tim_StatusField;
+        
+        private string utts_Vehicle_Owner_TypeField;
+        
+        private string utts_Plate_NoField;
         
         /// <remarks/>
         public string Sales_type {
@@ -3662,6 +3967,28 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<decimal> Invoice_Total_Amount {
+            get {
+                return this.invoice_Total_AmountField;
+            }
+            set {
+                this.invoice_Total_AmountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<decimal> Invoice_Net_Amount {
+            get {
+                return this.invoice_Net_AmountField;
+            }
+            set {
+                this.invoice_Net_AmountField = value;
+            }
+        }
+        
+        /// <remarks/>
         public string Customer_Reference {
             get {
                 return this.customer_ReferenceField;
@@ -3690,10 +4017,51 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
                 this.rIDField = value;
             }
         }
+        
+        /// <remarks/>
+        public string Utts_Isutts {
+            get {
+                return this.utts_IsuttsField;
+            }
+            set {
+                this.utts_IsuttsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<int> Utts_Tim_Status {
+            get {
+                return this.utts_Tim_StatusField;
+            }
+            set {
+                this.utts_Tim_StatusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Utts_Vehicle_Owner_Type {
+            get {
+                return this.utts_Vehicle_Owner_TypeField;
+            }
+            set {
+                this.utts_Vehicle_Owner_TypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Utts_Plate_No {
+            get {
+                return this.utts_Plate_NoField;
+            }
+            set {
+                this.utts_Plate_NoField = value;
+            }
+        }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3738,7 +4106,7 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3789,6 +4157,18 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
         
         private decimal shell_ReferenceField;
         
+        private System.Nullable<decimal> invoice_Total_AmountField;
+        
+        private System.Nullable<decimal> invoice_Net_AmountField;
+        
+        private string utts_IsuttsField;
+        
+        private System.Nullable<int> utts_Tim_StatusField;
+        
+        private string utts_Vehicle_Owner_TypeField;
+        
+        private string utts_Plate_NoField;
+        
         /// <remarks/>
         public string Sales_type {
             get {
@@ -4008,14 +4388,77 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
                 this.shell_ReferenceField = value;
             }
         }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<decimal> Invoice_Total_Amount {
+            get {
+                return this.invoice_Total_AmountField;
+            }
+            set {
+                this.invoice_Total_AmountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<decimal> Invoice_Net_Amount {
+            get {
+                return this.invoice_Net_AmountField;
+            }
+            set {
+                this.invoice_Net_AmountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Utts_Isutts {
+            get {
+                return this.utts_IsuttsField;
+            }
+            set {
+                this.utts_IsuttsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<int> Utts_Tim_Status {
+            get {
+                return this.utts_Tim_StatusField;
+            }
+            set {
+                this.utts_Tim_StatusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Utts_Vehicle_Owner_Type {
+            get {
+                return this.utts_Vehicle_Owner_TypeField;
+            }
+            set {
+                this.utts_Vehicle_Owner_TypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Utts_Plate_No {
+            get {
+                return this.utts_Plate_NoField;
+            }
+            set {
+                this.utts_Plate_NoField = value;
+            }
+        }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void GetCustomerSalesTransactionCompletedEventHandler(object sender, GetCustomerSalesTransactionCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetCustomerSalesTransactionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4037,11 +4480,11 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void GetCustomerSalesTransaction_with_ridCompletedEventHandler(object sender, GetCustomerSalesTransaction_with_ridCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetCustomerSalesTransaction_with_ridCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4063,11 +4506,11 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void GetBranchLimitandSalesCompletedEventHandler(object sender, GetBranchLimitandSalesCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetBranchLimitandSalesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4089,11 +4532,11 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void GetBranchLimitandSalesV2CompletedEventHandler(object sender, GetBranchLimitandSalesV2CompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetBranchLimitandSalesV2CompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4115,11 +4558,11 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void SetBranchLimitandCountCompletedEventHandler(object sender, SetBranchLimitandCountCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SetBranchLimitandCountCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4141,11 +4584,11 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void GetCardLimitCountandDaysCompletedEventHandler(object sender, GetCardLimitCountandDaysCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetCardLimitCountandDaysCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4167,11 +4610,11 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void GetCardLimitCountandDaysV2CompletedEventHandler(object sender, GetCardLimitCountandDaysV2CompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetCardLimitCountandDaysV2CompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4193,11 +4636,11 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void SetCardLimitCountandDaysCompletedEventHandler(object sender, SetCardLimitCountandDaysCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SetCardLimitCountandDaysCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4219,11 +4662,11 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void GetBranchStatusCompletedEventHandler(object sender, GetBranchStatusCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetBranchStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4245,11 +4688,11 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void SetBranchStatusCompletedEventHandler(object sender, SetBranchStatusCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SetBranchStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4271,11 +4714,11 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void GetOnlineTransactionCompletedEventHandler(object sender, GetOnlineTransactionCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetOnlineTransactionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4297,11 +4740,11 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void RO_GetOnlineTransactionCompletedEventHandler(object sender, RO_GetOnlineTransactionCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class RO_GetOnlineTransactionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4323,11 +4766,11 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void GetPlateStatusCompletedEventHandler(object sender, GetPlateStatusCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetPlateStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4349,11 +4792,37 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void GetPlateStatusWithCancelCompletedEventHandler(object sender, GetPlateStatusWithCancelCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetPlateStatusWithCancelCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetPlateStatusWithCancelCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public GETCARDSTATUSWITHCANCELRESULT Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((GETCARDSTATUSWITHCANCELRESULT)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void SetPlateStatusCompletedEventHandler(object sender, SetPlateStatusCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SetPlateStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4375,11 +4844,11 @@ namespace RemziCicek.com.turkiyeshell.ttstest {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void GetInvoiceDetailCompletedEventHandler(object sender, GetInvoiceDetailCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetInvoiceDetailCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {

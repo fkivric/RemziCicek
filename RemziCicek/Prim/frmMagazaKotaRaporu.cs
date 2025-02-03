@@ -15,9 +15,9 @@ using System.Data.SqlClient;
 
 namespace RemziCicek
 {
-    public partial class frmKotaRaporu : DevExpress.XtraEditors.XtraForm
+    public partial class frmMagazaKotaRaporu : DevExpress.XtraEditors.XtraForm
     {
-        public frmKotaRaporu()
+        public frmMagazaKotaRaporu()
         {
             InitializeComponent();
         }
@@ -104,30 +104,28 @@ namespace RemziCicek
             }
         }
         string dosyaadi = "";
-        DataTable dtMonths = new DataTable();
         DataTable dtYear = new DataTable();
         string magaza = "";
         DataTable MGZ = new DataTable();
         private void frmKotaRaporu_Load(object sender, EventArgs e)
         {
-            dtMonths.Columns.Add("AY", typeof(string));
-            dtMonths.Columns.Add("ayi", typeof(int));
-
             dtYear.Columns.Add("Yil", typeof(int));
 
-            string[] monthNames = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.MonthNames;
-            for (int i = 0; i < 12; i++)
-            {
-                dtMonths.Rows.Add(monthNames[i], i + 1);
-            }
             for (int i = 0; i < 3; i++)
             {
                 dtYear.Rows.Add(DateTime.Now.AddYears(i * -1).Year);
             }
 
+            srcYil.Properties.DataSource = dtYear;
+            srcYil.Properties.DisplayMember = "Yil";
+            srcYil.Properties.ValueMember = "Yil";
+
+            SqlDataAdapter day = new SqlDataAdapter("select SATGMMONTH, SATGMMONTHNAME from SALTARGETMONTH", sql);
+            DataTable dtMonths = new DataTable();
+            day.Fill(dtMonths);            
             srcAy.Properties.DataSource = dtMonths;
-            srcAy.Properties.DisplayMember = "AY";
-            srcAy.Properties.ValueMember = "ayi";
+            srcAy.Properties.DisplayMember = "SATGMMONTHNAME";
+            srcAy.Properties.ValueMember = "SATGMMONTH";
 
             SqlDataAdapter dab = new SqlDataAdapter("select distinct DIVREGION from DIVISON where DIVREGION is not NULL", sql);
             DataTable dtb = new DataTable();
@@ -146,17 +144,32 @@ namespace RemziCicek
 
         private void btnListesi_Click(object sender, EventArgs e)
         {
-            string q = @"select distinct 1 as sira,DIVREGION,DIVNAME,SMENVAL,SMENNAME,SATGSAAMOUNT from SALESMEN 
-            left outer join DIVISON on DIVVAL = SMENDIVISON
-            outer apply (select SATGSAAMOUNT from SALTARGETSALESMEN where SATGSASMENID = SMENID 
-            and SATGSAYEAR = '2024' ";
-            if(srcAy.EditValue != null)
+            string q = @"select * from (
+            select DIVVAL,DIVNAME,DIVREGION,'Ana Kotası' as SMENVAL,DIVMDRNAME as SMENNAME,SATGYYEAR,SATGMMONTH,SATGMMONTHNAME,SATGDIAMOUNT,SATGDIRATE from (
+            select DIVISON.DIVVAL,DIVREGION,DIVISON.DIVNAME,yil.SATGYYEAR,ay.SATGMMONTH,DIVMDRNAME,ay.SATGMMONTHNAME from [W].[Yonavm_Web_Siparis].[dbo].[VolantMagazaIletisim] i
+            left outer join DIVISON DIVISON on DIVISON.DIVVAL = i.DIVVAL
+            outer apply (select * from SATGYYEAR) yil
+            outer apply (select * from SALTARGETMONTH) ay 
+            where DIVSALESTS = 1 and DIVSTS = 1 and DIVISON.DIVVAL not in ('00','WB')) magaza
+            outer apply (select SATGDIAMOUNT,SATGDIRATE from SALTARGETDIVISON where SATGDIDIVISON = magaza.DIVVAL and SATGDIYEAR = magaza.SATGYYEAR and SATGDIMONTH = magaza.SATGMMONTH) kota
+            ) sonuc
+            where 1=1 "; 
+
+            if(srcYil.EditValue != null)
             {
-                q = q + String.Format(@" and SATGSAMONTH = '{0}') kota", srcAy.EditValue.ToString());
+                q = q + String.Format(@" and SATGYYEAR = '{0}'", srcYil.EditValue.ToString());
             }
             else
             {
-                q = q + " and SATGSAMONTH = MONTH(getdate())) kota";
+                q = q + " and SATGSAYEAR = YEAR(getdate()))";
+            }
+            if(srcAy.EditValue != null)
+            {
+                q = q + String.Format(@" and SATGMMONTH = '{0}'", srcAy.EditValue.ToString());
+            }
+            else
+            {
+                q = q + " and SATGMMONTH = MONTH(getdate())) kota";
             }
             if (srcBolge.EditValue != null)
             {
@@ -166,50 +179,7 @@ namespace RemziCicek
             {
                 q = q + String.Format(@" and DIVVAL = '{0}'", srcMagaza.EditValue.ToString());
             }
-            q = q + @" and SMENSTS = 1";
             
-            
-            //string q = @"select 1 as sira, DIVREGION,DIVNAME,SMENVAL,SMENNAME,SATGSAAMOUNT from SALESMEN
-            //left outer join DIVISON on DIVVAL = SMENDIVISON
-            //left outer join SALTARGETSALESMEN on SATGSASMENID = SMENID
-            //where SMENSTS = 1 and SATGSACOMPANY = '01' and SATGSAYEAR = YEAR(getdate())";
-            //if (srcBolge.EditValue != null)
-            //{
-            //    q = q + String.Format(@" and DIVREGION = '{0}'", srcBolge.EditValue.ToString());
-            //}
-            //if (srcMagaza.EditValue != null)
-            //{
-            //    q = q + String.Format(@" and DIVVAL = '{0}'", srcMagaza.EditValue.ToString());
-            //}
-            //if (srcAy.EditValue != null)
-            //{
-            //    q = q + String.Format(@" and SATGSAMONTH = '{0}'",srcAy.EditValue.ToString());
-            //}
-            //else
-            //{
-            //    q = q + " and SATGSAMONTH = MONTH(getdate()) ";
-            //}
-            q = q + @"union
-            select distinct 2 as sira, DIVREGION,DIVNAME,'' as SMENVAL,'MAGAZA KOTASI :' as SMENNAME,SATGDIAMOUNT from SALESMEN
-            left outer join DIVISON on DIVVAL = SMENDIVISON
-            left outer join SALTARGETDIVISON on SATGDIDIVISON = SMENDIVISON
-            where SMENSTS = 1 and SATGDIYEAR = YEAR(getdate())";
-            if (srcBolge.EditValue != null)
-            {
-                q = q + String.Format(@" and DIVREGION = '{0}'", srcBolge.EditValue.ToString());
-            }
-            if (srcMagaza.EditValue != null)
-            {
-                q = q + String.Format(@" and DIVVAL = '{0}'", srcMagaza.EditValue.ToString());
-            }
-            if (srcAy.EditValue != null)
-            {
-                q = q + String.Format(@" and SATGDIMONTH = '{0}'", srcAy.EditValue.ToString());
-            }
-            else
-            {
-                q = q + " and SATGDIMONTH = MONTH(getdate()) ";
-            }
             q = q + @" order by 2,3,1";
             SqlDataAdapter da = new SqlDataAdapter(q, sql);
             DataTable dt = new DataTable();

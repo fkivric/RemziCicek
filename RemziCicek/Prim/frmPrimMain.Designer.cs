@@ -82,7 +82,7 @@
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2});
-            this.ribbon.Size = new System.Drawing.Size(1121, 158);
+            this.ribbon.Size = new System.Drawing.Size(1121, 132);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // barButtonItem1
@@ -162,6 +162,7 @@
             this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
             this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
             this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
             // barButtonItem4
             // 
@@ -171,6 +172,7 @@
             this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
             this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
             this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
             // barButtonItem5
             // 
@@ -252,20 +254,20 @@
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 757);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 756);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1121, 24);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1121, 25);
             // 
             // xtraTabControl
             // 
             this.xtraTabControl.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeader;
             this.xtraTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl.Location = new System.Drawing.Point(0, 158);
+            this.xtraTabControl.Location = new System.Drawing.Point(0, 132);
             this.xtraTabControl.MultiLine = DevExpress.Utils.DefaultBoolean.True;
             this.xtraTabControl.Name = "xtraTabControl";
             this.xtraTabControl.ShowTabHeader = DevExpress.Utils.DefaultBoolean.True;
-            this.xtraTabControl.Size = new System.Drawing.Size(1121, 599);
+            this.xtraTabControl.Size = new System.Drawing.Size(1121, 624);
             this.xtraTabControl.TabIndex = 37;
             this.xtraTabControl.CloseButtonClick += new System.EventHandler(this.xtraTabControl_CloseButtonClick);
             this.xtraTabControl.SizeChanged += new System.EventHandler(this.xtraTabControl_SizeChanged);

@@ -32,7 +32,7 @@ namespace RemziCicek
             DefaultLookAndFeel defaultLookAndFeel = new DefaultLookAndFeel();
             Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("TR-tr");
             RegistryKey key2 = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\EntegreFYonAvmTools");
-            var sonuc = key2.GetValue("ApplicationSetupComplate");
+            var sonuc = key2.GetValue("ApplicationGUID");
             if (sonuc == null)
             {
                 RunAsync().Wait();
@@ -41,19 +41,13 @@ namespace RemziCicek
             Mutex mtex = new Mutex(true, "Program", out acikmi);
             if (acikmi)
             {
-
-                RegistryKey key3 = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\EntegreFYonAvmTools");
-                var sonuc2 = key3.GetValue("ApplicationVersion");
-                if (sonuc2 == null)
-                {
-                    string _s4 = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-                    RegistryKey key = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\EntegreFYonAvmTools");
-                    key.SetValue("ApplicationVersion", _s4);
-                    key.Close();
-                }
+                string _s4 = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+                RegistryKey key = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\EntegreFYonAvmTools");
+                key.SetValue("ApplicationVersion", _s4);
+                key.Close();
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                //Application.Run(new frmMain());
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("TR-tr");
                 Application.Run(new frmLogin());
             }
             else
@@ -116,11 +110,9 @@ namespace RemziCicek
             string response2 = await client.UpdateLicensing("6200080458", ConnectionLisansingID.ToString(), Cpuid.ToString(), Motherboardid.ToString(), _s6);
             List<Sonuc> myDeserializedClass2 = JsonConvert.DeserializeObject<List<Sonuc>>(response2);
             RegistryKey key = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\EntegreFYonAvmTools");
-            var LisansingID2 = myDeserializedClass2[0].message;
-            key.SetValue("ApplicationSetupComplate", "True");
-            key.GetValue("ApplicationVKN", "6200080458");
             key.SetValue("ApplicationGUID", id);
             key.SetValue("ApplicationVersion", _s4);
+            key.SetValue("ApplicationVKN", "6200080458");
             key.SetValue("ApplicationPhoneLisans", true);
             key.SetValue("CPU", Cpuid);
             key.SetValue("motherboardid", Motherboardid);

@@ -1,0 +1,811 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F6E6EA9A-F2EB-48ED-A0D9-6CBEC574602F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RemziCicek</RootNamespace>
+    <AssemblyName>YonAvmTools</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://192.168.4.8:84/</InstallUrl>
+    <SupportUrl>http://192.168.4.8:84/</SupportUrl>
+    <ErrorReportUrl>http://192.168.4.8:84/</ErrorReportUrl>
+    <ProductName>Yön AVM® Araç Takip</ProductName>
+    <PublisherName>Fatih KIVRIÇ</PublisherName>
+    <SuiteName>Araç Takip</SuiteName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>index.html</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.12.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>11FE0FAE6A6E082D5B78C65CBE087B22197F32A8</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\..\Porjeler\SignUpDemo\SignUpDemo\bin\Debug\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v20.1" />
+    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v20.1" />
+    <Reference Include="DevExpress.Data.v20.1" />
+    <Reference Include="DevExpress.DataAccess.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v20.1.UI, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.ExpressApp.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v20.1.Drawing, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Persistent.Base.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Spreadsheet.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.1" />
+    <Reference Include="DevExpress.Sparkline.v20.1.Core" />
+    <Reference Include="DevExpress.Utils.v20.1.UI, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v20.1" />
+    <Reference Include="DevExpress.Printing.v20.1.Core" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPdfViewer.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraSpreadsheet.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Infragistics4.Documents.Excel.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Infragistics\2019.2\Windows Forms\CLR4.0\Bin\Infragistics4.Documents.Excel.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Documents.Reports.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Infragistics\2019.2\Windows Forms\CLR4.0\Bin\Infragistics4.Documents.Reports.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Olap.Core.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Olap.DataProvider.Adomd.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Olap.DataSource.Flat.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Olap.DataSource.Mdx.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Olap.DataSource.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Olap.DataSource.Xmla.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Shared.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.DataVisualization.Shared.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.DataVisualization.UltraDataChart.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.Misc.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.Portable.Core.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.UltraWinChart.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Infragistics\2019.2\Windows Forms\CLR4.0\Bin\Infragistics4.Win.UltraWinChart.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinDataSource.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Infragistics\2019.2\Windows Forms\CLR4.0\Bin\Infragistics4.Win.UltraWinDataSource.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinDock.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinEditors.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.UltraWinExplorerBar.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinGrid.DocumentExport.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Infragistics\2019.2\Windows Forms\CLR4.0\Bin\Infragistics4.Win.UltraWinGrid.DocumentExport.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinGrid.ExcelExport.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Infragistics\2019.2\Windows Forms\CLR4.0\Bin\Infragistics4.Win.UltraWinGrid.ExcelExport.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinGrid.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Infragistics\2019.2\Windows Forms\CLR4.0\Bin\Infragistics4.Win.UltraWinGrid.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinPivotGrid.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinSchedule.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Infragistics\2019.2\Windows Forms\CLR4.0\Bin\Infragistics4.Win.UltraWinSchedule.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinSpreadsheet.ChartAdapter.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Infragistics\2019.2\Windows Forms\CLR4.0\Bin\Infragistics4.Win.UltraWinSpreadsheet.ChartAdapter.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinSpreadsheet.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Infragistics\2019.2\Windows Forms\CLR4.0\Bin\Infragistics4.Win.UltraWinSpreadsheet.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinStatusBar.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.UltraWinTabbedMdi.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Infragistics\2019.2\Windows Forms\CLR4.0\Bin\Infragistics4.Win.UltraWinTabbedMdi.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinTabControl.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.UltraWinToolbars.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinTree.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Microsoft.SqlServer.SqlEnum, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\Microsoft SQL Server\110\SDK\Assemblies\Microsoft.SqlServer.SqlEnum.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Araclar.cs" />
+    <Compile Include="Class\CRUID.cs" />
+    <Compile Include="Class\CustomMessageBox.cs" />
+    <Compile Include="Class\DataTableExtensions.cs" />
+    <Compile Include="Class\Entegref.cs" />
+    <Compile Include="Class\ListtoDataTableConverter.cs" />
+    <Compile Include="Class\Shell.cs" />
+    <Compile Include="Class\Siniflar.cs" />
+    <Compile Include="Class\SqliteConnection.cs" />
+    <Compile Include="Class\Volant.cs" />
+    <Compile Include="Class\VolClass.cs" />
+    <Compile Include="Connected Services\ShellServiceClient\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="frmAracIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAracIslemleri.Designer.cs">
+      <DependentUpon>frmAracIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Arac\frmAracMasrafRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Arac\frmAracMasrafRaporu.Designer.cs">
+      <DependentUpon>frmAracMasrafRaporu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAracSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAracSec.Designer.cs">
+      <DependentUpon>frmAracSec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvraklar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvraklar.Designer.cs">
+      <DependentUpon>frmEvraklar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIslemler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIslemler.Designer.cs">
+      <DependentUpon>frmIslemler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Arac\frmArac_TTS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Arac\frmArac_TTS.Designer.cs">
+      <DependentUpon>frmArac_TTS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAraçlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAraçlar.Designer.cs">
+      <DependentUpon>frmAraçlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIslem_Pdf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIslem_Pdf.Designer.cs">
+      <DependentUpon>frmIslem_Pdf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKilitEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKilitEkrani.Designer.cs">
+      <DependentUpon>frmKilitEkrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Arac\frmMasrafGor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Arac\frmMasrafGor.Designer.cs">
+      <DependentUpon>frmMasrafGor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Arac\frmMasraf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Arac\frmMasraf.Designer.cs">
+      <DependentUpon>frmMasraf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMessageBox.Designer.cs">
+      <DependentUpon>frmMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmServisler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmServisler.Designer.cs">
+      <DependentUpon>frmServisler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Arac\frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Arac\frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSplashScreen.Designer.cs">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUrunSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUrunSec.Designer.cs">
+      <DependentUpon>frmUrunSec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Arac\frmMasrafPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Arac\frmMasrafPDF.Designer.cs">
+      <DependentUpon>frmMasrafPDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmYapıSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmYapıSec.Designer.cs">
+      <DependentUpon>frmYapıSec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Arac\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Arac\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prim\DataTableClass.cs" />
+    <Compile Include="Prim\frmExcelAl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prim\frmExcelAl.Designer.cs">
+      <DependentUpon>frmExcelAl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prim\frmKotaRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prim\frmKotaRaporu.Designer.cs">
+      <DependentUpon>frmKotaRaporu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prim\frmMagazaKotasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prim\frmMagazaKotasi.Designer.cs">
+      <DependentUpon>frmMagazaKotasi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prim\frmMagazaSatisKota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prim\frmMagazaSatisKota.Designer.cs">
+      <DependentUpon>frmMagazaSatisKota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prim\frmPrimMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prim\frmPrimMain.Designer.cs">
+      <DependentUpon>frmPrimMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prim\frmOzelGunRapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prim\frmOzelGunRapor.Designer.cs">
+      <DependentUpon>frmOzelGunRapor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prim\frmOzelGunTanimlama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prim\frmOzelGunTanimlama.Designer.cs">
+      <DependentUpon>frmOzelGunTanimlama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prim\frmPersonel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prim\frmPersonel.Designer.cs">
+      <DependentUpon>frmPersonel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prim\frmPrimCarpan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prim\frmPrimCarpan.Designer.cs">
+      <DependentUpon>frmPrimCarpan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prim\frmPrimRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prim\frmPrimRaporu.Designer.cs">
+      <DependentUpon>frmPrimRaporu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProgressBarFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgressBarFrm.Designer.cs">
+      <DependentUpon>ProgressBarFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sayım\frmSayimDosyaKontrol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sayım\frmSayimDosyaKontrol.Designer.cs">
+      <DependentUpon>frmSayimDosyaKontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sayım\SayımRapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sayım\SayımRapor.Designer.cs">
+      <DependentUpon>SayımRapor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sayım\frmSayımMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sayım\frmSayımMain.Designer.cs">
+      <DependentUpon>frmSayımMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sayım\frmSayim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sayım\frmSayim.Designer.cs">
+      <DependentUpon>frmSayim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlConnectionObject.cs" />
+    <Compile Include="Web References\com.turkiyeshell.ttstest\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Class\Yakit.cs" />
+    <EmbeddedResource Include="frmAracIslemleri.resx">
+      <DependentUpon>frmAracIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Arac\frmAracMasrafRaporu.resx">
+      <DependentUpon>frmAracMasrafRaporu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAracSec.resx">
+      <DependentUpon>frmAracSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvraklar.resx">
+      <DependentUpon>frmEvraklar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIslemler.resx">
+      <DependentUpon>frmIslemler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Arac\frmArac_TTS.resx">
+      <DependentUpon>frmArac_TTS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAraçlar.resx">
+      <DependentUpon>frmAraçlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIslem_Pdf.resx">
+      <DependentUpon>frmIslem_Pdf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKilitEkrani.resx">
+      <DependentUpon>frmKilitEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Arac\frmMasrafGor.resx">
+      <DependentUpon>frmMasrafGor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Arac\frmMasraf.resx">
+      <DependentUpon>frmMasraf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMessageBox.resx">
+      <DependentUpon>frmMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmServisler.resx">
+      <DependentUpon>frmServisler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Arac\frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplashScreen.resx">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUrunSec.resx">
+      <DependentUpon>frmUrunSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Arac\frmMasrafPDF.resx">
+      <DependentUpon>frmMasrafPDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmYapıSec.resx">
+      <DependentUpon>frmYapıSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Arac\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prim\frmExcelAl.resx">
+      <DependentUpon>frmExcelAl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prim\frmKotaRaporu.resx">
+      <DependentUpon>frmKotaRaporu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prim\frmMagazaKotasi.resx">
+      <DependentUpon>frmMagazaKotasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prim\frmMagazaSatisKota.resx">
+      <DependentUpon>frmMagazaSatisKota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prim\frmPrimMain.resx">
+      <DependentUpon>frmPrimMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prim\frmOzelGunRapor.resx">
+      <DependentUpon>frmOzelGunRapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prim\frmOzelGunTanimlama.resx">
+      <DependentUpon>frmOzelGunTanimlama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prim\frmPersonel.resx">
+      <DependentUpon>frmPersonel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prim\frmPrimCarpan.resx">
+      <DependentUpon>frmPrimCarpan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prim\frmPrimRaporu.resx">
+      <DependentUpon>frmPrimRaporu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressBarFrm.resx">
+      <DependentUpon>ProgressBarFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Sayım\SayımRapor.resx">
+      <DependentUpon>SayımRapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sayım\frmSayımMain.resx">
+      <DependentUpon>frmSayımMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sayım\frmSayim.resx">
+      <DependentUpon>frmSayim.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="Connected Services\ShellServiceClient\RemziCicek.ShellServiceClient.CARDLIMITUPDATERESULT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ShellServiceClient\RemziCicek.ShellServiceClient.CUSTOMERLIMITANDCOUNTUPDATERESULT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ShellServiceClient\RemziCicek.ShellServiceClient.CUSTOMERSALESTRANSACTIONS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ShellServiceClient\RemziCicek.ShellServiceClient.CUSTOMERSALESTRANSACTIONS_WITH_RID.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ShellServiceClient\RemziCicek.ShellServiceClient.GETBRANCHLIMITANDSALESRESULT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ShellServiceClient\RemziCicek.ShellServiceClient.GETBRANCHLIMITANDSALESRESULTV2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ShellServiceClient\RemziCicek.ShellServiceClient.GETBRANCHSTATUSRESULT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ShellServiceClient\RemziCicek.ShellServiceClient.GETCARDLIMITDAYANDCOUNTRESULT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ShellServiceClient\RemziCicek.ShellServiceClient.GETCARDLIMITDAYANDCOUNTRESULTV2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ShellServiceClient\RemziCicek.ShellServiceClient.GETCARDSTATUSRESULT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ShellServiceClient\RemziCicek.ShellServiceClient.GetCustomerSalesTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ShellServiceClient\RemziCicek.ShellServiceClient.GetCustomerSalesTransaction_with_ridResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ShellServiceClient\RemziCicek.ShellServiceClient.GetInvoiceDetailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ShellServiceClient\RemziCicek.ShellServiceClient.GETINVOICEDETAILRESULT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ShellServiceClient\RemziCicek.ShellServiceClient.GetOnlineTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ShellServiceClient\RemziCicek.ShellServiceClient.GETONLINETRANSACTIONRESULT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ShellServiceClient\RemziCicek.ShellServiceClient.RO_GetOnlineTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ShellServiceClient\RemziCicek.ShellServiceClient.RO_GETONLINETRANSACTIONRESULT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ShellServiceClient\RemziCicek.ShellServiceClient.SetBranchLimitandCountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ShellServiceClient\RemziCicek.ShellServiceClient.SETBRANCHSTATUSRESULT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ShellServiceClient\RemziCicek.ShellServiceClient.SetCardLimitCountandDaysResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ShellServiceClient\RemziCicek.ShellServiceClient.SETCARDSTATUSRESULT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ShellServiceClient\TTSWebServices.wsdl" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="RemziCicek_TemporaryKey.pfx" />
+    <None Include="Web References\com.turkiyeshell.ttstest\CARDLIMITUPDATERESULT.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.turkiyeshell.ttstest\CUSTOMERLIMITANDCOUNTUPDATERESULT.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.turkiyeshell.ttstest\CUSTOMERSALESTRANSACTIONS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.turkiyeshell.ttstest\CUSTOMERSALESTRANSACTIONS_WITH_RID.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.turkiyeshell.ttstest\GETBRANCHLIMITANDSALESRESULT.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.turkiyeshell.ttstest\GETBRANCHLIMITANDSALESRESULTV2.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.turkiyeshell.ttstest\GETBRANCHSTATUSRESULT.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.turkiyeshell.ttstest\GETCARDLIMITDAYANDCOUNTRESULT.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.turkiyeshell.ttstest\GETCARDLIMITDAYANDCOUNTRESULTV2.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.turkiyeshell.ttstest\GETCARDSTATUSRESULT.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.turkiyeshell.ttstest\GETINVOICEDETAILRESULT.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.turkiyeshell.ttstest\GETONLINETRANSACTIONRESULT.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.turkiyeshell.ttstest\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\com.turkiyeshell.ttstest\RO_GETONLINETRANSACTIONRESULT.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.turkiyeshell.ttstest\SETBRANCHSTATUSRESULT.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.turkiyeshell.ttstest\SETCARDSTATUSRESULT.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.turkiyeshell.ttstest\TTSWebServices.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transit_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shoppingcart_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newemployee_16x16.png" />
+    <None Include="Resources\newemployee_32x32.png" />
+    <None Include="Resources\Kamalar_logo.png" />
+    <None Include="Resources\YON_AVM_400.png" />
+    <None Include="Resources\question_32x32.png" />
+    <None Include="Resources\bodetails_32x32.png" />
+    <None Include="Resources\Entegref-_1_.png" />
+    <None Include="Resources\hideproduct_32x321.png" />
+    <None Include="Resources\excel.png" />
+    <None Include="Resources\hideproduct_32x32.png" />
+    <None Include="Resources\showtestreport_32x32.png" />
+    <None Include="Resources\logo.ico" />
+    <None Include="Connected Services\ShellServiceClient\TTSWebServices.disco" />
+    <None Include="Connected Services\ShellServiceClient\configuration91.svcinfo" />
+    <None Include="Connected Services\ShellServiceClient\configuration.svcinfo" />
+    <None Include="Connected Services\ShellServiceClient\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="cash.png" />
+    <None Include="barcode_reader.png" />
+    <Content Include="logo.ico" />
+    <None Include="Resources\close_32x32.png" />
+    <None Include="Resources\driving_32x32.png" />
+    <None Include="Resources\apply_32x32.png" />
+    <None Include="Resources\cleartablestyle_32x32.png" />
+    <None Include="Resources\openhyperlink_32x32.png" />
+    <None Include="Resources\truck_40px.png" />
+    <None Include="Resources\Benzin.png" />
+    <None Include="Resources\print_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 ve x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 </ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EntityFramework">
+      <Version>6.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="ExcelDataReader">
+      <Version>3.6.0</Version>
+    </PackageReference>
+    <PackageReference Include="ExcelDataReader.DataSet">
+      <Version>3.6.0</Version>
+    </PackageReference>
+    <PackageReference Include="MetroModernUI">
+      <Version>1.4.0</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="SKGL">
+      <Version>2.0.5.3</Version>
+    </PackageReference>
+    <PackageReference Include="System.Data.SQLite">
+      <Version>1.0.118</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://ttstest.turkiyeshell.com/tts/TTSWebServices.asmx%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.turkiyeshell.ttstest\</RelPath>
+      <UpdateFromURL>http://ttstest.turkiyeshell.com/tts/TTSWebServices.asmx%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>RemziCicek_com_turkiyeshell_ttstest_TTSWebServices</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ShellServiceClient\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Eklemeler\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

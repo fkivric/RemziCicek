@@ -228,14 +228,21 @@ namespace RemziCicek
         }
         public DataTable GetData(string spName, SqlConnection sql)
         {
-            DataTable returnType = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(spName, sql);
-            da.Fill(returnType);
-            if (returnType.Rows.Count > 0)
+            try
             {
-                return returnType;
+                DataTable returnType = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(spName, sql);
+                da.Fill(returnType);
+                if (returnType.Rows.Count > 0)
+                {
+                    return returnType;
+                }
+                else
+                {
+                    return null;
+                }
             }
-            else
+            catch (Exception)
             {
                 return null;
             }
